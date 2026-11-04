@@ -92,7 +92,17 @@ de captura, **auditar o banco e a flash antes de considerar o pedal intacto**.
 | Linux USB e BLE | sem máquina Linux disponível |
 | Android BLE | sem aparelho para instalar o APK |
 | Todos os modelos de todos os blocos | só uma transição por bloco foi testada |
-| Build Windows do app | Visual Studio sem os componentes C++; instalação exige UAC |
+| Build Windows do app | falta o componente `VC.CMake.Project` do Visual Studio; instalar exige UAC |
+| APK Android | compila, mas não foi instalado em aparelho |
+
+### Toolchain do Windows
+
+MSVC 14.44 e Windows SDK 10.0.26100 estão instalados; o que falta é o
+componente `Microsoft.VisualStudio.Component.VC.CMake.Project`, que o Flutter
+procura pelo nome e não aceita substituir por um CMake avulso (testado com
+`pip install cmake ninja`: `Unable to find suitable Visual Studio toolchain`).
+Para destravar, abra o Visual Studio Installer, clique em **Modificar** e marque
+"Desenvolvimento para desktop com C++".
 
 ## Falhas conhecidas do editor oficial
 
