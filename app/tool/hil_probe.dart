@@ -311,7 +311,8 @@ List<int> pack7ForProbe(List<int> data) {
 }
 
 Future<void> main(List<String> args) async {
-  final doWrite = args.contains('--write-test');  final doSwap = args.contains('--swap-test');
+  final doWrite = args.contains('--write-test');
+  final doSwap = args.contains('--swap-test');
   final doModel = args.contains('--model-test');
   final transport = WinMmTransport();
   final device = TankDevice(transport, readTimeout: const Duration(seconds: 4));
@@ -387,6 +388,65 @@ Future<void> main(List<String> args) async {
           '(${decodeFlashName(back)})');
       if (!_sameBytes(back, original)) {
         throw StateError('RESTAURACAO DA FLASH FALHOU');
+      }
+    }
+
+    if (args.contains('--flash-test')) {
+      // Backup completo, alteracao de um byte, restauracao e auditoria —
+      // exercita o mesmo caminho que a tela de Ajustes usa.
+      print('backup da flash inteira...');
+      final snapshot = <int>[];
+      while (snapshot.length < modelFlashSize) {
+        final remaining = modelFlashSize - snapshot.length;
+        snapshot.addAll(
+          await device.readBlock(
+            modelFlashBase + snapshot.length,
+            remaining > 431 ? 431 : remaining,
+            area: 5,
+          ),
+        );
+      }
+      print('  lidos ${snapshot.length} bytes');
+
+      final address = modelFlashAddress(isCab: true, index: 20);
+      final tampered = List<int>.of(snapshot);
+      tampered[address - modelFlashBase + 4] ^= 0x01;
+      await device.writeModelFlash(
+        address,
+        tampered.sublist(
+          address - modelFlashBase,
+          address - modelFlashBase + 4096,
+        ),
+      );
+      print('  um byte alterado no CAB 20');
+
+      var rewritten = 0;
+      for (var offset = 0; offset < modelFlashSize; offset += 8192) {
+        final want = snapshot.sublist(offset, offset + 8192);
+        final have = await device.readBlock(
+          modelFlashBase + offset,
+          8192,
+          area: 5,
+        );
+        if (!_sameBytes(have, want)) {
+          await device.writeModelFlash(modelFlashBase + offset, want);
+          rewritten++;
+        }
+      }
+      print('  blocos regravados: $rewritten');
+
+      var good = 0;
+      for (var offset = 0; offset < modelFlashSize; offset += 8192) {
+        final have = await device.readBlock(
+          modelFlashBase + offset,
+          8192,
+          area: 5,
+        );
+        if (_sameBytes(have, snapshot.sublist(offset, offset + 8192))) good++;
+      }
+      print('  auditoria: $good/30 blocos iguais ao backup');
+      if (good != 30) {
+        throw StateError('FLASH NAO VOLTOU AO ESTADO ORIGINAL');
       }
     }
 

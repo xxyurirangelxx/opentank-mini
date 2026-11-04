@@ -40,8 +40,9 @@ dart run tool/hil_probe.dart            # só leitura
 ```
 
 Para operações destrutivas, use um slot sacrificial e restaure no mesmo teste.
-O `hil_probe` já faz isso ao receber `--write-test`, `--swap-test` e
-`--model-test`.
+O `hil_probe` já faz isso ao receber `--write-test`, `--swap-test`,
+`--model-test` e `--flash-test` (este último faz backup de tudo, altera um byte,
+restaura e audita os 30 blocos).
 
 Depois de qualquer sessão em que o M-EFCS foi instrumentado, confira que o
 pedal ficou intacto:
