@@ -99,7 +99,7 @@ void main() {
       expect(decodeFlashName(record), 'ABCDEFGHIJKLMN');
     });
 
-    test('CAB grava so 1024 amostras e header 02 40', () {
+    test('CAB grava amostras a partir do offset 20 e header 02 40', () {
       final buffer = _cabBuffer();
       final record = encodeCabFlashRecord(buffer, name: '3MESA_412');
       expect(record.length, cabFlashSlotSize);
@@ -107,15 +107,11 @@ void main() {
       expect(record.sublist(18, 20), <int>[0x02, 0x40]);
       expect(decodeFlashName(record), '3MESA_412');
       expect(
-        record.sublist(20, 20 + 1024 * 3),
-        buffer.sublist(20, 20 + 1024 * 3),
-        reason: 'a flash guarda metade das amostras do buffer',
+        record.sublist(20, 20 + cabFlashSampleBytes),
+        buffer.sublist(20, 20 + cabFlashSampleBytes),
+        reason: 'a flash guarda o maior trecho de amostras que cabe',
       );
-      expect(
-        record.sublist(20 + 1024 * 3),
-        everyElement(0),
-        reason: 'o resto do setor fica zerado',
-      );    });
+    });
 
     test('CAB rejeita buffer curto', () {
       expect(

@@ -25,10 +25,13 @@ Aparelho usado: `TANK MINI_009`, firmware reportado como versão 9, USB
 | Flash de modelos `0x70000000` | 245760 bytes lidos e comparados com a captura | idêntica (SHA-256) |
 | Tabelas de nomes de AMP e CAB em `0x80`/`0x90` | leitura | 20 nomes de cada |
 | Gravação permanente de AMP | registro alterado gravado, relido e restaurado | persiste sem commit |
+| Gravação permanente de CAB | registro de outro slot gravado, relido e restaurado | persiste sem commit |
 | Integridade após os testes | auditoria dos 30 blocos contra a captura | 30/30 idênticos |
 
-O dump completo foi refeito ao final da bateria de testes e bateu com o backup
-original: SHA-256 `08b87ad4…29ac`.
+O dump completo foi refeito ao final de toda a bateria (incluindo a captura do
+restore e a gravação de modelos) e bateu com o backup original:
+SHA-256 `00acaa80…168f` para o banco de presets e `9e8fc4e7…3d82` para a flash
+de modelos.
 
 ### Fluxos capturados do editor oficial
 
@@ -62,6 +65,13 @@ O resultado: 307 comandos únicos capturados, com o buffer completo de 30
 modelos (245760 bytes). A leitura da região `0x70000000` do pedal devolveu o
 **mesmo SHA-256** (`9e8fc4e7…3d82`) do que o editor enviou, o que confirma que
 o mapa endereço↔conteúdo está correto sem ter precisado apagar nada.
+
+**O bloqueio não é absoluto.** Durante a captura do "Restore All AM4 Presets"
+o editor conseguiu aplicar o banco de fábrica nos slots `1A..2B` (5 slots) antes
+do bloqueio entrar em vigor. A divergência foi detectada na verificação final e
+os 5 slots foram reescritos a partir do backup do usuário; o banco voltou ao
+SHA-256 original `00acaa80…168f`. Lição registrada: depois de qualquer sessão
+de captura, **auditar o banco e a flash antes de considerar o pedal intacto**.
 
 ## Verificado só em software
 

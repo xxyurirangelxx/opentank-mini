@@ -79,23 +79,36 @@ Uint8List encodeAmpFlashRecord(
   return out;
 }
 
+/// Tamanho do header de um CAB na flash.
+const int cabFlashHeader = 20;
+
+/// Bytes de amostra que cabem num CAB da flash (4096 - 20 = 4076, múltiplo de 3).
+///
+/// A flash guarda menos amostras que o buffer de prévia (2048). O número exato
+/// que o firmware consome não foi determinado; gravar o máximo possível não
+/// prejudica um IR mais curto, porque o excedente fica zerado no buffer.
+const int cabFlashSampleBytes = (cabFlashSlotSize - cabFlashHeader) ~/ 3 * 3;
+
 /// Monta o registro de um CAB na flash (4096 bytes).
 ///
-/// O buffer de previa guarda **2048 amostras** a partir do offset 20; a flash
-/// guarda **1024 amostras** e o header de fabrica termina em `02 40` (1024) em
-/// vez de `01 32` (50). O restante do setor e completado com zeros.
+/// Copia do offset 20 do buffer (onde começam as amostras) até o fim do setor.
+/// O header de fábrica termina em `02 40`, diferente do `01 32` do buffer.
 Uint8List encodeCabFlashRecord(
   List<int> buffer, {
   required String name,
 }) {
-  if (buffer.length < 20 + 1024 * 3) {
+  if (buffer.length < cabFlashHeader + cabFlashSampleBytes) {
     throw FormatException('Buffer de CAB tem ${buffer.length} bytes');
   }
   final out = Uint8List(cabFlashSlotSize);
   out.setRange(0, 4, factoryCabMagic);
   out.setRange(4, 18, _nameBytes(name));
   out.setRange(18, 20, const <int>[0x02, 0x40]);
-  out.setRange(20, 20 + 1024 * 3, buffer.sublist(20, 20 + 1024 * 3));
+  out.setRange(
+    cabFlashHeader,
+    cabFlashHeader + cabFlashSampleBytes,
+    buffer.sublist(cabFlashHeader, cabFlashHeader + cabFlashSampleBytes),
+  );
   return out;
 }
 

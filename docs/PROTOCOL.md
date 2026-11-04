@@ -317,13 +317,17 @@ partir do offset 18 é idêntico ao do buffer.
 ```
 43 41 42 00        "CAB\0"
 <14 bytes>         nome, ASCII, preenchido com NUL
-02 40              constante (1024 amostras)
-<offset 20..4096>  1024 amostras PCM 24-bit LE
+02 40              constante (diferente do 01 32 do buffer)
+<offset 20..4096>  amostras PCM 24-bit LE
 ```
 
-A flash guarda **metade** das amostras do buffer de prévia (1024 contra 2048) e
-usa `02 40` no lugar de `01 32` no header. Ao gravar um CAB a partir do buffer,
-copiar os primeiros 3072 bytes de amostra.
+A flash guarda menos amostras que o buffer de prévia: cabem 1358 amostras no
+setor de 4096 bytes. O número exato que o firmware consome não foi determinado;
+IRs de fábrica mais curtos deixam zeros no fim do setor. Ao gravar a partir do
+buffer, copiar do offset 20 até o fim do setor preserva o máximo do IR.
+
+O cabeçalho do CAB na flash tem o nome do modelo; o do buffer tem tudo zero. É
+por isso que uma leitura do buffer não revela o nome de um CAB de fábrica.
 
 ### Apagar setor (comando `0x21`)
 
