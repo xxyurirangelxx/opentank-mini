@@ -5,6 +5,7 @@ import '../core/model/model_flash.dart';
 import '../core/model/model_format.dart';
 import '../core/model/preset.dart';
 import '../core/model/preset_bank.dart';
+import '../core/protocol/messages.dart';
 import '../core/transport/transport.dart';
 import '../platform/ble_transport.dart';
 import '../platform/midi_transport.dart';
@@ -398,6 +399,99 @@ class TankController extends ChangeNotifier {
       _busy = false;
       notifyListeners();
     }
+  }
+
+  /// Le a flash inteira de modelos (245760 bytes).
+  Future<List<int>> readModelFlashAll({
+    void Function(double progress)? onProgress,
+  }) async {
+    final device = _device;
+    if (device == null) {
+      throw StateError('Dispositivo nao conectado');
+    }
+    if (_busy) {
+      throw StateError('Outra operacao em andamento');
+    }
+    _busy = true;
+    notifyListeners();
+    try {
+      final out = <int>[];
+      while (out.length < modelFlashSize) {
+        final chunk = await device.readBlock(
+          modelFlashBase + out.length,
+          maxRead < modelFlashSize - out.length
+              ? maxRead
+              : modelFlashSize - out.length,
+          area: Area.model,
+        );
+        out.addAll(chunk);
+        onProgress?.call(out.length / modelFlashSize);
+      }
+      _message = 'Flash de modelos lida';
+      return out;
+    } finally {
+      _busy = false;
+      notifyListeners();
+    }
+  }
+
+  /// Regrava a flash de modelos a partir de um backup.
+  ///
+  /// Escreve so os blocos que diferem e confere cada um por releitura. Um
+  /// backup de outra versao de firmware pode nao caber; nesse caso nada e
+  /// escrito.
+  Future<int> restoreModelFlashAll(
+    List<int> data, {
+    void Function(double progress)? onProgress,
+  }) async {
+    final device = _device;
+    if (device == null) {
+      throw StateError('Dispositivo nao conectado');
+    }
+    if (data.length != modelFlashSize) {
+      throw FormatException(
+        'Backup de modelos deve ter $modelFlashSize bytes, veio ${data.length}',
+      );
+    }
+    if (_busy) {
+      throw StateError('Outra operacao em andamento');
+    }
+    _busy = true;
+    notifyListeners();
+    var written = 0;
+    try {
+      const block = 8192;
+      for (var offset = 0; offset < modelFlashSize; offset += block) {
+        final want = data.sublist(offset, offset + block);
+        final have = await device.readBlock(
+          modelFlashBase + offset,
+          block,
+          area: Area.model,
+        );
+        if (_sameBytes(have, want)) {
+          onProgress?.call((offset + block) / modelFlashSize);
+          continue;
+        }
+        await device.writeModelFlash(modelFlashBase + offset, want);
+        written++;
+        onProgress?.call((offset + block) / modelFlashSize);
+      }
+      _message = written == 0
+          ? 'Flash ja estava igual ao backup'
+          : 'Flash de modelos restaurada ($written blocos)';
+      return written;
+    } finally {
+      _busy = false;
+      notifyListeners();
+    }
+  }
+
+  static bool _sameBytes(List<int> a, List<int> b) {
+    if (a.length != b.length) return false;
+    for (var i = 0; i < a.length; i++) {
+      if (a[i] != b[i]) return false;
+    }
+    return true;
   }
 
   Future<void> setBypass(bool value) =>

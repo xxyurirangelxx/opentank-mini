@@ -138,10 +138,15 @@ class Tank:
         raise TimeoutError('Sem dump RAM válido')
 
     def read(self, address, length=92, area=AREA_PRESETS, timeout=2.0):
-        """Lê até MAX_READ bytes. Retorna None em endereço inválido (ACK negativo)."""
+        """Lê até MAX_READ bytes. Retorna None em endereço inválido (ACK negativo).
+
+        Só aceita a resposta que ECOA o endereço pedido. Sem essa checagem uma
+        resposta atrasada de uma leitura anterior entra no lugar do chunk certo
+        e a comparação dá falso negativo (ou, pior, falso positivo).
+        """
         assert 0 < length <= MAX_READ
         start = len(self.events)
-        self.send(read_request(address, length, area), settle=0.5)
+        self.send(read_request(address, length, area), settle=0.35)
         end = time.monotonic() + timeout
         while time.monotonic() < end:
             for event in self.events[start:]:
@@ -150,6 +155,10 @@ class Tank:
                 raw = SCOPE['decode_sysex'](bytes.fromhex(event['hex']))
                 if (raw[:3] == bytes.fromhex('00 59 23') and len(raw) >= 16
                         and (255 - sum(raw[5:-1])) % 256 == raw[-1]):
+                    echoed = (raw[7] | (raw[8] << 8) | (raw[9] << 16)
+                              | (raw[10] << 24))
+                    if echoed != address:
+                        continue
                     # header de 14 bytes; payload = raw[14:-1]
                     return raw[14:-1]
                 if raw[:4] == bytes.fromhex('00 59 00 01'):

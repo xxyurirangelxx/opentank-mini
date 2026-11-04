@@ -175,6 +175,16 @@ class TankDevice {
         'Tamanho divergente: pedido $length, recebido ${payload.length}',
       );
     }
+    // A resposta ecoa o endereco. Conferir evita atribuir a um chunk o
+    // conteudo de outro quando uma resposta atrasada chega fora de ordem.
+    final echoed =
+        raw[7] | (raw[8] << 8) | (raw[9] << 16) | (raw[10] << 24);
+    if (echoed != address) {
+      throw ReadException(
+        'Resposta do endereco ${_hex32(echoed)} para pedido em '
+        '${_hex32(address)}',
+      );
+    }
     return payload;
   }
 

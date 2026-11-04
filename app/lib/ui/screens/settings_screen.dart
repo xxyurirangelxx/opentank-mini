@@ -63,6 +63,31 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ),
               ],
             ),
+            const SizedBox(height: 24),
+            const Text(
+              'Modelos (AMP e CAB)',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+            ),
+            const SizedBox(height: 8),
+            Row(
+              children: <Widget>[
+                FilledButton.tonalIcon(
+                  onPressed: controller.busy || !controller.connected
+                      ? null
+                      : _exportModels,
+                  icon: const Icon(Icons.download),
+                  label: const Text('Backup dos modelos'),
+                ),
+                const SizedBox(width: 12),
+                FilledButton.tonalIcon(
+                  onPressed: controller.busy || !controller.connected
+                      ? null
+                      : _importModels,
+                  icon: const Icon(Icons.upload),
+                  label: const Text('Restaurar modelos'),
+                ),
+              ],
+            ),
             const SizedBox(height: 12),
             if (_status.isNotEmpty)
               Text(
@@ -92,6 +117,79 @@ class _SettingsScreenState extends State<SettingsScreen> {
     } catch (error) {
       if (!mounted) return;
       setState(() => _status = 'Falha ao salvar: $error');
+    }
+  }
+
+  Future<void> _exportModels() async {
+    final controller = context.read<TankController>();
+    setState(() => _status = 'Lendo a flash de modelos...');
+    try {
+      final data = await controller.readModelFlashAll(
+        onProgress: (double v) {
+          if (mounted) setState(() => _status = 'Lendo... ${(v * 100).round()}%');
+        },
+      );
+      final path = await PresetIO.save(data, 'tank-models', 'otmodels');
+      if (!mounted) return;
+      setState(
+        () => _status = path == null
+            ? 'Cancelado'
+            : 'Backup dos ${data.length} bytes salvo em $path',
+      );
+    } catch (error) {
+      if (!mounted) return;
+      setState(() => _status = 'Falha ao salvar: $error');
+    }
+  }
+
+  Future<void> _importModels() async {
+    setState(() => _status = 'Lendo arquivo...');
+    try {
+      final data = await PresetIO.open('otmodels');
+      if (!mounted) return;
+      if (data == null) {
+        setState(() => _status = 'Cancelado');
+        return;
+      }
+      final ok = await showDialog<bool>(
+        context: context,
+        builder: (BuildContext ctx) => AlertDialog(
+          title: const Text('Restaurar os modelos?'),
+          content: const Text(
+            'Os 20 AMPs e 20 CABs do arquivo sobrescrevem os do pedal. '
+            'Blocos iguais sao ignorados; os diferentes sao apagados, '
+            'gravados e conferidos um a um.',
+          ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () => Navigator.pop(ctx, false),
+              child: const Text('Cancelar'),
+            ),
+            FilledButton(
+              onPressed: () => Navigator.pop(ctx, true),
+              child: const Text('Restaurar'),
+            ),
+          ],
+        ),
+      );
+      if (ok != true) return;
+      if (!mounted) return;
+      final controller = context.read<TankController>();
+      final written = await controller.restoreModelFlashAll(
+        data,
+        onProgress: (double v) {
+          if (mounted) {
+            setState(() => _status = 'Restaurando... ${(v * 100).round()}%');
+          }
+        },
+      );
+      if (!mounted) return;
+      setState(() => _status = written == 0
+          ? 'A flash ja estava igual ao arquivo'
+          : '$written blocos regravados e conferidos');
+    } catch (error) {
+      if (!mounted) return;
+      setState(() => _status = 'Falha: $error');
     }
   }
 

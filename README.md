@@ -45,7 +45,7 @@ on Linux or a real Android device.
 ```bash
 cd app
 flutter pub get
-flutter test          # 102 unit tests, no hardware needed
+flutter test          # 103 unit tests, no hardware needed
 flutter run -d windows
 ```
 

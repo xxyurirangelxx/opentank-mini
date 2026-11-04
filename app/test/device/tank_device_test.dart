@@ -58,9 +58,10 @@ void main() {
       final transport = FakeTransport((List<int> raw) {
         if (raw[2] == 0x11) return identity();
         if (raw[2] == 0x23) {
+          final address = raw[7] | (raw[8] << 8) | (raw[9] << 16) | (raw[10] << 24);
           final length = raw[11] | (raw[12] << 8);
           lengths.add(length);
-          return readReply(0, buffer.sublist(0, length));
+          return readReply(address, buffer.sublist(address, address + length));
         }
         return ack();
       });
@@ -76,6 +77,26 @@ void main() {
       final device = TankDevice(FakeTransport((_) => ack()));
       await device.connect();
       expect(() => device.readBytes(0, 500), throwsArgumentError);
+      await device.disconnect();
+    });
+
+    test('leitura recusa resposta que ecoa outro endereco', () async {
+      // Simula uma resposta atrasada de outro chunk: o pedal real ecoa o
+      // endereco, e aceitar a resposta errada corromperia a comparacao.
+      final device = TankDevice(
+        FakeTransport((List<int> raw) {
+          if (raw[2] == 0x11) return identity();
+          if (raw[2] == 0x23) {
+            return readReply(0x10000100, List<int>.filled(64, 0xAA));
+          }
+          return ack();
+        }),
+      );
+      await device.connect();
+      await expectLater(
+        device.readBytes(0, 64),
+        throwsA(isA<ReadException>()),
+      );
       await device.disconnect();
     });
 
