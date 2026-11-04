@@ -143,7 +143,10 @@ class Tank:
         Só aceita a resposta que ECOA o endereço pedido. Sem essa checagem uma
         resposta atrasada de uma leitura anterior entra no lugar do chunk certo
         e a comparação dá falso negativo (ou, pior, falso positivo).
-        """
+
+        Note que `area` importa: `0x70xxxxxx` só responde com área `0x05`.
+        Ler a flash de modelos com a área padrão devolve zeros e faz qualquer
+        auditoria acusar 30/30 blocos corrompidos."""
         assert 0 < length <= MAX_READ
         start = len(self.events)
         self.send(read_request(address, length, area), settle=0.35)

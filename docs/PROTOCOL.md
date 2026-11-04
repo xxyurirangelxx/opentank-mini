@@ -285,6 +285,10 @@ A região `0x70000000` é gravável byte a byte e endereçável por leitura comu
 ler os 245760 bytes e concatenar devolve exatamente o mesmo conteúdo que o
 editor enviava no restore (SHA-256 idêntico, verificado em 2026-11-04).
 
+**A área importa.** Ler `0x70000000` com `area = 0x04` devolve zeros sem erro
+nenhum; só `area = 0x05` endereça a flash de modelos. Uma auditoria que esqueça
+a área acusa os 30 blocos como corrompidos.
+
 ### Layout da flash
 
 30 blocos de 8192 bytes:
