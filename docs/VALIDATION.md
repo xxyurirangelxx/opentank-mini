@@ -27,6 +27,7 @@ Aparelho usado: `TANK MINI_009`, firmware reportado como versão 9, USB
 | Gravação permanente de AMP | registro alterado gravado, relido e restaurado | persiste sem commit |
 | Gravação permanente de CAB | registro de outro slot gravado, relido e restaurado | persiste sem commit |
 | Integridade após os testes | auditoria dos 30 blocos contra a captura | 30/30 idênticos |
+| Backup e restauração da flash (`--flash-test`) | backup, 1 byte alterado, restauração, auditoria | 30/30 voltaram |
 
 O dump completo foi refeito ao final de toda a bateria (incluindo a captura do
 restore e a gravação de modelos) e bateu com o backup original:
