@@ -202,6 +202,20 @@ void main() {
     await controller.disconnect();
   });
 
+  test('rajada de edicoes envia apenas o estado final', () async {
+    final controller = build();
+    await controller.connect();
+    // Simula arrastar o slider: muitas chamadas sem esperar.
+    final futures = <Future<void>>[];
+    for (var v = 20; v <= 60; v += 10) {
+      futures.add(controller.apply(controller.draft!.withVolume(v)));
+    }
+    await Future.wait(futures);
+    expect(ram[0], 60, reason: 'o pedal deve terminar no valor final');
+    expect(controller.draft!.volume, 60);
+    await controller.disconnect();
+  });
+
   test('setLink so funciona desconectado', () async {
     final controller = build();
     controller.setLink(Link.bluetooth);

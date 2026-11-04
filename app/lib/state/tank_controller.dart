@@ -76,6 +76,39 @@ class TankController extends ChangeNotifier {
   bool get connected => _state == TankConnectionState.connected;
   TankDevice? get device => _device;
 
+  Preset? _pending;
+  bool _draining = false;
+
+  /// Envia o estado pendente mais recente, um por vez.
+  Future<void> _drain() async {
+    if (_draining) return;
+    _draining = true;
+    try {
+      while (_pending != null) {
+        final device = _device;
+        final target = _pending!;
+        final current = _draft;
+        _pending = null;
+        if (device == null || current == null) continue;
+        final baseline = _lastSent ?? current;
+        try {
+          await _push(baseline, target);
+          _lastSent = target;
+        } catch (error) {
+          _message = 'Alteracao rejeitada: $error';
+          _pending = null;
+          notifyListeners();
+          break;
+        }
+      }
+    } finally {
+      _draining = false;
+    }
+  }
+
+  /// Ultimo estado confirmado no pedal; base das diferencas enviadas.
+  Preset? _lastSent;
+
   /// Rascunho difere do que esta salvo no slot?
   bool get isDirty {
     final bank = _bank;
@@ -141,6 +174,8 @@ class TankController extends ChangeNotifier {
     _message = '';
     _bank = null;
     _draft = null;
+    _lastSent = null;
+    _pending = null;
     notifyListeners();
     await device?.disconnect();
   }
@@ -158,6 +193,7 @@ class TankController extends ChangeNotifier {
       _bank = PresetBank(slots);
       _activeSlot = _matchingSlot(slots, active);
       _draft = active;
+      _lastSent = active;
       _message = device.identity;
     });
   }
@@ -180,6 +216,7 @@ class TankController extends ChangeNotifier {
       _draft = await device.readActive();
       await device.selectSlot(index, expected: bank.slots[index]);
       _draft = await device.readActive();
+      _lastSent = _draft;
     });
   }
 
@@ -188,6 +225,16 @@ class TankController extends ChangeNotifier {
     final device = _device;
     final previous = _draft;
     if (previous == null) return;
+    if (device != null) {
+      // Arrastar um slider dispara dezenas de eventos por segundo e o
+      // protocolo so aceita uma conversa por vez. Guarda apenas o estado mais
+      // recente e deixa um unico envio em andamento.
+      _pending = next;
+      _draft = next;
+      notifyListeners();
+      await _drain();
+      return;
+    }
     // Sem pedal (modo offline) a edicao fica so no rascunho.
     if (device == null) {
       _draft = next;
@@ -283,6 +330,7 @@ class TankController extends ChangeNotifier {
       // Reescreve a RAM com os valores salvos, campo a campo.
       await _push(_draft ?? saved, saved);
       _draft = await device.readActive();
+      _lastSent = _draft;
     });
   }
 
