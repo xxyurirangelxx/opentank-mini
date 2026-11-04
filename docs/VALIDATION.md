@@ -22,6 +22,10 @@ Aparelho usado: `TANK MINI_009`, firmware reportado como versão 9, USB
 | Descartar alteração não salva | mudar volume na RAM, reescrever o valor salvo | RAM volta ao slot |
 | Leitura de bloco grande | 8192 bytes em fatias de 431 | estável entre leituras |
 | Escrita de bloco grande | 1015 bytes por comando | ACK e conteúdo confere |
+| Flash de modelos `0x70000000` | 245760 bytes lidos e comparados com a captura | idêntica (SHA-256) |
+| Tabelas de nomes de AMP e CAB em `0x80`/`0x90` | leitura | 20 nomes de cada |
+| Gravação permanente de AMP | registro alterado gravado, relido e restaurado | persiste sem commit |
+| Integridade após os testes | auditoria dos 30 blocos contra a captura | 30/30 idênticos |
 
 O dump completo foi refeito ao final da bateria de testes e bateu com o backup
 original: SHA-256 `08b87ad4…29ac`.
@@ -43,7 +47,21 @@ alterar argumentos nem retornos. As capturas ficam em `research/captures/`.
 | Routing da cadeia | sim, com restauração |
 | Preview de AMP (upload + ativação) | sim |
 | Preview de CAB (upload + ativação) | sim |
-| Factory reset | **não** |
+| Restore de presets AM4 (banco de fábrica) | sim, sem executar no pedal |
+| Restore de Amp/Cab (apagar setor + escrita) | sim, sem executar no pedal |
+
+### Captura sem execução
+
+O "Restore AM4 Amp/Cab" do editor é a única forma de descobrir a gravação
+permanente de modelos, mas executá-lo apaga a flash do pedal. A solução foi
+interceptar `midiOutLongMsg` com Frida e devolver sucesso **sem chamar a
+função original** (`tools/research/capture_blocked.py`): o editor acredita ter
+enviado, o pedal não recebe nada.
+
+O resultado: 307 comandos únicos capturados, com o buffer completo de 30
+modelos (245760 bytes). A leitura da região `0x70000000` do pedal devolveu o
+**mesmo SHA-256** (`9e8fc4e7…3d82`) do que o editor enviou, o que confirma que
+o mapa endereço↔conteúdo está correto sem ter precisado apagar nada.
 
 ## Verificado só em software
 
@@ -58,7 +76,7 @@ alterar argumentos nem retornos. As capturas ficam em `research/captures/`.
 | Item | Por que |
 |---|---|
 | Persistência após desligar o pedal | exige desligar e religar o aparelho |
-| Gravação permanente de AMP/CAB | o comando não foi capturado; o editor oficial falha antes |
+| Gravação permanente de AMP/CAB após power-cycle | o comando está decifrado e conferido por releitura; falta desligar/ligar |
 | Afinador com sinal de áudio | precisa de guitarra e ouvido humano |
 | Loopback e bypass audíveis | precisa de áudio |
 | Linux USB e BLE | sem máquina Linux disponível |

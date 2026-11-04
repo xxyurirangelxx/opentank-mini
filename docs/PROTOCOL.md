@@ -259,14 +259,149 @@ para AMP (7 blocos, 6272 bytes) e para CAB (7 blocos, 6164 bytes).
 
 Não foi observada nenhuma mensagem MIDI ao clicar em "Save to Device" para CAB
 nesta versão do editor — o app falha antes, com
-`Null check operator used on a null value` em `import_cab.dart:157`. A causa é
+`Null check operator used on a null object` em `import_cab.dart:157`. A causa é
 o toast de erro: `errorToast` chama `Overlay.of(context)` sem `context` válido,
 e a exceção derruba o aplicativo.
 
-Portanto **a gravação permanente de AMP/CAB no pedal não foi validada**. O que
-foi validado é o upload para o buffer em RAM e a ativação por preview. Se a
-gravação permanente também for apenas commit do buffer, o comando segue o
-mesmo padrão do save de preset; isso é hipótese, não fato.
+O caminho de gravação permanente foi obtido por outro lado: interceptando as
+chamadas de `midiOutLongMsg` do "More → Factory Restore → Restore AM4
+Amp/Cab" **sem deixá-las chegar ao pedal** (`tools/research/capture_blocked.py`).
+O comando está na seção 7.1.
+
+## 7.1 Flash de modelos
+
+Região de **245760 bytes** em `0x70000000`, lida e escrita com
+`area = 0x05`. É a mesma área do buffer de prévia; o que separa os dois é o
+endereço.
+
+| Endereço | Conteúdo |
+|---|---|
+| `0x00000000` | buffer de prévia (8192 B) |
+| `0x70000000` | flash de modelos (245760 B) |
+| `0x80000000` | tabela de nomes de CAB |
+| `0x90000000` | tabela de nomes de AMP |
+
+A região `0x70000000` é gravável byte a byte e endereçável por leitura comum:
+ler os 245760 bytes e concatenar devolve exatamente o mesmo conteúdo que o
+editor enviava no restore (SHA-256 idêntico, verificado em 2026-11-04).
+
+### Layout da flash
+
+30 blocos de 8192 bytes:
+
+| Blocos | Conteúdo |
+|---|---|
+| 0..19 | 20 AMPs (8192 B cada) |
+| 20..29 | 20 CABs, **dois por bloco de 4096 B** |
+
+O índice guardado no preset é 1-based:
+
+```
+AMP n  →  0x70000000 + (n-1) * 8192
+CAB n  →  0x70000000 + (20 + (n-1) ~/ 2) * 8192 + ((n-1) % 2) * 4096
+```
+
+### Registro AMP (8192 B)
+
+```
+41 4D 34 00        "AM4\0"
+<14 bytes>         nome, ASCII, preenchido com NUL
+<offset 18..>      mesmo payload do buffer de prévia
+```
+
+O magic de fábrica é `AM4\0`, não o `AM2\0` do buffer de prévia. O payload a
+partir do offset 18 é idêntico ao do buffer.
+
+### Registro CAB (4096 B)
+
+```
+43 41 42 00        "CAB\0"
+<14 bytes>         nome, ASCII, preenchido com NUL
+02 40              constante (1024 amostras)
+<offset 20..4096>  1024 amostras PCM 24-bit LE
+```
+
+A flash guarda **metade** das amostras do buffer de prévia (1024 contra 2048) e
+usa `02 40` no lugar de `01 32` no header. Ao gravar um CAB a partir do buffer,
+copiar os primeiros 3072 bytes de amostra.
+
+### Apagar setor (comando `0x21`)
+
+```
+00 59 21 05 00 00 05 <addr LE32> <cs>       (12 bytes)
+```
+
+Apaga 4096 bytes a partir de `addr`. O endereço de `0x70xxxxxx` já termina em
+`70`, o que fazia o frame parecer ter um campo extra.
+
+Não há comando de leitura implícito ao apagar: o commit só é enviado ao final
+do restore inteiro, não a cada setor.
+
+### Fluxo de gravação (reproduz o "Restore Amp/Cab")
+
+1. `0x21` nos setores que o registro ocupa (2 setores para AMP, 1 para CAB)
+2. escritas `0x22` de até 1015 bytes com offset crescente, `area 0x05`
+3. releitura e comparação byte a byte
+
+**Não há commit.** A captura do "Restore Amp/Cab" não contém nenhum frame com
+`F0`, e testar um commit `00 59 22 08 00 00 05 00 00 00 F0 00 00 00 00` depois
+da escrita faz o pedal **descartar o bloco inteiro** (verificado em
+2026-11-04: a releitura volta zerada). O commit `F0` é exclusivo da área `0x04`
+e não deve ser usado com `0x05`, embora o comando seja aceito com ACK.
+
+O ciclo correto, conferido em bancada:
+
+```
+apagar setor 0x70000000 → ACK
+apagar setor 0x70001000 → ACK
+escrever 9 x 1015 bytes  → ACK
+reler                   → idêntico
+```
+
+Sem commit, a gravação sobrevive à leitura imediata e à regravação de outros
+blocos. Falta confirmar se sobrevive ao power-cycle.
+
+### Tabelas de nomes
+
+`0x80000000` lista os nomes de CAB e `0x90000000` os de AMP, ambos em registros
+de 10 bytes separados por NUL e repetidos a cada 431 bytes (a tabela ocupa o
+início de cada página de leitura). Servem para exibir o nome do modelo sem ler a
+flash inteira.
+
+Nomes de fábrica (este aparelho):
+
+| # | AMP | CAB |
+|---|---|---|
+| 1 | 1J120_CL | 1AC-SeVin |
+| 2 | 2J900_CL | 2JVM_1960_57 |
+| 3 | 3VAVE_TS | 3MESA_412 |
+| 4 | 4RAT_OD | 4WANGS112 |
+| 5 | 5VAVE_HTS | 5VOX_AC30 |
+| 6 | 6VAVE_DS | 6HIFI_YAMAHA |
+| 7 | 7MS_GV2 | 7EGNL_412 |
+| 8 | 8J900_HV | 8V30_MD421 |
+| 9 | 9MS_HIGAIN | 9Peavey115B |
+| 10 | 10J900-FG | 10OrPPC212 |
+| 11 | 11.410H-FG | 11TraceElliot |
+| 12 | 12MES-FG | 12Bog2VTY |
+| 13 | 13MES-_CH3 | 13BGN412 |
+| 14 | 14FIRMAN | 14EV MIX |
+| 15 | 15CT-Gas V4H | 15Friedman |
+| 16 | 16AgDb750_BS | 16Agula410 |
+| 17 | 17ApSVT_BS | 17AgSVT410 |
+| 18 | 18PjBuddy_BS | 18DgDG212N |
+| 19 | 19DgXu_BS | 19MbSway210 |
+| 20 | 20MarkLm_BS | 20Tace412 |
+
+A tabela `0x90000000` repete o bloco depois do registro 20; é uma tabela de
+nomes, não a flash.
+
+### Restore de presets
+
+"Restore All AM4 Presets" não é um comando especial: o editor lê o preset de
+fábrica embutido e envia escritas `0x22` normais em `area 0x04` (dois blocos,
+1015 + 917 bytes), commits e um pedido de seleção. O banco de fábrica de
+1982 bytes foi capturado em `research/fixtures/factory-bank-am4.bin`.
 
 ## 8. Limites conhecidos
 
@@ -279,8 +414,8 @@ mesmo padrão do save de preset; isso é hipótese, não fato.
 ## 9. O que ainda não foi verificado
 
 - Persistência após desligar o pedal (power-cycle físico).
-- Upload de CAB.
-- Escrita de AMP com dados diferentes e reboot.
-- Factory reset (comando não capturado).
+- Gravação permanente de AMP/CAB: o comando está decifrado e conferido por
+  releitura, mas não houve desligar/ligar para confirmar que sobrevive.
 - Comportamento em Linux e Android.
 - Áudio real (loopback, bypass, afinador com sinal).
+- O efeito de gravar o mesmo slot duas vezes seguidas sem power-cycle.

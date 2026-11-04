@@ -234,5 +234,105 @@ void main() {
       final device = TankDevice(FakeTransport((_) => ack()));
       await expectLater(device.readSlot(0), throwsStateError);
     });
+
+    test('writeModelFlash apaga, escreve e relê sem commit', () async {
+      final packets = <List<int>>[];
+      final stored = <int, int>{};
+      final transport = FakeTransport((List<int> raw) {
+        packets.add(raw);
+        if (raw[2] == 0x11) return identity();
+        if (raw[2] == 0x21) {
+          final address = raw[7] | (raw[8] << 8) | (raw[9] << 16) | (raw[10] << 24);
+          stored.removeWhere((int k, int v) => k >= address && k < address + 4096);
+          return ack();
+        }
+        if (raw[2] == 0x22 && (raw[11] | (raw[12] << 8)) > 1) {
+          final address = raw[7] | (raw[8] << 8) | (raw[9] << 16) | (raw[10] << 24);
+          final length = raw[11] | (raw[12] << 8);
+          for (var i = 0; i < length; i++) {
+            stored[address + i] = raw[14 + i];
+          }
+        }
+        if (raw[2] == 0x23) {
+          final address = raw[7] | (raw[8] << 8) | (raw[9] << 16) | (raw[10] << 24);
+          final length = raw[11] | (raw[12] << 8);
+          return readReply(
+            address,
+            <int>[for (var i = 0; i < length; i++) stored[address + i] ?? 0],
+          );
+        }
+        return ack();
+      });
+      final device = TankDevice(transport);
+      await device.connect();
+      packets.clear();
+
+      final record = List<int>.generate(8192, (int i) => (i * 3) & 0xFF);
+      await device.writeModelFlash(0x70000000 + 5 * 8192, record);
+
+      final erases = packets
+          .where((List<int> p) => p[2] == 0x21)
+          .map(
+            (List<int> p) =>
+                p[7] | (p[8] << 8) | (p[9] << 16) | (p[10] << 24),
+          )
+          .toList();
+      expect(erases, <int>[
+        0x70000000 + 5 * 8192,
+        0x70000000 + 5 * 8192 + 4096,
+      ]);
+      // O editor oficial nao envia commit no restore de modelos; enviar um
+      // commit com area 0x05 faz o pedal descartar a gravacao.
+      final commits = packets.where(
+        (List<int> p) => p.length > 10 && p[10] == 0xF0,
+      );
+      expect(commits, isEmpty, reason: 'modelo nao leva commit');
+      expect(
+        <int>[
+          for (var i = 0; i < 8192; i++)
+            stored[0x70000000 + 5 * 8192 + i] ?? -1,
+        ],
+        record,
+      );
+      await device.disconnect();
+    });
+
+    test('writeModelFlash falha quando a releitura nao confere', () async {
+      var reads = 0;
+      final transport = FakeTransport((List<int> raw) {
+        if (raw[2] == 0x11) return identity();
+        if (raw[2] == 0x23) {
+          reads++;
+          final address = raw[7] | (raw[8] << 8) | (raw[9] << 16) | (raw[10] << 24);
+          final length = raw[11] | (raw[12] << 8);
+          return readReply(address, List<int>.filled(length, 0xFF));
+        }
+        return ack();
+      });
+      final device = TankDevice(transport);
+      await device.connect();
+      final record = List<int>.filled(8192, 0x11);
+      await expectLater(
+        device.writeModelFlash(0x70000000, record),
+        throwsA(isA<FlashWriteException>()),
+      );
+      expect(reads, greaterThan(0));
+      await device.disconnect();
+    });
+
+    test('writeModelFlash propaga NAK do apagamento', () async {
+      final transport = FakeTransport((List<int> raw) {
+        if (raw[2] == 0x11) return identity();
+        if (raw[2] == 0x21) return nak();
+        return ack();
+      });
+      final device = TankDevice(transport);
+      await device.connect();
+      await expectLater(
+        device.writeModelFlash(0x70000000, List<int>.filled(4096, 0)),
+        throwsA(isA<WriteException>()),
+      );
+      await device.disconnect();
+    });
   });
 }

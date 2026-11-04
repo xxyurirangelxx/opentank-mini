@@ -17,6 +17,7 @@ import 'dart:typed_data';
 
 import 'package:ffi/ffi.dart';
 import 'package:opentank_mini/core/device/tank_device.dart';
+import 'package:opentank_mini/core/model/model_flash.dart';
 import 'package:opentank_mini/core/model/preset.dart';
 import 'package:opentank_mini/core/protocol/packing.dart';
 import 'package:opentank_mini/core/transport/transport.dart';
@@ -310,8 +311,8 @@ List<int> pack7ForProbe(List<int> data) {
 }
 
 Future<void> main(List<String> args) async {
-  final doWrite = args.contains('--write-test');
-  final doSwap = args.contains('--swap-test');
+  final doWrite = args.contains('--write-test');  final doSwap = args.contains('--swap-test');
+  final doModel = args.contains('--model-test');
   final transport = WinMmTransport();
   final device = TankDevice(transport, readTimeout: const Duration(seconds: 4));
   try {
@@ -360,6 +361,35 @@ Future<void> main(List<String> args) async {
       print('  inverso restaurado: ${backA == first && backB == second}');
     }
 
+    if (doModel) {
+      // Exercita o caminho de gravacao permanente de modelo usando o codigo de
+      // producao: le o bloco, grava um registro com outro nome, confere e
+      // restaura.
+      final index = args
+          .firstWhere((String a) => a.startsWith('--index='), orElse: () => '')
+          .replaceFirst('--index=', '');
+      final slot = index.isEmpty ? 20 : int.parse(index);
+      final address = modelFlashAddress(isCab: false, index: slot);
+      final original = await device.readModelFlash(address, 8192);
+      print('AMP $slot em ${_hex32(address)}: ${decodeFlashName(original)}');
+      final renamed = List<int>.of(original);
+      final tag = 'OPENTANK_${DateTime.now().millisecondsSinceEpoch % 10000}';
+      final nameBytes = <int>[...tag.codeUnits.take(14)];
+      renamed.setRange(4, 18, List<int>.filled(14, 0));
+      renamed.setRange(4, 4 + nameBytes.length, nameBytes);
+      await device.writeModelFlash(address, renamed);
+      final live = await device.readModelFlash(address, 8192);
+      print('  gravado e relido igual: ${_sameBytes(live, renamed)}');
+      print('  nome lido: ${decodeFlashName(live)}');
+      await device.writeModelFlash(address, original);
+      final back = await device.readModelFlash(address, 8192);
+      print('  restaurado: ${_sameBytes(back, original)} '
+          '(${decodeFlashName(back)})');
+      if (!_sameBytes(back, original)) {
+        throw StateError('RESTAURACAO DA FLASH FALHOU');
+      }
+    }
+
     // Descartar alteracao: muda o volume na RAM e volta ao salvo.
     final saved = await device.readSlot(4);
     await device.setVolume(saved.volume == 60 ? 59 : 60);
@@ -377,3 +407,14 @@ Future<void> main(List<String> args) async {
     await device.disconnect();
   }
 }
+
+bool _sameBytes(List<int> a, List<int> b) {
+  if (a.length != b.length) return false;
+  for (var i = 0; i < a.length; i++) {
+    if (a[i] != b[i]) return false;
+  }
+  return true;
+}
+
+String _hex32(int value) =>
+    '0x${value.toRadixString(16).padLeft(8, '0')}';

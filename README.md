@@ -13,7 +13,8 @@ fork and improve.
 - Edit volume, effect chain order, block on/off, model and parameters
 - Preview changes on the pedal in real time (RAM), before saving
 - Save to the current slot, save to another slot, or swap two slots
-- Import amplifier models (`.am2Data`) and cabinet IRs (`.wav`) and audition them
+- Import amplifier models (`.am2Data`) and cabinet IRs (`.wav`), audition them,
+  and write them permanently to any of the 20 model slots
 - Toggle bypass, loopback and the tuner
 - Export and restore the whole preset bank (`.atkm`)
 
@@ -31,17 +32,20 @@ fork and improve.
 ## Status
 
 The protocol layer is verified against hardware for reading, writing, swapping,
-selecting and the global toggles. Model upload (AMP/CAB) is verified up to the
-pedal's RAM buffer; permanent storage of models was **not** verified, because
-the vendor app crashes before that step. Details and evidence live in
-[docs/VALIDATION.md](docs/VALIDATION.md).
+selecting, the global toggles and permanent model storage. The model flash
+(`0x70000000`) was read back byte for byte and matched the factory image; a
+modified AMP was written, read back and restored during the investigation.
+Details and evidence live in [docs/VALIDATION.md](docs/VALIDATION.md).
+
+Persistence across a physical power-cycle is still unverified, as is anything
+on Linux or a real Android device.
 
 ## Getting started
 
 ```bash
 cd app
 flutter pub get
-flutter test          # 85 unit tests, no hardware needed
+flutter test          # 102 unit tests, no hardware needed
 flutter run -d windows
 ```
 

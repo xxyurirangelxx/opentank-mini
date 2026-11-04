@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import '../model/model_flash.dart';
 import '../model/preset.dart';
 import '../protocol/messages.dart';
 import '../transport/transport.dart';
@@ -22,6 +23,11 @@ class WriteException implements Exception {
 
   @override
   String toString() => 'WriteException: $message';
+}
+
+/// A gravacao foi aceita mas a releitura nao confere.
+class FlashWriteException extends WriteException {
+  FlashWriteException(super.message);
 }
 
 /// Uma resposta recebida do dispositivo.
@@ -342,6 +348,67 @@ class TankDevice {
       throw WriteException('Preview de modelo rejeitado: ${_hex(raw)}');
     }
   }
+
+  /// Grava um modelo de forma permanente na flash de modelos.
+  ///
+  /// O fluxo reproduz o "Restore Amp/Cab" do editor oficial: apaga os setores
+  /// que o registro ocupa e escreve o registro em blocos de [maxWrite] bytes.
+  /// **Nao ha commit**: a captura do editor nao envia nenhum, e enviar o
+  /// commit de preset com `area 0x05` faz o pedal descartar a gravacao.
+  ///
+  /// Lanca [FlashWriteException] quando a releitura nao bate com o envio.
+  Future<void> writeModelFlash(
+    int address,
+    List<int> record, {
+    void Function(double progress)? onProgress,
+  }) async {
+    final sectors = eraseSectorsFor(address, record.length);
+    final blocks = (record.length / maxWrite).ceil();
+    final total = sectors.length + blocks + 1;
+    var done = 0;
+
+    for (final sector in sectors) {
+      final raw = await _exchange(eraseSectorRequest(sector));
+      if (!_Response.isAck(raw)) {
+        throw WriteException('Apagamento de ${_hex32(sector)} recusado');
+      }
+      onProgress?.call(++done / total);
+    }
+
+    for (var offset = 0; offset < record.length; offset += maxWrite) {
+      final end = offset + maxWrite;
+      final chunk = record.sublist(
+        offset,
+        end > record.length ? record.length : end,
+      );
+      await _write(
+        chunk,
+        address: address + offset,
+        area: Area.model,
+        commit: false,
+      );
+      onProgress?.call(++done / total);
+    }
+
+    final check = await readBlock(address, record.length, area: Area.model);
+    for (var i = 0; i < record.length; i++) {
+      if (check[i] != record[i]) {
+        throw FlashWriteException(
+          'Verificacao falhou em ${_hex32(address + i)}: '
+          'gravado ${check[i].toRadixString(16)}, '
+          'esperado ${record[i].toRadixString(16)}',
+        );
+      }
+    }
+    onProgress?.call(1);
+  }
+
+  /// Le o registro de um modelo da flash (8192 para AMP, 4096 para CAB).
+  Future<List<int>> readModelFlash(int address, int length) =>
+      readBlock(address, length, area: Area.model);
+
+  static String _hex32(int value) =>
+      '0x${value.toRadixString(16).padLeft(8, '0')}';
 
   static String _hex(List<int> data) =>
       data.map((b) => b.toRadixString(16).padLeft(2, '0')).join(' ');

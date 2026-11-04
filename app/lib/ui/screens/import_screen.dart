@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../core/io/wav_file.dart';
+import '../../core/model/model_flash.dart';
 import '../../core/model/model_format.dart';
 import '../../state/tank_controller.dart';
 import '../theme.dart';
@@ -62,6 +63,16 @@ class _ImportScreenState extends State<ImportScreen> {
                     icon: const Icon(Icons.play_arrow),
                     label: const Text('Ouvir no pedal'),
                   ),
+                if (_buffer != null) ...<Widget>[
+                  const SizedBox(width: 8),
+                  FilledButton.icon(
+                    onPressed: _busy || !controller.connected
+                        ? null
+                        : () => _saveToDevice(controller),
+                    icon: const Icon(Icons.save),
+                    label: const Text('Gravar permanentemente'),
+                  ),
+                ],
               ],
             ),
             const SizedBox(height: 20),
@@ -185,6 +196,75 @@ class _ImportScreenState extends State<ImportScreen> {
       setState(() => _busy = false);
     }
   }
+
+  Future<void> _saveToDevice(TankController controller) async {
+    final buffer = _buffer;
+    if (buffer == null) return;
+    final index = await showDialog<int>(
+      context: context,
+      builder: (BuildContext ctx) => AlertDialog(
+        title: Text(
+          'Gravar ${_kind == ModelKind.cab ? 'CAB' : 'AMP'} em qual slot?',
+        ),
+        content: SizedBox(
+          width: 420,
+          height: 340,
+          child: GridView.count(
+            crossAxisCount: 5,
+            mainAxisSpacing: 8,
+            crossAxisSpacing: 8,
+            childAspectRatio: 1.8,
+            children: <Widget>[
+              for (var i = 1; i <= modelSlotCount; i++)
+                OutlinedButton(
+                  onPressed: () => Navigator.pop(ctx, i),
+                  child: Text('$i'),
+                ),
+            ],
+          ),
+        ),
+        actions: <Widget>[
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text('Cancelar'),
+          ),
+        ],
+      ),
+    );
+    if (index == null) return;
+
+    final name = (_fileName ?? 'OPEN TANK')
+        .replaceAll(RegExp(r'\.[^.]+$'), '')
+        .replaceAll(RegExp(r'[^A-Za-z0-9._ -]'), '')
+        .trim();
+    setState(() {
+      _busy = true;
+      _status = 'Apagando e gravando...';
+    });
+    try {
+      await controller.saveModel(
+        kind: _kind,
+        index: index,
+        name: name.isEmpty ? 'OPEN TANK' : name,
+        buffer: buffer,
+        onProgress: (double value) {
+          if (!mounted) return;
+          setState(() => _status = 'Gravando... ${(value * 100).round()}%');
+        },
+      );
+      if (!mounted) return;
+      setState(
+        () => _status =
+            'Gravado no slot $index e conferido por releitura. '
+            'Selecione o modelo no preset para usar.',
+      );
+    } catch (error) {
+      if (!mounted) return;
+      setState(() => _status = 'Falha na gravacao: $error');
+    } finally {
+      if (mounted) setState(() => _busy = false);
+    }
+  }
 }
 
 class _Notice extends StatelessWidget {
@@ -206,8 +286,9 @@ class _Notice extends StatelessWidget {
           Expanded(
             child: Text(
               'O envio coloca o modelo no buffer de previa do pedal. '
-              'Gravar permanentemente no aparelho ainda nao foi verificado: '
-              'o editor oficial falha nessa etapa.',
+              'Gravar permanentemente apaga os setores da flash do slot e '
+              'confere por releitura; o slot antigo e sobrescrito, entao '
+              'guarde um backup antes.',
               style: TextStyle(fontSize: 12, color: AppTheme.textDim),
             ),
           ),

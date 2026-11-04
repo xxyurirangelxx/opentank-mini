@@ -1,6 +1,8 @@
 import 'dart:typed_data';
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:opentank_mini/core/model/model_flash.dart';
+import 'package:opentank_mini/core/model/model_format.dart';
 import 'package:opentank_mini/core/model/preset.dart';
 import 'package:opentank_mini/state/tank_controller.dart';
 
@@ -227,6 +229,59 @@ void main() {
       Link.bluetooth,
       reason: 'nao deve trocar conectado',
     );
+    await controller.disconnect();
+  });
+
+  test('saveModel grava o registro na flash de modelos', () async {
+    final modelFlash = <int, int>{};
+    final transport = FakeTransport((List<int> raw) {
+      if (raw[2] == 0x11) return identity();
+      if (raw[2] == 0x21) {
+        final address =
+            raw[7] | (raw[8] << 8) | (raw[9] << 16) | (raw[10] << 24);
+        for (var i = 0; i < 4096; i++) {
+          modelFlash.remove(address + i);
+        }
+        return ack();
+      }
+      final address =
+          raw[7] | (raw[8] << 8) | (raw[9] << 16) | (raw[10] << 24);
+      if (raw[2] == 0x22) {
+        final length = raw[11] | (raw[12] << 8);
+        for (var i = 0; i < length; i++) {
+          modelFlash[address + i] = raw[14 + i];
+        }
+        return ack();
+      }
+      if (raw[2] == 0x23) {
+        final length = raw[11] | (raw[12] << 8);
+        return readReply(address, <int>[
+          for (var i = 0; i < length; i++) modelFlash[address + i] ?? 0,
+        ]);
+      }
+      return ack();
+    });
+    final controller = TankController(transportFactory: (_) => transport);
+    await controller.connect();
+
+    final buffer = Uint8List(modelBufferSize)..setRange(0, 4, ampMagic);
+    for (var i = 18; i < 8192; i++) {
+      buffer[i] = (i * 5) & 0xFF;
+    }
+    await controller.saveModel(
+      kind: ModelKind.amp,
+      index: 7,
+      name: 'TEST_AMP',
+      buffer: buffer,
+    );
+
+    final address = modelFlashAddress(isCab: false, index: 7);
+    final record = <int>[
+      for (var i = 0; i < 8192; i++) modelFlash[address + i] ?? -1,
+    ];
+    expect(record.sublist(0, 4), factoryAmpMagic);
+    expect(decodeFlashName(record), 'TEST_AMP');
+    expect(record.sublist(18), buffer.sublist(18));
     await controller.disconnect();
   });
 }

@@ -12,6 +12,9 @@ class Area {
 /// Comandos do protocolo.
 class Command {
   static const int identify = 0x11;
+
+  /// Apaga um setor da flash de modelos (ver `model_flash.dart`).
+  static const int eraseSector = 0x21;
   static const int write = 0x22;
   static const int read = 0x23;
   static const int readReply = 0x23;
@@ -312,6 +315,23 @@ Uint8List tunerStateRequest() => seal(<int>[
   0x06,
   0x00,
   0x00,
+  0x00,
+]);
+
+/// Apaga um setor de 4 KB da flash de modelos.
+///
+/// Formato capturado do "Restore Amp/Cab" do M-EFCS:
+/// `00 59 21 05 00 00 05 <addr LE32> <cs>` (12 bytes). O `70` que fecha o
+/// endereco de `0x70xxxxxx` e parte do proprio endereco, nao um campo extra.
+Uint8List eraseSectorRequest(int address, {int area = Area.model}) => seal(<int>[
+  0x00,
+  0x59,
+  Command.eraseSector,
+  0x05,
+  0x00,
+  0x00,
+  area,
+  ..._le32(address),
   0x00,
 ]);
 

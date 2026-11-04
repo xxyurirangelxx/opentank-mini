@@ -35,6 +35,10 @@ erro aqui corrompe dados no aparelho.
   novo preset, o que torna trivial descartar um rascunho e comparar com o salvo.
 - `preset_bank.dart` — leitura e escrita do `.atkm` (21 × 92 + `PATCHEND\0\0`).
 - `model_format.dart` — buffers de AMP (`AM2\0`) e CAB (`CAB\0`).
+- `model_flash.dart` — registro de modelo na flash (`0x70000000`) e o mapa
+  índice-do-preset → endereço. Define os setores a apagar e a diferença de
+  formato entre buffer e flash (AMP troca `AM2\0` por `AM4\0`; CAB perde metade
+  das amostras e troca `01 32` por `02 40`).
 
 ### `core/device`
 

@@ -1,6 +1,8 @@
 import 'package:flutter/foundation.dart';
 
 import '../core/device/tank_device.dart';
+import '../core/model/model_flash.dart';
+import '../core/model/model_format.dart';
 import '../core/model/preset.dart';
 import '../core/model/preset_bank.dart';
 import '../core/transport/transport.dart';
@@ -358,6 +360,40 @@ class TankController extends ChangeNotifier {
       _activeSlot = _matchingSlot(bank.slots, await device.readActive());
       _draft = await device.readActive();
       _message = 'Banco restaurado';
+    } finally {
+      _busy = false;
+      notifyListeners();
+    }
+  }
+
+  /// Grava um modelo permanentemente na flash do pedal.
+  ///
+  /// [index] e o indice 1-based do slot de modelo (o mesmo valor que o preset
+  /// guarda). O registro e montado por `model_flash.dart`.
+  Future<void> saveModel({
+    required ModelKind kind,
+    required int index,
+    required String name,
+    required List<int> buffer,
+    void Function(double progress)? onProgress,
+  }) async {
+    final device = _device;
+    if (device == null) {
+      throw StateError('Dispositivo nao conectado');
+    }
+    final isCab = kind == ModelKind.cab;
+    final record = isCab
+        ? encodeCabFlashRecord(buffer, name: name)
+        : encodeAmpFlashRecord(buffer, name: name);
+    final address = modelFlashAddress(isCab: isCab, index: index);
+    if (_busy) {
+      throw StateError('Outra operacao em andamento');
+    }
+    _busy = true;
+    notifyListeners();
+    try {
+      await device.writeModelFlash(address, record, onProgress: onProgress);
+      _message = 'Modelo gravado em ${isCab ? 'CAB' : 'AMP'} $index';
     } finally {
       _busy = false;
       notifyListeners();
