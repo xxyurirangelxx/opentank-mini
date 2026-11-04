@@ -360,6 +360,18 @@ Future<void> main(List<String> args) async {
       print('  inverso restaurado: ${backA == first && backB == second}');
     }
 
+    // Descartar alteracao: muda o volume na RAM e volta ao salvo.
+    final saved = await device.readSlot(4);
+    await device.setVolume(saved.volume == 60 ? 59 : 60);
+    final changed = await device.readActive();
+    final reverted = saved;
+    await device.setVolume(reverted.volume);
+    final back = await device.readActive();
+    print(
+      'descartar alteracao: mudou=${changed.volume != saved.volume} '
+      'voltou=${back == saved}',
+    );
+
     print('OK: nucleo Dart validado contra o hardware');
   } finally {
     await device.disconnect();

@@ -19,6 +19,7 @@ Aparelho usado: `TANK MINI_009`, firmware reportado como versão 9, USB
 | Swap entre dois slots | troca, verificação, troca inversa | confirmado, restaurado |
 | Seleção de slot | com espera de convergência da RAM | converge em 1–2 leituras |
 | Banco completo após todos os testes | SHA-256 do dump contra o backup | idêntico |
+| Descartar alteração não salva | mudar volume na RAM, reescrever o valor salvo | RAM volta ao slot |
 | Leitura de bloco grande | 8192 bytes em fatias de 431 | estável entre leituras |
 | Escrita de bloco grande | 1015 bytes por comando | ACK e conteúdo confere |
 

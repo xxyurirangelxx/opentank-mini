@@ -41,7 +41,7 @@ the vendor app crashes before that step. Details and evidence live in
 ```bash
 cd app
 flutter pub get
-flutter test          # 65 unit tests, no hardware needed
+flutter test          # 77 unit tests, no hardware needed
 flutter run -d windows
 ```
 

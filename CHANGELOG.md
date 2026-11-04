@@ -18,7 +18,7 @@ Primeira versão utilizável. Substitui o M-EFCS nas funções de edição de pr
   pedal com prévia.
 - Exportação e restauração do banco completo (`.atkm`).
 - Transportes USB MIDI (Windows/Linux/Android) e BLE proprietário.
-- Núcleo em Dart puro com 65 testes, incluindo vetores extraídos de capturas
+- Núcleo em Dart puro com 77 testes, incluindo vetores extraídos de capturas
   reais do editor oficial.
 
 ### Descoberto

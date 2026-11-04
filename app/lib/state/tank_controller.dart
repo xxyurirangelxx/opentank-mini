@@ -1,13 +1,33 @@
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 
 import '../core/device/tank_device.dart';
 import '../core/model/preset.dart';
 import '../core/model/preset_bank.dart';
+import '../core/transport/transport.dart';
+import '../platform/ble_transport.dart';
 import '../platform/midi_transport.dart';
 
 /// Estado da conexao com a pedal.
 enum TankConnectionState { idle, scanning, connecting, connected, error }
+
+/// Como o app fala com a pedal.
+enum Link { usb, bluetooth }
+
+/// Cria o transporte adequado a plataforma e ao tipo de link.
+///
+/// Android nao tem MIDI nativo no plugin, entao USB so aparece onde ha suporte.
+TankTransport createTransport(
+  Link link, {
+  String midiName = 'USB-Midi',
+  String bleName = 'TANK MINI_BLE',
+}) {
+  switch (link) {
+    case Link.usb:
+      return MidiTransport(deviceName: midiName);
+    case Link.bluetooth:
+      return BleTransport(deviceName: bleName);
+  }
+}
 
 /// Controlador principal do aplicativo.
 ///
@@ -16,9 +36,28 @@ enum TankConnectionState { idle, scanning, connecting, connected, error }
 /// pedal em tempo real (RAM), mas **nao** sao gravadas na flash ate o usuario
 /// pedir Save.
 class TankController extends ChangeNotifier {
-  TankController({this.deviceName = 'USB-Midi'});
+  TankController({
+    this.deviceName = 'USB-Midi',
+    this.bleName = 'TANK MINI_BLE',
+    Link initialLink = Link.usb,
+    TankTransport Function(Link link)? transportFactory,
+  }) : _link = initialLink {
+    _transportFactory = transportFactory;
+  }
 
   final String deviceName;
+  final String bleName;
+  late final TankTransport Function(Link link)? _transportFactory;
+  Link _link;
+
+  /// Link escolhido pelo usuario.
+  Link get link => _link;
+
+  /// Existe suporte a USB nesta plataforma?
+  static bool get supportsUsb =>
+      !kIsWeb &&
+      (defaultTargetPlatform == TargetPlatform.windows ||
+          defaultTargetPlatform == TargetPlatform.linux);
 
   TankDevice? _device;
   TankConnectionState _state = TankConnectionState.idle;
@@ -45,12 +84,22 @@ class TankController extends ChangeNotifier {
     return bank.slots[_activeSlot] != draft;
   }
 
+  /// Troca o link (USB ou Bluetooth). Precisa estar desconectado.
+  void setLink(Link link) {
+    if (connected || _state == TankConnectionState.connecting) return;
+    _link = link;
+    _message = '';
+    notifyListeners();
+  }
+
   Future<void> connect() async {
     if (_state == TankConnectionState.connecting || connected) return;
     _state = TankConnectionState.connecting;
     _message = 'Procurando a pedal...';
     notifyListeners();
-    final transport = MidiTransport(deviceName: deviceName);
+    final transport =
+        _transportFactory?.call(_link) ??
+        createTransport(_link, midiName: deviceName, bleName: bleName);
     final device = TankDevice(transport);
     try {
       final identity = await device.connect();
@@ -91,8 +140,8 @@ class TankController extends ChangeNotifier {
       for (var i = 0; i < 21; i++) {
         slots.add(await device.readSlot(i));
       }
-      _bank = PresetBank(slots);
       final active = await device.readActive();
+      _bank = PresetBank(slots);
       _activeSlot = _matchingSlot(slots, active);
       _draft = active;
       _message = device.identity;
@@ -200,11 +249,19 @@ class TankController extends ChangeNotifier {
     });
   }
 
-  /// Restaura o rascunho a partir do ram.
+  /// Desfaz as alteracoes nao salvas.
+  ///
+  /// Aplica o conteudo salvo no slot de volta ao pedal (RAM) e adota esse
+  /// conteudo como rascunho. Ler a RAM nao serviria: a RAM tem justamente a
+  /// edicao que se quer descartar.
   Future<void> revert() async {
     final device = _device;
-    if (device == null) return;
+    final bank = _bank;
+    if (device == null || bank == null) return;
     await _guard(() async {
+      final saved = bank.slots[_activeSlot];
+      // Reescreve a RAM com os valores salvos, campo a campo.
+      await _push(_draft ?? saved, saved);
       _draft = await device.readActive();
     });
   }

@@ -121,51 +121,85 @@ class _ConnectPane extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final connecting = controller.state == TankConnectionState.connecting;
+    final link = controller.link;
     return Center(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          Icon(
-            Icons.usb,
-            size: 64,
-            color: AppTheme.textDim.withValues(alpha: 0.6),
-          ),
-          const SizedBox(height: 20),
-          const Text(
-            'Conecte a Tank Mini por USB',
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-          ),
-          const SizedBox(height: 8),
-          SizedBox(
-            width: 460,
-            child: Text(
-              controller.state == TankConnectionState.connecting
-                  ? 'Abrindo a porta MIDI...'
+      child: SizedBox(
+        width: 460,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            Icon(
+              link == Link.usb ? Icons.usb : Icons.bluetooth,
+              size: 64,
+              color: AppTheme.textDim.withValues(alpha: 0.6),
+            ),
+            const SizedBox(height: 20),
+            Text(
+              link == Link.usb
+                  ? 'Conecte a Tank Mini por USB'
+                  : 'Ligue o Bluetooth da Tank Mini',
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              connecting
+                  ? (link == Link.usb
+                        ? 'Abrindo a porta MIDI...'
+                        : 'Procurando o dispositivo BLE...')
                   : controller.statusMessage.isEmpty
-                  ? 'Feche outros editores que estejam usando a porta MIDI.'
+                  ? (link == Link.usb
+                        ? 'Feche outros editores que estejam usando a porta '
+                              'MIDI.'
+                        : 'Deixe a pedal ligada e perto do computador.')
                   : controller.statusMessage,
               textAlign: TextAlign.center,
               style: const TextStyle(color: AppTheme.textDim, fontSize: 13),
             ),
-          ),
-          const SizedBox(height: 24),
-          if (connecting)
-            const SizedBox(
-              width: 28,
-              height: 28,
-              child: CircularProgressIndicator(strokeWidth: 2.5),
-            )
-          else
-            FilledButton.icon(
-              onPressed: controller.connect,
-              icon: const Icon(Icons.link),
-              label: Text(
-                controller.state == TankConnectionState.error
-                    ? 'Tentar novamente'
-                    : 'Conectar',
+            const SizedBox(height: 20),
+            if (TankController.supportsUsb && !connecting)
+              SegmentedButton<Link>(
+                segments: const <ButtonSegment<Link>>[
+                  ButtonSegment<Link>(
+                    value: Link.usb,
+                    label: Text('USB'),
+                    icon: Icon(Icons.usb, size: 16),
+                  ),
+                  ButtonSegment<Link>(
+                    value: Link.bluetooth,
+                    label: Text('Bluetooth'),
+                    icon: Icon(Icons.bluetooth, size: 16),
+                  ),
+                ],
+                selected: <Link>{link},
+                onSelectionChanged: (Set<Link> value) =>
+                    controller.setLink(value.first),
               ),
-            ),
-        ],
+            const SizedBox(height: 20),
+            if (connecting)
+              const SizedBox(
+                width: 28,
+                height: 28,
+                child: CircularProgressIndicator(strokeWidth: 2.5),
+              )
+            else
+              FilledButton.icon(
+                onPressed: controller.connect,
+                icon: const Icon(Icons.link),
+                label: Text(
+                  controller.state == TankConnectionState.error
+                      ? 'Tentar novamente'
+                      : 'Conectar',
+                ),
+              ),
+            if (!TankController.supportsUsb) ...<Widget>[
+              const SizedBox(height: 16),
+              const Text(
+                'Nesta plataforma o app usa apenas Bluetooth.',
+                style: TextStyle(color: AppTheme.textDim, fontSize: 12),
+              ),
+            ],
+          ],
+        ),
       ),
     );
   }
