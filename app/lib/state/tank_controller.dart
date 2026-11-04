@@ -84,6 +84,20 @@ class TankController extends ChangeNotifier {
     return bank.slots[_activeSlot] != draft;
   }
 
+  /// Carrega um banco e um rascunho sem falar com o pedal.
+  ///
+  /// Existe para testes de interface e para abrir o editor em modo offline,
+  /// quando o usuario quiser so inspecionar um arquivo.
+  @visibleForTesting
+  void loadOffline(PresetBank bank, {int activeSlot = 0, Preset? draft}) {
+    _bank = bank;
+    _activeSlot = activeSlot;
+    _draft = draft ?? bank.slots[activeSlot];
+    _state = TankConnectionState.connected;
+    _message = 'Offline';
+    notifyListeners();
+  }
+
   /// Troca o link (USB ou Bluetooth). Precisa estar desconectado.
   void setLink(Link link) {
     if (connected || _state == TankConnectionState.connecting) return;
@@ -173,7 +187,13 @@ class TankController extends ChangeNotifier {
   Future<void> apply(Preset next) async {
     final device = _device;
     final previous = _draft;
-    if (device == null || previous == null) return;
+    if (previous == null) return;
+    // Sem pedal (modo offline) a edicao fica so no rascunho.
+    if (device == null) {
+      _draft = next;
+      notifyListeners();
+      return;
+    }
     _draft = next;
     notifyListeners();
     try {

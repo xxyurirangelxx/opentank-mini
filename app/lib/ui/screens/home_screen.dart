@@ -294,56 +294,67 @@ class _Toolbar extends StatelessWidget {
       height: 60,
       color: AppTheme.surface,
       padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Row(
-        children: <Widget>[
-          const Text(
-            'OpenTank Mini',
-            style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
-          ),
-          const SizedBox(width: 24),
-          _toolbarButton(
-            context,
-            icon: Icons.save,
-            label: 'Salvar',
-            onPressed: controller.busy || !controller.isDirty
-                ? null
-                : () => _confirmSave(context, controller),
-          ),
-          _toolbarButton(
-            context,
-            icon: Icons.save_as,
-            label: 'Salvar em...',
-            onPressed: controller.busy
-                ? null
-                : () => _saveTo(context, controller),
-          ),
-          _toolbarButton(
-            context,
-            icon: Icons.swap_horiz,
-            label: 'Trocar',
-            onPressed: controller.busy
-                ? null
-                : () => _swap(context, controller),
-          ),
-          _toolbarButton(
-            context,
-            icon: Icons.undo,
-            label: 'Descartar',
-            onPressed: controller.busy ? null : controller.revert,
-          ),
-          const Spacer(),
-          _toggleChip('Bypass', controller.setBypass),
-          const SizedBox(width: 8),
-          _toggleChip('Loopback', controller.setLoopback),
-          const SizedBox(width: 8),
-          _toggleChip('Afinador', controller.setTuner),
-          const SizedBox(width: 16),
-          IconButton(
-            tooltip: 'Desconectar',
-            onPressed: controller.disconnect,
-            icon: const Icon(Icons.link_off, color: AppTheme.textDim),
-          ),
-        ],
+      child: LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+          // Em janelas estreitas a barra rola em vez de estourar o layout.
+          return SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: ConstrainedBox(
+              constraints: BoxConstraints(minWidth: constraints.maxWidth),
+              child: Row(
+                children: <Widget>[
+                  const Text(
+                    'OpenTank Mini',
+                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
+                  ),
+                  const SizedBox(width: 24),
+                  _toolbarButton(
+                    context,
+                    icon: Icons.save,
+                    label: 'Salvar',
+                    onPressed: controller.busy || !controller.isDirty
+                        ? null
+                        : () => _confirmSave(context, controller),
+                  ),
+                  _toolbarButton(
+                    context,
+                    icon: Icons.save_as,
+                    label: 'Salvar em...',
+                    onPressed: controller.busy
+                        ? null
+                        : () => _saveTo(context, controller),
+                  ),
+                  _toolbarButton(
+                    context,
+                    icon: Icons.swap_horiz,
+                    label: 'Trocar',
+                    onPressed: controller.busy
+                        ? null
+                        : () => _swap(context, controller),
+                  ),
+                  _toolbarButton(
+                    context,
+                    icon: Icons.undo,
+                    label: 'Descartar',
+                    onPressed: controller.busy ? null : controller.revert,
+                  ),
+                  const SizedBox(width: 12),
+                  _toggleChip('Bypass', controller.setBypass),
+                  const SizedBox(width: 8),
+                  _toggleChip('Loopback', controller.setLoopback),
+                  const SizedBox(width: 8),
+                  _toggleChip('Afinador', controller.setTuner),
+                  const SizedBox(width: 8),
+                  IconButton(
+                    tooltip: 'Desconectar',
+                    onPressed: controller.disconnect,
+                    icon: const Icon(Icons.link_off, color: AppTheme.textDim),
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
       ),
     );
   }
