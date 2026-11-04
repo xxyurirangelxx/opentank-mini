@@ -1,0 +1,40 @@
+# Flutter / Dart
+app/build/
+app/.dart_tool/
+app/.flutter-plugins
+app/.flutter-plugins-dependencies
+app/.packages
+app/pubspec.lock
+app/coverage/
+app/android/.gradle/
+app/android/local.properties
+app/android/app/debug/
+app/android/app/profile/
+app/android/app/release/
+app/windows/flutter/ephemeral/
+app/linux/flutter/ephemeral/
+app/ios/Flutter/ephemeral/
+app/macos/Flutter/ephemeral/
+**/*.g.dart
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Python (ferramentas de pesquisa)
+__pycache__/
+*.pyc
+.venv*/
+.venv-validation/
+
+# Artefatos locais de pesquisa que não devem ir para o repo
+research/artifacts/*.tmp
+*.log

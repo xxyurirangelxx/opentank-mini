@@ -1,0 +1,273 @@
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+
+import '../core/device/tank_device.dart';
+import '../core/model/preset.dart';
+import '../core/model/preset_bank.dart';
+import '../platform/midi_transport.dart';
+
+/// Estado da conexao com a pedal.
+enum TankConnectionState { idle, scanning, connecting, connected, error }
+
+/// Controlador principal do aplicativo.
+///
+/// Mantem o dispositivo, o banco de presets e o rascunho em edicao. A regra
+/// central: alteracoes na interface vao para o rascunho e sao aplicadas ao
+/// pedal em tempo real (RAM), mas **nao** sao gravadas na flash ate o usuario
+/// pedir Save.
+class TankController extends ChangeNotifier {
+  TankController({this.deviceName = 'USB-Midi'});
+
+  final String deviceName;
+
+  TankDevice? _device;
+  TankConnectionState _state = TankConnectionState.idle;
+  String _message = '';
+  PresetBank? _bank;
+  Preset? _draft;
+  int _activeSlot = 0;
+  bool _busy = false;
+
+  TankConnectionState get state => _state;
+  String get statusMessage => _message;
+  PresetBank? get bank => _bank;
+  Preset? get draft => _draft;
+  int get activeSlot => _activeSlot;
+  bool get busy => _busy;
+  bool get connected => _state == TankConnectionState.connected;
+  TankDevice? get device => _device;
+
+  /// Rascunho difere do que esta salvo no slot?
+  bool get isDirty {
+    final bank = _bank;
+    final draft = _draft;
+    if (bank == null || draft == null) return false;
+    return bank.slots[_activeSlot] != draft;
+  }
+
+  Future<void> connect() async {
+    if (_state == TankConnectionState.connecting || connected) return;
+    _state = TankConnectionState.connecting;
+    _message = 'Procurando a pedal...';
+    notifyListeners();
+    final transport = MidiTransport(deviceName: deviceName);
+    final device = TankDevice(transport);
+    try {
+      final identity = await device.connect();
+      _device = device;
+      _state = TankConnectionState.connected;
+      _message = identity;
+      notifyListeners();
+      await refresh();
+    } catch (error) {
+      _state = TankConnectionState.error;
+      _message = 'Falha ao conectar: $error';
+      notifyListeners();
+      try {
+        await device.disconnect();
+      } catch (_) {
+        // O transporte pode nem ter aberto.
+      }
+    }
+  }
+
+  Future<void> disconnect() async {
+    final device = _device;
+    _device = null;
+    _state = TankConnectionState.idle;
+    _message = '';
+    _bank = null;
+    _draft = null;
+    notifyListeners();
+    await device?.disconnect();
+  }
+
+  /// Le os 21 slots e o preset ativo.
+  Future<void> refresh() async {
+    final device = _device;
+    if (device == null) return;
+    await _guard(() async {
+      final slots = <Preset>[];
+      for (var i = 0; i < 21; i++) {
+        slots.add(await device.readSlot(i));
+      }
+      _bank = PresetBank(slots);
+      final active = await device.readActive();
+      _activeSlot = _matchingSlot(slots, active);
+      _draft = active;
+      _message = device.identity;
+    });
+  }
+
+  int _matchingSlot(List<Preset> slots, Preset active) {
+    for (var i = 0; i < slots.length; i++) {
+      if (slots[i] == active) return i;
+    }
+    // Estado nao salvo: mantem o slot selecionado.
+    return _activeSlot;
+  }
+
+  /// Seleciona um slot no pedal.
+  Future<void> selectSlot(int index) async {
+    final device = _device;
+    final bank = _bank;
+    if (device == null || bank == null) return;
+    await _guard(() async {
+      _activeSlot = index;
+      _draft = await device.readActive();
+      await device.selectSlot(index, expected: bank.slots[index]);
+      _draft = await device.readActive();
+    });
+  }
+
+  /// Aplica uma alteracao ao rascunho e ao pedal.
+  Future<void> apply(Preset next) async {
+    final device = _device;
+    final previous = _draft;
+    if (device == null || previous == null) return;
+    _draft = next;
+    notifyListeners();
+    try {
+      await _push(previous, next);
+    } catch (error) {
+      _draft = previous;
+      _message = 'Alteracao rejeitada: $error';
+      notifyListeners();
+    }
+  }
+
+  Future<void> _push(Preset from, Preset to) async {
+    final device = _device!;
+    if (from.volume != to.volume) {
+      await device.setVolume(to.volume);
+    }
+    if (from.routing.join(',') != to.routing.join(',')) {
+      await device.setRouting(to.routing);
+    }
+    for (final block in Block.values) {
+      if (from.isEnabled(block) != to.isEnabled(block)) {
+        await device.setBlockEnabled(block, to.isEnabled(block));
+      }
+      if (from.model(block) != to.model(block)) {
+        await device.setBlockModel(block, to.model(block));
+      }
+      for (final offset in Preset.parameterOffsets[block]!) {
+        if (from.parameter(offset) != to.parameter(offset)) {
+          await device.setParameter(offset, to.parameter(offset));
+        }
+      }
+    }
+  }
+
+  /// Grava o rascunho no slot ativo.
+  Future<void> save() async {
+    final device = _device;
+    final draft = _draft;
+    if (device == null || draft == null) return;
+    await _guard(() async {
+      await device.saveSlot(_activeSlot, draft);
+      await device.selectSlot(_activeSlot, expected: draft);
+      _bank = _bank!.withSlot(_activeSlot, draft);
+      _message = 'Preset salvo';
+    });
+  }
+
+  /// Grava o rascunho em outro slot.
+  Future<void> saveTo(int index) async {
+    final device = _device;
+    final draft = _draft;
+    if (device == null || draft == null) return;
+    await _guard(() async {
+      await device.saveSlot(index, draft);
+      _bank = _bank!.withSlot(index, draft);
+      _message = 'Preset copiado para ${slotLabel(index)}';
+    });
+  }
+
+  /// Troca dois slots.
+  Future<void> swap(int a, int b) async {
+    final device = _device;
+    final bank = _bank;
+    if (device == null || bank == null) return;
+    await _guard(() async {
+      await device.swapSlots(a, b);
+      final slots = List<Preset>.of(bank.slots);
+      final temp = slots[a];
+      slots[a] = slots[b];
+      slots[b] = temp;
+      _bank = PresetBank(slots);
+      _message = '${slotLabel(a)} <-> ${slotLabel(b)}';
+    });
+  }
+
+  /// Restaura o rascunho a partir do ram.
+  Future<void> revert() async {
+    final device = _device;
+    if (device == null) return;
+    await _guard(() async {
+      _draft = await device.readActive();
+    });
+  }
+
+  /// Grava um banco completo nos 21 slots e confere por releitura.
+  Future<void> restoreBank(PresetBank bank) async {
+    final device = _device;
+    if (device == null) {
+      throw StateError('Dispositivo nao conectado');
+    }
+    _busy = true;
+    notifyListeners();
+    try {
+      for (var slot = 0; slot < PresetBank.slotCount; slot++) {
+        await device.saveSlot(slot, bank.slots[slot]);
+      }
+      for (var slot = 0; slot < PresetBank.slotCount; slot++) {
+        final actual = await device.readSlot(slot);
+        if (actual != bank.slots[slot]) {
+          throw StateError(
+            'Slot ${slotLabel(slot)} nao confere apos a gravacao',
+          );
+        }
+      }
+      _bank = bank;
+      _activeSlot = _matchingSlot(bank.slots, await device.readActive());
+      _draft = await device.readActive();
+      _message = 'Banco restaurado';
+    } finally {
+      _busy = false;
+      notifyListeners();
+    }
+  }
+
+  Future<void> setBypass(bool value) =>
+      _global(() => _device!.setBypass(value));
+  Future<void> setLoopback(bool value) =>
+      _global(() => _device!.setLoopback(value));
+  Future<void> setTuner(bool value) => _global(() => _device!.setTuner(value));
+
+  Future<void> _global(Future<void> Function() action) async {
+    if (_device == null) return;
+    await _guard(action);
+  }
+
+  Future<void> _guard(Future<void> Function() action) async {
+    if (_busy) return;
+    _busy = true;
+    notifyListeners();
+    try {
+      await action();
+    } catch (error) {
+      _message = '$error';
+      debugPrint('erro: $error');
+    } finally {
+      _busy = false;
+      notifyListeners();
+    }
+  }
+
+  @override
+  void dispose() {
+    _device?.disconnect();
+    super.dispose();
+  }
+}

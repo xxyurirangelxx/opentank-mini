@@ -1,0 +1,40 @@
+# Flutter/Dart
+build/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+coverage/
+pubspec.lock
+android/.gradle/
+android/local.properties
+android/app/debug/
+android/app/profile/
+android/app/release/
+windows/flutter/ephemeral/
+linux/flutter/ephemeral/
+ios/Flutter/ephemeral/
+macos/Flutter/ephemeral/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Python
+__pycache__/
+*.pyc
+.venv*/
+venv/
+
+# Segredos
+key.properties
+*.keystore
+*.jks

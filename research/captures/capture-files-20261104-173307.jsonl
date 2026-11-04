@@ -1,0 +1,261 @@
+{"type": "send", "payload": {"kind": "HOOK", "name": "CreateFileW"}}
+{"type": "send", "payload": {"kind": "HOOK", "name": "CreateFile2"}}
+{"type": "send", "payload": {"kind": "HOOK", "name": "CreateFileW"}}
+{"type": "send", "payload": {"kind": "HOOK", "name": "CreateFile2"}}
+{"type": "send", "payload": {"kind": "READY"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395766, "path": "C:\\"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395766, "path": "C:\\"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395766, "path": "C:\\Users\\desktop.ini"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395766, "path": "C:\\Users\\desktop.ini"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395766, "path": "C:\\Users"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395766, "path": "C:\\Users"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395766, "path": "C:\\Users\\Yuri Rangel"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395766, "path": "C:\\Users\\Yuri Rangel"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395766, "path": "C:\\Users\\Yuri Rangel\\Documents\\desktop.ini"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395766, "path": "C:\\Users\\Yuri Rangel\\Documents\\desktop.ini"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395766, "path": "C:\\Users\\Yuri Rangel\\Documents\\Projetos\\tank-mini-effects-automation\\assets\\cabs\\not-installed\\user-and-community\\desktop.ini"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395766, "path": "C:\\Users\\Yuri Rangel\\Documents\\Projetos\\tank-mini-effects-automation\\assets\\cabs\\not-installed\\user-and-community\\desktop.ini"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395766, "path": "C:\\Windows\\resources\\themes\\Aero\\Shell\\NormalColor\\ShellStyle.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395766, "path": "C:\\Windows\\resources\\themes\\Aero\\Shell\\NormalColor\\ShellStyle.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395767, "path": "C:\\Windows\\resources\\themes\\Aero\\Shell\\NormalColor\\ShellStyle.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395767, "path": "C:\\Windows\\resources\\themes\\Aero\\Shell\\NormalColor\\ShellStyle.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395784, "path": "C:\\Users\\Yuri Rangel\\Documents\\Projetos\\tank-mini-effects-automation\\assets\\cabs\\not-installed\\user-and-community"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395784, "path": "C:\\Users\\Yuri Rangel\\Documents\\Projetos\\tank-mini-effects-automation\\assets\\cabs\\not-installed\\user-and-community"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395795, "path": "C:\\Users\\Yuri Rangel\\Documents\\Projetos\\tank-mini-effects-automation\\assets\\cabs\\not-installed\\user-and-community"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395795, "path": "C:\\Users\\Yuri Rangel\\Documents\\Projetos\\tank-mini-effects-automation\\assets\\cabs\\not-installed\\user-and-community"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395795, "path": "\\\\.\\MountPointManager"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395795, "path": "\\\\.\\MountPointManager"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395796, "path": "\\\\.\\MountPointManager"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395796, "path": "\\\\.\\MountPointManager"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395798, "path": "C:\\Windows\\resources\\themes\\Aero\\Shell\\NormalColor\\ShellStyle.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395798, "path": "C:\\Windows\\resources\\themes\\Aero\\Shell\\NormalColor\\ShellStyle.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395800, "path": "C:\\Windows\\resources\\themes\\Aero\\Shell\\NormalColor\\ShellStyle.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395800, "path": "C:\\Windows\\resources\\themes\\Aero\\Shell\\NormalColor\\ShellStyle.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395800, "path": "C:\\Windows\\resources\\themes\\Aero\\Shell\\NormalColor\\ShellStyle.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395800, "path": "C:\\Windows\\resources\\themes\\Aero\\Shell\\NormalColor\\ShellStyle.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395806, "path": "C:\\Windows\\SYSTEM32\\imageres.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395806, "path": "C:\\Windows\\SYSTEM32\\imageres.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395807, "path": "C:\\Windows\\resources\\themes\\Aero\\Shell\\NormalColor\\ShellStyle.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395807, "path": "C:\\Windows\\resources\\themes\\Aero\\Shell\\NormalColor\\ShellStyle.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395810, "path": "C:\\Windows\\resources\\themes\\Aero\\Shell\\NormalColor\\ShellStyle.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395810, "path": "C:\\Windows\\resources\\themes\\Aero\\Shell\\NormalColor\\ShellStyle.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395810, "path": "C:\\Windows\\resources\\themes\\Aero\\Shell\\NormalColor\\ShellStyle.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395810, "path": "C:\\Windows\\resources\\themes\\Aero\\Shell\\NormalColor\\ShellStyle.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395810, "path": "C:\\Windows\\resources\\themes\\Aero\\Shell\\NormalColor\\ShellStyle.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395811, "path": "C:\\Windows\\resources\\themes\\Aero\\Shell\\NormalColor\\ShellStyle.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395814, "path": "C:\\Windows\\resources\\themes\\Aero\\Shell\\NormalColor\\ShellStyle.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395814, "path": "C:\\Windows\\resources\\themes\\Aero\\Shell\\NormalColor\\ShellStyle.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395814, "path": "C:\\Windows\\resources\\themes\\Aero\\Shell\\NormalColor\\ShellStyle.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395814, "path": "C:\\Windows\\resources\\themes\\Aero\\Shell\\NormalColor\\ShellStyle.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395817, "path": "C:\\Users\\Yuri Rangel\\Desktop\\desktop.ini"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395817, "path": "C:\\Users\\Yuri Rangel\\Desktop\\desktop.ini"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395817, "path": "C:\\Users\\Yuri Rangel\\Desktop"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395817, "path": "C:\\Users\\Yuri Rangel\\Desktop"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395817, "path": "C:\\Users\\Public\\Desktop\\desktop.ini"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395817, "path": "C:\\Users\\Public\\Desktop\\desktop.ini"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395817, "path": "C:\\Users\\Yuri Rangel\\AppData\\Roaming\\Microsoft\\Windows\\Recent\\AutomaticDestinations\\f01b4d95cf55d32a.automaticDestinations-ms"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395817, "path": "C:\\Users\\Yuri Rangel\\AppData\\Roaming\\Microsoft\\Windows\\Recent\\AutomaticDestinations\\f01b4d95cf55d32a.automaticDestinations-ms"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395817, "path": "C:\\Users\\Public\\Desktop"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395817, "path": "C:\\Users\\Public\\Desktop"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395818, "path": "C:\\"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395818, "path": "C:\\"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395818, "path": "C:\\Users"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395818, "path": "C:\\Users"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395818, "path": "C:\\Users\\Yuri Rangel"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395818, "path": "C:\\Users\\Yuri Rangel"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395818, "path": "C:\\"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395818, "path": "C:\\"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395819, "path": "C:\\Users"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395819, "path": "C:\\Users"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395819, "path": "C:\\Users\\Yuri Rangel"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395819, "path": "C:\\Users\\Yuri Rangel"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395819, "path": "C:\\Users\\Yuri Rangel\\Downloads\\desktop.ini"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395819, "path": "C:\\Users\\Yuri Rangel\\Downloads\\desktop.ini"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395819, "path": "C:\\"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395819, "path": "C:\\"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395819, "path": "C:\\Users"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395819, "path": "C:\\Users"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395819, "path": "C:\\Users\\Yuri Rangel"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395819, "path": "C:\\Users\\Yuri Rangel"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395820, "path": "C:\\"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395820, "path": "C:\\"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395820, "path": "C:\\Users"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395820, "path": "C:\\Users"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395820, "path": "C:\\Users\\Yuri Rangel"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395820, "path": "C:\\Users\\Yuri Rangel"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395820, "path": "C:\\Users\\Yuri Rangel\\Pictures\\desktop.ini"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395820, "path": "C:\\Users\\Yuri Rangel\\Pictures\\desktop.ini"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395821, "path": "C:\\Users\\Yuri Rangel\\AppData\\Roaming\\Microsoft\\Windows\\Recent\\AutomaticDestinations\\f01b4d95cf55d32a.automaticDestinations-ms"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395821, "path": "C:\\Users\\Yuri Rangel\\AppData\\Roaming\\Microsoft\\Windows\\Recent\\AutomaticDestinations\\f01b4d95cf55d32a.automaticDestinations-ms"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395826, "path": "C:\\"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395826, "path": "C:\\"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395826, "path": "C:\\Users"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395826, "path": "C:\\Users"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395832, "path": "C:\\"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395832, "path": "C:\\"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395832, "path": "C:\\Users"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395832, "path": "C:\\Users"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395832, "path": "C:\\Users\\Yuri Rangel"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395832, "path": "C:\\Users\\Yuri Rangel"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395832, "path": "C:\\Users\\Yuri Rangel\\Favorites\\desktop.ini"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395832, "path": "C:\\Users\\Yuri Rangel\\Favorites\\desktop.ini"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395900, "path": "\\\\localhost\\C$\\Users\\Yuri Rangel\\Documents\\Projetos\\tank-mini-effects-automation\\assets\\cabs\\not-installed\\user-and-community"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395900, "path": "\\\\localhost\\C$\\Users\\Yuri Rangel\\Documents\\Projetos\\tank-mini-effects-automation\\assets\\cabs\\not-installed\\user-and-community"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395913, "path": "\\\\localhost\\C$\\Users\\Yuri Rangel\\Documents\\Projetos\\tank-mini-effects-automation\\assets\\cabs\\not-installed\\user-and-community"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395913, "path": "\\\\localhost\\C$\\Users\\Yuri Rangel\\Documents\\Projetos\\tank-mini-effects-automation\\assets\\cabs\\not-installed\\user-and-community"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395916, "path": "C:\\Users\\Yuri Rangel\\AppData\\Local\\Microsoft\\Windows\\Explorer\\iconcache_idx.db"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395916, "path": "C:\\Users\\Yuri Rangel\\AppData\\Local\\Microsoft\\Windows\\Explorer\\iconcache_idx.db"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395916, "path": "C:\\Users\\Yuri Rangel\\AppData\\Local\\Microsoft\\Windows\\Explorer\\iconcache_16.db"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395916, "path": "C:\\Users\\Yuri Rangel\\AppData\\Local\\Microsoft\\Windows\\Explorer\\iconcache_16.db"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395917, "path": "C:\\Program Files\\VideoLAN\\VLC"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395917, "path": "C:\\Program Files\\VideoLAN\\VLC"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395917, "path": "c:\\program files\\videolan\\vlc\\vlc.ico"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395917, "path": "c:\\program files\\videolan\\vlc\\vlc.ico"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395917, "path": "c:\\program files\\videolan\\vlc\\vlc.ico"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395917, "path": "c:\\program files\\videolan\\vlc\\vlc.ico"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395918, "path": "c:\\program files\\videolan\\vlc\\vlc.ico"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395918, "path": "c:\\program files\\videolan\\vlc\\vlc.ico"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395918, "path": "c:\\program files\\videolan\\vlc\\vlc.ico"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395918, "path": "c:\\program files\\videolan\\vlc\\vlc.ico"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395918, "path": "c:\\program files\\videolan\\vlc\\vlc.ico"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395918, "path": "c:\\program files\\videolan\\vlc\\vlc.ico"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395918, "path": "c:\\program files\\videolan\\vlc\\vlc.ico"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395918, "path": "c:\\program files\\videolan\\vlc\\vlc.ico"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395918, "path": "c:\\program files\\videolan\\vlc\\vlc.ico"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395918, "path": "c:\\program files\\videolan\\vlc\\vlc.ico"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395918, "path": "c:\\program files\\videolan\\vlc\\vlc.ico"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395918, "path": "c:\\program files\\videolan\\vlc\\vlc.ico"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395918, "path": "c:\\program files\\videolan\\vlc\\vlc.ico"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395918, "path": "c:\\program files\\videolan\\vlc\\vlc.ico"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395919, "path": "c:\\program files\\videolan\\vlc\\vlc.ico"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395919, "path": "c:\\program files\\videolan\\vlc\\vlc.ico"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395929, "path": "C:\\Windows\\resources\\themes\\Aero\\Shell\\NormalColor\\ShellStyle.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395929, "path": "C:\\Windows\\resources\\themes\\Aero\\Shell\\NormalColor\\ShellStyle.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395931, "path": "C:\\Windows\\resources\\themes\\Aero\\Shell\\NormalColor\\ShellStyle.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824395931, "path": "C:\\Windows\\resources\\themes\\Aero\\Shell\\NormalColor\\ShellStyle.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455800, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455800, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455800, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455800, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455800, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455800, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455800, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455800, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455801, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455801, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455801, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455801, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455801, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455801, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455801, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455801, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455802, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455802, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455802, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455802, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455803, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455803, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455803, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455803, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455803, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455803, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455803, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455803, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455804, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455804, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455804, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455804, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455804, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455804, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455804, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455804, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455805, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455805, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455805, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455805, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455805, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455805, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455805, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455805, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455806, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455806, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455806, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455806, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455807, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455807, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455807, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455807, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455807, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455807, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455807, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455807, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455808, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455808, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455808, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455808, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455808, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455808, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455808, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455808, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455809, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455809, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455809, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455809, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455809, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455809, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455809, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824455809, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824470799, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824470799, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824470799, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824470799, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824470799, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824470799, "path": "C:\\Windows\\System32\\UIAutomationCore.dll\\5"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824470799, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824470799, "path": "C:\\Windows\\System32\\UIAutomationCore.dll"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824471443, "path": "\\\\?\\C:\\Users\\Yuri Rangel\\Documents\\M-EFCS\\ampFile\\16 - Bogner Uberschall.am2Data"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824471443, "path": "\\\\?\\C:\\Users\\Yuri Rangel\\Documents\\M-EFCS\\ampFile\\16 - Bogner Uberschall.am2Data"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824471443, "path": "\\\\?\\C:\\Users\\Yuri Rangel\\Documents\\M-EFCS\\cabFile\\A7X-Self-Titled-IR-mono-48k-automation.wav"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824471443, "path": "\\\\?\\C:\\Users\\Yuri Rangel\\Documents\\M-EFCS\\cabFile\\A7X-Self-Titled-IR-mono-48k-automation.wav"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512191, "path": "C:\\"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512191, "path": "C:\\"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512191, "path": "C:\\Users\\desktop.ini"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512191, "path": "C:\\Users\\desktop.ini"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512191, "path": "C:\\Users"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512191, "path": "C:\\Users"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512191, "path": "C:\\Users\\Yuri Rangel"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512191, "path": "C:\\Users\\Yuri Rangel"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512191, "path": "C:\\Users\\Yuri Rangel\\Documents\\desktop.ini"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512191, "path": "C:\\Users\\Yuri Rangel\\Documents\\desktop.ini"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512191, "path": "C:\\Users\\Yuri Rangel\\Documents"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512191, "path": "C:\\Users\\Yuri Rangel\\Documents"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512191, "path": "C:\\Users\\Yuri Rangel\\Documents\\Projetos"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512191, "path": "C:\\Users\\Yuri Rangel\\Documents\\Projetos"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512191, "path": "C:\\Users\\Yuri Rangel\\Documents\\Projetos\\tank-mini-effects-automation"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512191, "path": "C:\\Users\\Yuri Rangel\\Documents\\Projetos\\tank-mini-effects-automation"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512192, "path": "C:\\Users\\Yuri Rangel\\Documents\\Projetos\\tank-mini-effects-automation\\assets"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512192, "path": "C:\\Users\\Yuri Rangel\\Documents\\Projetos\\tank-mini-effects-automation\\assets"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512192, "path": "C:\\Users\\Yuri Rangel\\Documents\\Projetos\\tank-mini-effects-automation\\assets\\cabs"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512192, "path": "C:\\Users\\Yuri Rangel\\Documents\\Projetos\\tank-mini-effects-automation\\assets\\cabs"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512192, "path": "C:\\Users\\Yuri Rangel\\Documents\\Projetos\\tank-mini-effects-automation\\assets\\cabs\\not-installed"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512192, "path": "C:\\Users\\Yuri Rangel\\Documents\\Projetos\\tank-mini-effects-automation\\assets\\cabs\\not-installed"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512192, "path": "C:\\Users\\Yuri Rangel\\Documents\\Projetos\\tank-mini-effects-automation\\assets\\cabs\\not-installed\\user-and-community"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512192, "path": "C:\\Users\\Yuri Rangel\\Documents\\Projetos\\tank-mini-effects-automation\\assets\\cabs\\not-installed\\user-and-community"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512192, "path": "C:\\Users\\Yuri Rangel\\Documents\\Projetos\\tank-mini-effects-automation\\assets\\cabs\\not-installed\\user-and-community\\A7X-Self-Titled-IR-mono-48k-automation.wav"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512192, "path": "C:\\Users\\Yuri Rangel\\Documents\\Projetos\\tank-mini-effects-automation\\assets\\cabs\\not-installed\\user-and-community\\A7X-Self-Titled-IR-mono-48k-automation.wav"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512266, "path": "\\\\?\\C:\\Users\\Yuri Rangel\\Documents\\Projetos\\tank-mini-effects-automation\\assets\\cabs\\not-installed\\user-and-community\\A7X-Self-Titled-IR-mono-48k-automation.wav"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512266, "path": "\\\\?\\C:\\Users\\Yuri Rangel\\Documents\\Projetos\\tank-mini-effects-automation\\assets\\cabs\\not-installed\\user-and-community\\A7X-Self-Titled-IR-mono-48k-automation.wav"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512266, "path": "\\\\?\\C:\\Users\\Yuri Rangel\\Documents\\Projetos\\tank-mini-effects-automation\\assets\\cabs\\not-installed\\user-and-community\\A7X-Self-Titled-IR-mono-48k-automation.wav"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512266, "path": "\\\\?\\C:\\Users\\Yuri Rangel\\Documents\\Projetos\\tank-mini-effects-automation\\assets\\cabs\\not-installed\\user-and-community\\A7X-Self-Titled-IR-mono-48k-automation.wav"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512267, "path": "\\\\?\\C:\\Users\\Yuri Rangel\\Documents\\M-EFCS\\cabFile"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512267, "path": "\\\\?\\C:\\Users\\Yuri Rangel\\Documents\\M-EFCS\\cabFile"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512267, "path": "\\\\?\\C:\\Users\\Yuri Rangel\\Documents\\Projetos\\tank-mini-effects-automation\\assets\\cabs\\not-installed\\user-and-community\\A7X-Self-Titled-IR-mono-48k-automation.wav"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512267, "path": "\\\\?\\C:\\Users\\Yuri Rangel\\Documents\\Projetos\\tank-mini-effects-automation\\assets\\cabs\\not-installed\\user-and-community\\A7X-Self-Titled-IR-mono-48k-automation.wav"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512267, "path": "\\\\?\\C:\\Users\\Yuri Rangel\\Documents\\M-EFCS\\ampFile\\16 - Bogner Uberschall.am2Data"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512267, "path": "\\\\?\\C:\\Users\\Yuri Rangel\\Documents\\M-EFCS\\ampFile\\16 - Bogner Uberschall.am2Data"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512268, "path": "\\\\?\\C:\\Users\\Yuri Rangel\\Documents\\M-EFCS\\cabFile\\A7X-Self-Titled-IR-mono-48k-automation.wav"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512268, "path": "\\\\?\\C:\\Users\\Yuri Rangel\\Documents\\M-EFCS\\cabFile\\A7X-Self-Titled-IR-mono-48k-automation.wav"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512268, "path": "\\\\?\\C:\\Users\\Yuri Rangel\\Documents\\M-EFCS\\cabFile\\A7X-Self-Titled-IR-mono-48k-automation.wav"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824512268, "path": "\\\\?\\C:\\Users\\Yuri Rangel\\Documents\\M-EFCS\\cabFile\\A7X-Self-Titled-IR-mono-48k-automation.wav"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824516968, "path": "\\\\.\\pipe\\frida-bebfeaf27d1f11e97a3af6c1365fd56c"}}
+{"type": "send", "payload": {"kind": "OPEN", "time": 1793824516968, "path": "\\\\.\\pipe\\frida-bebfeaf27d1f11e97a3af6c1365fd56c"}}

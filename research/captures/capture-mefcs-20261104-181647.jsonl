@@ -1,0 +1,771 @@
+{"type": "send", "payload": {"kind": "MODULE", "name": "WINMM.dll", "path": "C:\\Windows\\SYSTEM32\\WINMM.dll"}}
+{"type": "send", "payload": {"kind": "HOOK", "name": "midiOutLongMsg", "address": "0x7ff8a1389d20"}}
+{"type": "send", "payload": {"kind": "HOOK", "name": "midiOutShortMsg", "address": "0x7ff8a1389de0"}}
+{"type": "send", "payload": {"kind": "HOOK", "name": "midiInOpen", "address": "0x7ff8a1389b20"}}
+{"type": "send", "payload": {"kind": "HOOK", "name": "midiInAddBuffer", "address": "0x7ff8a1389a00"}}
+{"type": "send", "payload": {"kind": "MODULE", "name": "winmmbase.dll", "path": "C:\\Windows\\SYSTEM32\\winmmbase.dll"}}
+{"type": "send", "payload": {"kind": "HOOK", "name": "midiOutLongMsg", "address": "0x7ff882c48620"}}
+{"type": "send", "payload": {"kind": "HOOK", "name": "midiOutShortMsg", "address": "0x7ff882c48570"}}
+{"type": "send", "payload": {"kind": "HOOK", "name": "midiInOpen", "address": "0x7ff882c48d90"}}
+{"type": "send", "payload": {"kind": "HOOK", "name": "midiInAddBuffer", "address": "0x7ff882c491d0"}}
+{"type": "send", "payload": {"kind": "MODULE", "name": "midimap.dll", "path": "C:\\Windows\\SYSTEM32\\midimap.dll"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "OPEN IN", "flags": 0}}
+{"type": "send", "payload": {"kind": "OPEN IN", "flags": 0}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827013536}, "hex": "f0 00 32 45 00 00 00 40 7f f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827013536}, "hex": "f0 00 32 45 00 00 00 40 7f f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827013538}, "hex": "f0 00 32 0d 41 00 00 40 02 00 00 00 00 0d 04 00 00 0a 00 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827013538}, "hex": "f0 00 32 0d 41 00 00 40 02 00 00 00 00 0d 04 00 00 0a 00 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827013542}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827013542}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827013543}, "hex": "f0 00 32 0d 41 00 00 40 02 00 00 00 00 08 23 00 00 61 00 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827013543}, "hex": "f0 00 32 0d 41 00 00 40 02 00 00 00 00 08 23 00 00 61 00 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827013545}, "hex": "f0 00 32 0d 41 00 00 40 02 00 00 00 00 09 23 00 00 51 00 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827013545}, "hex": "f0 00 32 0d 41 00 00 40 02 00 00 00 00 09 23 00 00 51 00 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827013547}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 41 0b 00 00 0f 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827013547}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 41 0b 00 00 0f 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827013549}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 1d 00 00 00 2a 00 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827013549}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 1d 00 00 00 2a 00 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827014553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827014553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827015554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827015554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827016553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827016553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827017554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827017554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827018554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827018554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827019553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827019553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827020552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827020552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827021554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827021554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827022554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827022554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827023553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827023553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827024552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827024552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827025552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827025552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827026552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827026552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827027553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827027553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827028553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827028553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827029552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827029552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827030553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827030553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827031553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827031553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827032553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827032553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827033552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827033552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827034553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827034553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827035552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827035552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827036553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827036553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827037553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827037553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827038554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827038554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827039552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827039552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827040552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827040552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827041553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827041553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827042553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827042553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827043553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827043553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827044552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827044552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827045553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827045553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827046554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827046554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827047553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827047553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827048553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827048553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827049554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827049554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827050553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827050553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827051553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827051553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827052554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827052554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827053553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827053553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827054553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827054553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827054609}, "hex": "f0 00 32 09 79 3f 00 40 02 00 00 00 00 70 7e 00 00 43 02 09 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 10 40 0c 66 23 6e 78 7b 58 2c 48 14 7d 60 03 7d 05 5a 2d 15 4b 25 59 7f 5e 50 35 7f 0d 14 03 58 69 3a 62 31 74 67 3b 78 10 78 5d 08 22 1c 0d 68 66 02 3e 24 06 7b 1f 54 08 41 10 3f 0b 4c 5e 37 20 2d 17 01 60 54 05 10 2a 71 40 46 79 0b 58 32 70 40 63 1e 06 76 1c 2e 70 4e 2a 03 11 1f 15 48 19 2b 3f 23 68 66 33 75 70 5d 2d 74 70 47 1c 3a 0f 75 4a 7f 6a 05 1a 38 06 6b 02 2f 0a 11 0c 08 70 7f 13 6f 77 4b 62 4a 2f 1a 39 00 1b 17 24 58 44 39 03 7b 15 1b 50 7d 03 21 50 7e 7c 65 5e 0d 3f 1c 2d 77 59 18 48 17 02 3c 3d 1f 11 72 2f 7a 5f 5f 52 05 05 04 1a 55 60 5d 3a 05 35 7d 18 58 38 26 00 29 3d 7d 7b 46 74 3f 04 2d 01 12 5d 12 20 65 38 00 5c 48 70 67 5a 2f 7d 08 32 61 53 73 0d 3e 67 29 76 5b 6d 6c 7f 3b 0d 01 68 15 07 18 23 36 7f 7d 0b 73 4f 6f 00 5f 52 60 78 47 13 4b 0f 1e 02 7d 6b 58 6d 0f 4a 1e 7f 5d 29 7c 0f 58 5c 7f 4a 66 7a 15 53 3b 2f 6e 5d 7b 49 49 6e 57 57 3b 40 09 5c 0c 30 56 59 20 1d 18 00 24 48 4e 6f 7f 6d 7a 3e 5a 55 67 2e 74 3d 12 06 73 43 12 22 1f 7a 49 79 11 72 42 2f 70 34 7c 64 3a 6f 2f 3d 66 7f 00 1e 02 70 44 15 00 41 7f 7f 03 48 71 1f 47 52 7e 49 46 75 0f 59 3f 3f 00 09 7c 3b 71 57 5f 26 45 7e 4f 62 10 00 55 0d 03 21 30 1d 28 4b 6f 40 17 78 78 63 04 58 7e 54 7f 70 43 2d 03 2f 4f 00 7a 72 58 66 1f 35 4d 3f 4f 15 01 7c 54 03 40 72 7d 7e 37 37 6b 6f 3b 10 7e 6d 22 73 17 03 3c 7f 62 5e 7b 3b 41 47 3f 18 6c 79 15 18 37 6f 74 44 7a 26 6b 54 27 5d 69 7d 39 02 77 37 31 7d 3f 5c 07 02 02 28 0e 30 08 4c 7f 29 5d 71 17 57 68 3e 56 7f 77 17 38 60 3f 65 3c 7f 6b 41 78 5f 4f 33 7e 63 6e 67 4f 3d 62 3d 06 1c 6a 53 07 5c 3e 72 56 78 4f 7f 64 3f 6b 56 7f 51 3e 00 50 03 6f 3f 09 3b 7a 47 03 27 1f 35 22 78 09 72 42 5f 7c 48 7d 1d 4d 7b 3f 31 3c 00 30 70 05 34 3f 27 00 1f 1b 00 78 05 68 2f 7b 4c 7d 14 42 6f 17 6d 57 7f 63 0d 02 00 00 1b 60 5e 3c 01 6e 22 06 40 54 02 00 39 73 7b 2f 3e 4e 7f 55 71 7d 2b 2c 03 00 1c 2d 01 66 7d 07 30 6f 0b 00 55 40 7e 27 03 74 3f 2e 10 00 50 3d 08 60 5d 2c 01 0e 37 0a 50 15 08 00 23 74 78 2f 03 0a 7f 06 0d 77 47 51 41 5f 52 40 7e 57 70 0c 00 79 7c 01 31 0c 13 58 42 7a 00 2a 5b 04 10 37 09 60 1a 0f 7f 5f 7c 72 4f 2a 27 7f 44 5d 00 00 2f 35 00 40 0a 05 30 21 29 60 77 0e 02 36 0c 0d 40 26 41 00 69 16 04 38 00 28 00 01 59 02 4c 1b 19 60 0e 0b 02 1a 02 15 20 1d 72 00 0e 4f 00 38 66 60 3f 68 56 7e 0b 60 11 40 4d 6c 02 20 34 21 40 22 39 02 20 7e 13 38 67 7e 40 74 7d 02 74 38 71 7f 5c 5c 7d 15 28 6c 3f 1f 61 7e 5c 3f 75 07 60 38 3f 71 36 7c 03 54 65 7f 17 7c 7d 23 44 6d 6f 76 0a 7f 74 19 7d 3f 31 1f 00 36 5e 04 6c 31 31 00 55 69 02 5e 0a 0d 30 36 16 00 56 65 7d 57 4d 68 3f 77 5b 7e 0f 01 79 1f 68 6b 7f 7d 3e 7d 4f 35 62 7f 11 0b 02 50 60 6e 00 16 5b 0d 74 45 00 01 63 0e 06 20 33 12 30 67 2d 7f 2c 72 71 0f 61 03 7f 59 38 7b 1b 5c 02 00 30 73 01 34 50 0e 20 60 26 00 15 30 7e 4f 2d 61 7f 09 3e 7c 57 5c 52 1f 56 06 7d 33 03 73 0f 53 1b 00 6d 6e 08 00 4c 60 00 07 0e 05 44 20 0d 20 78 5d 7e 2b 09 6e 0f 67 1e 7f 0e 05 00 78 12 1f 00 38 1d 01 40 7f 74 5f 40 1c 7e 73 0a 71 3f 4a 41 7f 07 3b 01 70 75 34 40 7e 1f 05 24 59 31 40 26 6a 02 72 07 10 70 6e 5e 00 4e 46 06 70 59 4e 40 6f 08 07 4c 78 45 40 61 09 05 22 65 2e 50 0a 4a 03 16 21 25 08 77 77 02 26 5c 19 00 4d 34 01 74 2e 07 2c 68 13 40 27 25 7f 6e 17 73 77 71 23 7f 3e 79 7d 5f 2a 0c 60 55 45 01 06 15 09 30 39 16 00 7b 55 00 48 51 0d 00 1e 2e 01 34 0e 09 00 1f 3d 00 62 5c 04 30 21 2f 00 05 52 03 30 50 19 00 10 73 01 4c 29 13 60 5a 20 01 58 33 0a 60 2e 47 00 13 6e 04 20 54 36 40 59 7d 04 30 1d 34 60 53 46 5d 00 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827054610}, "hex": "f0 00 32 09 79 3f 00 40 02 00 00 00 00 70 7e 00 00 43 02 09 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 10 40 0c 66 23 6e 78 7b 58 2c 48 14 7d 60 03 7d 05 5a 2d 15 4b 25 59 7f 5e 50 35 7f 0d 14 03 58 69 3a 62 31 74 67 3b 78 10 78 5d 08 22 1c 0d 68 66 02 3e 24 06 7b 1f 54 08 41 10 3f 0b 4c 5e 37 20 2d 17 01 60 54 05 10 2a 71 40 46 79 0b 58 32 70 40 63 1e 06 76 1c 2e 70 4e 2a 03 11 1f 15 48 19 2b 3f 23 68 66 33 75 70 5d 2d 74 70 47 1c 3a 0f 75 4a 7f 6a 05 1a 38 06 6b 02 2f 0a 11 0c 08 70 7f 13 6f 77 4b 62 4a 2f 1a 39 00 1b 17 24 58 44 39 03 7b 15 1b 50 7d 03 21 50 7e 7c 65 5e 0d 3f 1c 2d 77 59 18 48 17 02 3c 3d 1f 11 72 2f 7a 5f 5f 52 05 05 04 1a 55 60 5d 3a 05 35 7d 18 58 38 26 00 29 3d 7d 7b 46 74 3f 04 2d 01 12 5d 12 20 65 38 00 5c 48 70 67 5a 2f 7d 08 32 61 53 73 0d 3e 67 29 76 5b 6d 6c 7f 3b 0d 01 68 15 07 18 23 36 7f 7d 0b 73 4f 6f 00 5f 52 60 78 47 13 4b 0f 1e 02 7d 6b 58 6d 0f 4a 1e 7f 5d 29 7c 0f 58 5c 7f 4a 66 7a 15 53 3b 2f 6e 5d 7b 49 49 6e 57 57 3b 40 09 5c 0c 30 56 59 20 1d 18 00 24 48 4e 6f 7f 6d 7a 3e 5a 55 67 2e 74 3d 12 06 73 43 12 22 1f 7a 49 79 11 72 42 2f 70 34 7c 64 3a 6f 2f 3d 66 7f 00 1e 02 70 44 15 00 41 7f 7f 03 48 71 1f 47 52 7e 49 46 75 0f 59 3f 3f 00 09 7c 3b 71 57 5f 26 45 7e 4f 62 10 00 55 0d 03 21 30 1d 28 4b 6f 40 17 78 78 63 04 58 7e 54 7f 70 43 2d 03 2f 4f 00 7a 72 58 66 1f 35 4d 3f 4f 15 01 7c 54 03 40 72 7d 7e 37 37 6b 6f 3b 10 7e 6d 22 73 17 03 3c 7f 62 5e 7b 3b 41 47 3f 18 6c 79 15 18 37 6f 74 44 7a 26 6b 54 27 5d 69 7d 39 02 77 37 31 7d 3f 5c 07 02 02 28 0e 30 08 4c 7f 29 5d 71 17 57 68 3e 56 7f 77 17 38 60 3f 65 3c 7f 6b 41 78 5f 4f 33 7e 63 6e 67 4f 3d 62 3d 06 1c 6a 53 07 5c 3e 72 56 78 4f 7f 64 3f 6b 56 7f 51 3e 00 50 03 6f 3f 09 3b 7a 47 03 27 1f 35 22 78 09 72 42 5f 7c 48 7d 1d 4d 7b 3f 31 3c 00 30 70 05 34 3f 27 00 1f 1b 00 78 05 68 2f 7b 4c 7d 14 42 6f 17 6d 57 7f 63 0d 02 00 00 1b 60 5e 3c 01 6e 22 06 40 54 02 00 39 73 7b 2f 3e 4e 7f 55 71 7d 2b 2c 03 00 1c 2d 01 66 7d 07 30 6f 0b 00 55 40 7e 27 03 74 3f 2e 10 00 50 3d 08 60 5d 2c 01 0e 37 0a 50 15 08 00 23 74 78 2f 03 0a 7f 06 0d 77 47 51 41 5f 52 40 7e 57 70 0c 00 79 7c 01 31 0c 13 58 42 7a 00 2a 5b 04 10 37 09 60 1a 0f 7f 5f 7c 72 4f 2a 27 7f 44 5d 00 00 2f 35 00 40 0a 05 30 21 29 60 77 0e 02 36 0c 0d 40 26 41 00 69 16 04 38 00 28 00 01 59 02 4c 1b 19 60 0e 0b 02 1a 02 15 20 1d 72 00 0e 4f 00 38 66 60 3f 68 56 7e 0b 60 11 40 4d 6c 02 20 34 21 40 22 39 02 20 7e 13 38 67 7e 40 74 7d 02 74 38 71 7f 5c 5c 7d 15 28 6c 3f 1f 61 7e 5c 3f 75 07 60 38 3f 71 36 7c 03 54 65 7f 17 7c 7d 23 44 6d 6f 76 0a 7f 74 19 7d 3f 31 1f 00 36 5e 04 6c 31 31 00 55 69 02 5e 0a 0d 30 36 16 00 56 65 7d 57 4d 68 3f 77 5b 7e 0f 01 79 1f 68 6b 7f 7d 3e 7d 4f 35 62 7f 11 0b 02 50 60 6e 00 16 5b 0d 74 45 00 01 63 0e 06 20 33 12 30 67 2d 7f 2c 72 71 0f 61 03 7f 59 38 7b 1b 5c 02 00 30 73 01 34 50 0e 20 60 26 00 15 30 7e 4f 2d 61 7f 09 3e 7c 57 5c 52 1f 56 06 7d 33 03 73 0f 53 1b 00 6d 6e 08 00 4c 60 00 07 0e 05 44 20 0d 20 78 5d 7e 2b 09 6e 0f 67 1e 7f 0e 05 00 78 12 1f 00 38 1d 01 40 7f 74 5f 40 1c 7e 73 0a 71 3f 4a 41 7f 07 3b 01 70 75 34 40 7e 1f 05 24 59 31 40 26 6a 02 72 07 10 70 6e 5e 00 4e 46 06 70 59 4e 40 6f 08 07 4c 78 45 40 61 09 05 22 65 2e 50 0a 4a 03 16 21 25 08 77 77 02 26 5c 19 00 4d 34 01 74 2e 07 2c 68 13 40 27 25 7f 6e 17 73 77 71 23 7f 3e 79 7d 5f 2a 0c 60 55 45 01 06 15 09 30 39 16 00 7b 55 00 48 51 0d 00 1e 2e 01 34 0e 09 00 1f 3d 00 62 5c 04 30 21 2f 00 05 52 03 30 50 19 00 10 73 01 4c 29 13 60 5a 20 01 58 33 0a 60 2e 47 00 13 6e 04 20 54 36 40 59 7d 04 30 1d 34 60 53 46 5d 00 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827054614}, "hex": "f0 00 32 09 79 3f 00 40 02 77 07 00 00 70 7e 00 00 03 08 0e 1a 10 3e 0f 01 2a 5e 05 78 0f 21 40 7e 7b 01 3c 70 17 40 3b 76 01 56 2e 13 60 40 22 01 45 40 08 70 51 2f 40 02 5a 01 00 00 0f 20 22 2d 01 30 16 0f 30 3d 08 01 2b 74 07 28 0c 3c 40 2b 17 03 60 24 1b 00 5b 00 02 7a 1c 12 50 39 0c 01 22 20 05 38 55 13 00 64 66 7f 4f 22 72 1f 36 3e 7e 3b 4d 6f 7f 33 75 7e 3d 74 76 3f 72 3c 7f 4b 30 7c 4f 75 6d 7f 50 6f 7f 0d 2d 02 30 31 21 00 6a 55 00 78 7b 70 3f 76 14 7e 43 4c 6b 3f 59 6d 7e 07 19 79 3f 2e 6d 7f 78 34 00 28 09 08 40 17 62 00 40 0d 04 00 1b 4c 00 0a 60 08 60 26 61 00 64 7e 05 30 19 14 40 0a 43 7f 2f 5d 72 3f 02 2f 7f 1d 06 7e 1f 72 69 7f 3c 78 7d 07 72 69 7f 65 7e 7e 47 2b 7b 5f 17 7e 7f 3f 0c 03 40 28 29 00 0c 3a 03 68 7d 12 00 0a 6f 00 34 73 06 40 26 21 00 74 26 02 70 6d 05 00 00 58 7e 77 5c 63 7f 3d 3e 7d 77 6b 69 3f 42 40 7e 35 7e 75 5f 44 4e 7f 7a 1e 00 70 47 13 40 3c 58 00 5c 1c 7e 5f 77 39 7f 65 06 7b 6f 64 6b 7f 2b 51 01 58 00 2e 40 65 29 04 28 04 28 00 1b 24 02 72 2b 0d 30 0d 2f 00 5e 30 7e 6f 22 59 7f 23 17 7d 6b 48 70 1f 30 37 7f 35 76 7c 3f 06 00 00 51 67 02 48 35 3b 00 77 34 05 04 2d 27 40 64 39 01 14 18 06 00 1c 49 00 19 78 07 40 34 40 00 25 5e 00 4c 31 5a 1f 08 5b 7a 3d 5f 3f 7f 01 18 7b 69 12 5b 67 08 2c 7e 78 5c 7a 1b 62 13 20 72 75 03 4e 33 28 60 68 1b 02 4e 5e 08 10 1b 6d 7f 66 37 7b 7f 2b 5c 5f 1c 5e 7e 63 5a 7b 1f 4f 72 7f 17 6d 7f 37 51 7c 7f 3b 02 7f 1f 67 72 3f 5f 2e 7f 6b 38 7f 1f 46 06 00 63 70 7e 37 0e 6c 7f 51 56 7e 67 73 79 5f 74 72 7f 39 79 7e 1f 0c 73 7f 66 0b 7f 5f 3d 73 3f 53 4b 7e 1f 0a 72 7f 57 29 7f 77 10 00 10 48 39 00 44 4a 04 18 1f 1b 00 1a 1b 01 58 76 0c 00 0b 23 01 32 00 0a 50 62 33 00 22 2a 01 68 61 7e 3f 19 06 7f 4f 55 6e 5f 11 3f 7e 27 02 74 1f 20 51 7f 0d 75 01 48 2a 30 00 36 60 03 54 3a 14 20 3c 22 00 16 0e 7a 4f 13 45 7f 57 7e 00 48 7b 3e 40 60 39 06 70 74 31 60 70 6a 01 58 2e 00 50 11 1c 7f 28 72 75 4f 5a 22 3f 60 71 7a 1b 39 61 3f 70 6c 7e 15 0f 7e 2f 06 30 00 32 09 08 20 11 56 40 38 42 04 20 7d 0f 40 1e 56 7f 15 53 78 6f 4f 40 7f 25 1b 7d 6f 77 6f 3f 48 7c 7e 3f 27 73 7f 39 2b 7e 4d 7a 6a 4f 50 27 7e 38 64 72 1f 40 2a 7f 08 48 7b 4b 22 64 7f 0f 64 7e 35 22 7c 6f 5f 06 00 4f 7d 00 48 13 07 40 73 15 00 68 29 02 20 2b 01 00 48 4d 7d 1f 1a 57 7f 32 39 7c 27 34 66 7f 42 01 7e 27 65 6c 1f 61 69 7e 4b 6c 77 1f 41 4a 7f 75 2a 7c 67 10 68 3f 5c 10 7f 57 7e 7c 3f 10 63 7f 3b 30 7a 6f 00 39 7f 6e 25 7a 57 27 56 7f 79 19 7e 23 4b 78 7f 5f 0a 00 56 2f 02 00 44 17 00 29 76 00 58 3f 00 00 2f 77 7f 3b 7b 7f 5f 64 23 00 4c 06 03 60 0e 15 00 6d 5a 00 78 3c 7e 7f 7d 50 7f 73 09 78 3f 26 3d 7f 45 57 7d 5f 42 7b 7f 0d 18 00 30 7c 7a 3f 31 19 7f 1b 35 75 1f 67 34 7f 29 04 7f 2f 70 1b 00 62 04 04 28 1b 28 40 7e 5c 02 1c 53 15 00 25 30 01 6c 6c 0c 60 0a 6a 00 59 1d 06 20 3c 28 00 7c 7d 01 2c 6b 0e 00 73 17 01 7a 3e 10 60 36 4b 01 5c 17 10 38 34 00 41 10 72 05 38 52 16 40 5b 01 00 16 58 7a 6f 76 4a 7f 57 09 7d 27 0d 70 7f 37 0a 7f 03 4a 75 3f 32 02 7f 3d 42 77 4f 4f 4f 7f 72 07 7f 6f 5d 05 00 21 24 00 2c 78 7d 3f 35 4d 7f 61 79 7c 7f 72 78 7f 1a 1e 00 40 0e 04 40 42 12 00 30 65 7d 1f 46 46 7f 41 4e 7a 1f 68 52 7f 72 33 7d 37 67 71 3f 58 65 7f 27 64 05 40 29 6f 00 50 65 09 10 57 53 00 4f 15 04 68 1d 13 00 6f 33 00 10 4c 7f 1f 59 7d 7f 59 51 00 10 35 04 00 75 50 7f 47 29 78 7f 3c 3b 7f 43 2c 7b 7f 67 4a 7f 33 0f 7c 6f 43 6b 7f 34 73 7f 0f 7c 08 40 60 1b 01 18 10 0d 00 36 55 00 5e 72 01 30 54 75 7f 51 5e 7e 1f 4f 76 3f 2c 1b 7f 1f 7c 75 1f 18 18 7f 73 14 79 3f 5e 49 7f 4e 50 7c 17 5b 69 3f 01 08 7f 77 13 7b 5f 7b 50 7f 63 13 7b 0f 64 4f 7f 65 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827054614}, "hex": "f0 00 32 09 79 3f 00 40 02 77 07 00 00 70 7e 00 00 03 08 0e 1a 10 3e 0f 01 2a 5e 05 78 0f 21 40 7e 7b 01 3c 70 17 40 3b 76 01 56 2e 13 60 40 22 01 45 40 08 70 51 2f 40 02 5a 01 00 00 0f 20 22 2d 01 30 16 0f 30 3d 08 01 2b 74 07 28 0c 3c 40 2b 17 03 60 24 1b 00 5b 00 02 7a 1c 12 50 39 0c 01 22 20 05 38 55 13 00 64 66 7f 4f 22 72 1f 36 3e 7e 3b 4d 6f 7f 33 75 7e 3d 74 76 3f 72 3c 7f 4b 30 7c 4f 75 6d 7f 50 6f 7f 0d 2d 02 30 31 21 00 6a 55 00 78 7b 70 3f 76 14 7e 43 4c 6b 3f 59 6d 7e 07 19 79 3f 2e 6d 7f 78 34 00 28 09 08 40 17 62 00 40 0d 04 00 1b 4c 00 0a 60 08 60 26 61 00 64 7e 05 30 19 14 40 0a 43 7f 2f 5d 72 3f 02 2f 7f 1d 06 7e 1f 72 69 7f 3c 78 7d 07 72 69 7f 65 7e 7e 47 2b 7b 5f 17 7e 7f 3f 0c 03 40 28 29 00 0c 3a 03 68 7d 12 00 0a 6f 00 34 73 06 40 26 21 00 74 26 02 70 6d 05 00 00 58 7e 77 5c 63 7f 3d 3e 7d 77 6b 69 3f 42 40 7e 35 7e 75 5f 44 4e 7f 7a 1e 00 70 47 13 40 3c 58 00 5c 1c 7e 5f 77 39 7f 65 06 7b 6f 64 6b 7f 2b 51 01 58 00 2e 40 65 29 04 28 04 28 00 1b 24 02 72 2b 0d 30 0d 2f 00 5e 30 7e 6f 22 59 7f 23 17 7d 6b 48 70 1f 30 37 7f 35 76 7c 3f 06 00 00 51 67 02 48 35 3b 00 77 34 05 04 2d 27 40 64 39 01 14 18 06 00 1c 49 00 19 78 07 40 34 40 00 25 5e 00 4c 31 5a 1f 08 5b 7a 3d 5f 3f 7f 01 18 7b 69 12 5b 67 08 2c 7e 78 5c 7a 1b 62 13 20 72 75 03 4e 33 28 60 68 1b 02 4e 5e 08 10 1b 6d 7f 66 37 7b 7f 2b 5c 5f 1c 5e 7e 63 5a 7b 1f 4f 72 7f 17 6d 7f 37 51 7c 7f 3b 02 7f 1f 67 72 3f 5f 2e 7f 6b 38 7f 1f 46 06 00 63 70 7e 37 0e 6c 7f 51 56 7e 67 73 79 5f 74 72 7f 39 79 7e 1f 0c 73 7f 66 0b 7f 5f 3d 73 3f 53 4b 7e 1f 0a 72 7f 57 29 7f 77 10 00 10 48 39 00 44 4a 04 18 1f 1b 00 1a 1b 01 58 76 0c 00 0b 23 01 32 00 0a 50 62 33 00 22 2a 01 68 61 7e 3f 19 06 7f 4f 55 6e 5f 11 3f 7e 27 02 74 1f 20 51 7f 0d 75 01 48 2a 30 00 36 60 03 54 3a 14 20 3c 22 00 16 0e 7a 4f 13 45 7f 57 7e 00 48 7b 3e 40 60 39 06 70 74 31 60 70 6a 01 58 2e 00 50 11 1c 7f 28 72 75 4f 5a 22 3f 60 71 7a 1b 39 61 3f 70 6c 7e 15 0f 7e 2f 06 30 00 32 09 08 20 11 56 40 38 42 04 20 7d 0f 40 1e 56 7f 15 53 78 6f 4f 40 7f 25 1b 7d 6f 77 6f 3f 48 7c 7e 3f 27 73 7f 39 2b 7e 4d 7a 6a 4f 50 27 7e 38 64 72 1f 40 2a 7f 08 48 7b 4b 22 64 7f 0f 64 7e 35 22 7c 6f 5f 06 00 4f 7d 00 48 13 07 40 73 15 00 68 29 02 20 2b 01 00 48 4d 7d 1f 1a 57 7f 32 39 7c 27 34 66 7f 42 01 7e 27 65 6c 1f 61 69 7e 4b 6c 77 1f 41 4a 7f 75 2a 7c 67 10 68 3f 5c 10 7f 57 7e 7c 3f 10 63 7f 3b 30 7a 6f 00 39 7f 6e 25 7a 57 27 56 7f 79 19 7e 23 4b 78 7f 5f 0a 00 56 2f 02 00 44 17 00 29 76 00 58 3f 00 00 2f 77 7f 3b 7b 7f 5f 64 23 00 4c 06 03 60 0e 15 00 6d 5a 00 78 3c 7e 7f 7d 50 7f 73 09 78 3f 26 3d 7f 45 57 7d 5f 42 7b 7f 0d 18 00 30 7c 7a 3f 31 19 7f 1b 35 75 1f 67 34 7f 29 04 7f 2f 70 1b 00 62 04 04 28 1b 28 40 7e 5c 02 1c 53 15 00 25 30 01 6c 6c 0c 60 0a 6a 00 59 1d 06 20 3c 28 00 7c 7d 01 2c 6b 0e 00 73 17 01 7a 3e 10 60 36 4b 01 5c 17 10 38 34 00 41 10 72 05 38 52 16 40 5b 01 00 16 58 7a 6f 76 4a 7f 57 09 7d 27 0d 70 7f 37 0a 7f 03 4a 75 3f 32 02 7f 3d 42 77 4f 4f 4f 7f 72 07 7f 6f 5d 05 00 21 24 00 2c 78 7d 3f 35 4d 7f 61 79 7c 7f 72 78 7f 1a 1e 00 40 0e 04 40 42 12 00 30 65 7d 1f 46 46 7f 41 4e 7a 1f 68 52 7f 72 33 7d 37 67 71 3f 58 65 7f 27 64 05 40 29 6f 00 50 65 09 10 57 53 00 4f 15 04 68 1d 13 00 6f 33 00 10 4c 7f 1f 59 7d 7f 59 51 00 10 35 04 00 75 50 7f 47 29 78 7f 3c 3b 7f 43 2c 7b 7f 67 4a 7f 33 0f 7c 6f 43 6b 7f 34 73 7f 0f 7c 08 40 60 1b 01 18 10 0d 00 36 55 00 5e 72 01 30 54 75 7f 51 5e 7e 1f 4f 76 3f 2c 1b 7f 1f 7c 75 1f 18 18 7f 73 14 79 3f 5e 49 7f 4e 50 7c 17 5b 69 3f 01 08 7f 77 13 7b 5f 7b 50 7f 63 13 7b 0f 64 4f 7f 65 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827054619}, "hex": "f0 00 32 09 79 3f 00 40 02 6e 0f 00 00 70 7e 00 00 35 6c 7c 27 36 6c 7f 67 4d 7f 0b 0d 05 40 2a 52 00 24 2e 05 30 32 2a 00 4c 2d 02 60 58 0f 00 64 6d 00 6c 08 07 60 5f 4b 00 32 0c 05 10 59 24 00 02 54 01 38 59 06 40 28 66 7f 33 4b 75 5f 0f 73 7e 05 0a 76 5f 07 43 7f 1b 7d 7d 57 08 79 7f 0c 02 00 3c 44 01 20 5f 0f 00 66 78 7f 5f 6d 75 7f 76 3a 7f 17 74 7a 3f 02 5a 7f 4f 61 7d 7f 16 7c 7f 77 0b 01 30 03 09 00 0d 19 00 48 3d 7b 7f 02 5b 7f 5f 09 7e 1f 4e 65 7f 13 72 7d 2f 3e 68 7f 4b 6a 7e 37 40 79 3f 3c 6a 7f 17 5e 02 20 25 34 00 4a 73 04 60 75 21 00 78 2a 01 10 78 02 00 54 60 7f 1b 0f 7d 1f 51 57 7f 63 1b 7d 1f 78 67 7f 16 35 7e 07 4f 72 7f 5e 6a 7e 4b 1f 76 5f 5a 37 7f 4f 54 7d 3f 31 08 00 33 73 01 70 3f 18 00 4a 45 01 2c 7e 08 20 7f 04 00 3e 44 7b 4f 69 45 7f 73 51 7b 57 2f 5d 7f 61 41 7d 3b 69 68 7f 65 3a 7e 53 63 73 4f 1b 32 7f 09 73 7c 27 42 7a 3f 25 5b 00 10 6a 09 60 1c 50 00 08 53 03 30 08 20 00 4d 2c 02 08 46 11 00 34 4c 00 0c 0c 7e 3f 31 4d 7f 79 79 7a 2f 27 53 7f 74 46 7d 7f 7d 73 7f 12 05 00 48 1a 04 60 47 31 00 42 10 03 30 02 1c 00 65 03 02 70 2b 0c 40 12 37 00 24 4b 00 00 6c 7d 7f 75 3d 7f 0f 67 75 7f 01 27 7f 07 5f 79 3f 5c 63 7f 6f 67 7f 3f 4d 06 00 02 41 00 00 61 7e 7f 5f 6b 7f 67 58 7d 3f 64 71 7f 43 4c 00 20 42 12 00 40 5e 01 70 73 08 00 3f 1c 00 40 64 00 00 24 1b 00 28 15 04 20 20 28 00 50 18 02 10 4d 05 00 27 2e 7f 27 44 72 3f 1f 66 7e 5f 69 78 3f 25 7f 7f 03 05 04 10 7c 34 00 05 4a 03 78 19 17 40 45 5a 00 58 05 7f 3f 55 4d 7f 3f 78 7b 4f 49 65 7f 7f 14 7f 17 52 00 40 43 28 00 44 2f 04 20 45 34 00 4c 75 03 20 7e 1d 00 51 37 01 60 4f 06 40 71 14 00 48 16 00 20 34 75 7f 53 20 7e 3f 30 6b 7f 36 56 7e 1f 57 77 7f 04 45 7f 47 62 7b 3f 23 5e 7f 51 04 7e 3f 08 6f 7f 36 0c 7f 4f 17 7d 7f 31 11 00 44 1c 02 40 4f 0a 00 62 07 00 40 55 7d 7f 3d 5f 7f 67 40 7d 3f 28 6c 7f 17 4c 7f 5f 68 07 00 14 0f 01 20 47 0a 00 09 68 00 20 1c 08 40 35 3a 00 0c 62 02 60 20 10 00 6c 24 01 10 23 10 00 2b 11 01 30 4b 07 40 13 17 00 3c 71 7e 1f 48 6c 7f 37 14 7f 1f 2b 01 00 55 32 00 48 38 03 40 70 77 7f 2b 60 7c 3f 5b 5b 7f 41 66 7d 1f 01 76 7f 0a 66 7f 1f 78 00 40 3b 0b 00 40 1c 00 40 10 02 00 5e 7c 7f 6f 48 7e 7f 78 4e 7f 67 59 7a 7f 10 49 7f 7f 4a 7b 7f 75 60 7f 3d 4d 7e 2f 73 79 7f 29 48 7f 27 1a 7b 3f 1a 7a 7f 3f 7d 02 00 53 31 00 16 22 03 70 05 15 00 46 22 01 68 17 0b 00 55 69 00 34 2c 06 20 1b 34 00 4c 40 03 70 1a 1b 00 27 5f 01 50 31 0e 00 3b 15 01 44 18 0c 00 70 78 00 10 4a 08 60 10 3f 00 33 02 03 28 7a 0b 00 37 06 00 4c 4e 7c 5f 46 51 7f 29 18 7d 7f 4b 6e 7f 64 3f 7f 37 49 7e 7f 4a 73 7f 2b 03 7f 5f 4a 74 7f 13 68 7f 1f 78 01 00 12 35 00 58 47 05 00 74 27 00 70 44 02 00 0d 12 00 3a 23 01 70 3a 08 00 7e 14 00 60 3c 7f 7f 1e 68 7f 1b 43 7d 1f 73 5e 7f 73 76 7d 0f 7a 79 7f 3f 25 00 28 1d 05 00 20 12 00 18 7b 7f 1f 67 03 00 7e 7b 00 70 74 0f 00 40 0e 01 00 30 08 00 3a 2a 00 08 55 00 20 58 7a 7f 63 14 7f 2f 28 79 7f 4b 3d 7f 7f 3f 7b 3f 75 50 7f 27 54 7b 3f 4a 5d 7f 05 3d 7e 6f 54 7f 7f 09 4c 00 20 30 06 40 78 33 00 70 62 02 40 42 14 00 30 42 00 50 5e 7a 7f 39 12 7f 67 72 76 3f 5f 3d 7f 0b 1f 7c 3f 5b 69 7f 49 1b 7f 6f 1f 7e 7f 1d 07 00 08 78 7e 7f 3f 6d 7f 6f 26 7e 7f 0b 6e 7f 4b 3f 7e 4f 5b 70 7f 7e 19 7f 27 0c 7d 7f 1b 0f 00 5c 5f 02 60 4d 1d 00 4c 7e 01 70 61 0b 00 17 32 00 08 19 00 00 31 73 7f 73 07 7f 7f 17 78 7f 5b 4f 7f 5f 07 7d 7f 63 6c 7f 77 63 7e 3f 17 6e 7f 47 1e 7e 5f 17 6f 7f 5d 25 7f 0f 15 7e 7f 7b 02 00 38 13 00 00 42 7c 7f 67 70 7f 7f 19 00 00 12 13 00 20 5d 02 00 37 1e 00 08 7b 01 40 33 08 00 0c 22 00 40 0e 08 00 74 26 01 60 49 0e 00 17 62 00 00 36 02 40 3f 2b 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827054619}, "hex": "f0 00 32 09 79 3f 00 40 02 6e 0f 00 00 70 7e 00 00 35 6c 7c 27 36 6c 7f 67 4d 7f 0b 0d 05 40 2a 52 00 24 2e 05 30 32 2a 00 4c 2d 02 60 58 0f 00 64 6d 00 6c 08 07 60 5f 4b 00 32 0c 05 10 59 24 00 02 54 01 38 59 06 40 28 66 7f 33 4b 75 5f 0f 73 7e 05 0a 76 5f 07 43 7f 1b 7d 7d 57 08 79 7f 0c 02 00 3c 44 01 20 5f 0f 00 66 78 7f 5f 6d 75 7f 76 3a 7f 17 74 7a 3f 02 5a 7f 4f 61 7d 7f 16 7c 7f 77 0b 01 30 03 09 00 0d 19 00 48 3d 7b 7f 02 5b 7f 5f 09 7e 1f 4e 65 7f 13 72 7d 2f 3e 68 7f 4b 6a 7e 37 40 79 3f 3c 6a 7f 17 5e 02 20 25 34 00 4a 73 04 60 75 21 00 78 2a 01 10 78 02 00 54 60 7f 1b 0f 7d 1f 51 57 7f 63 1b 7d 1f 78 67 7f 16 35 7e 07 4f 72 7f 5e 6a 7e 4b 1f 76 5f 5a 37 7f 4f 54 7d 3f 31 08 00 33 73 01 70 3f 18 00 4a 45 01 2c 7e 08 20 7f 04 00 3e 44 7b 4f 69 45 7f 73 51 7b 57 2f 5d 7f 61 41 7d 3b 69 68 7f 65 3a 7e 53 63 73 4f 1b 32 7f 09 73 7c 27 42 7a 3f 25 5b 00 10 6a 09 60 1c 50 00 08 53 03 30 08 20 00 4d 2c 02 08 46 11 00 34 4c 00 0c 0c 7e 3f 31 4d 7f 79 79 7a 2f 27 53 7f 74 46 7d 7f 7d 73 7f 12 05 00 48 1a 04 60 47 31 00 42 10 03 30 02 1c 00 65 03 02 70 2b 0c 40 12 37 00 24 4b 00 00 6c 7d 7f 75 3d 7f 0f 67 75 7f 01 27 7f 07 5f 79 3f 5c 63 7f 6f 67 7f 3f 4d 06 00 02 41 00 00 61 7e 7f 5f 6b 7f 67 58 7d 3f 64 71 7f 43 4c 00 20 42 12 00 40 5e 01 70 73 08 00 3f 1c 00 40 64 00 00 24 1b 00 28 15 04 20 20 28 00 50 18 02 10 4d 05 00 27 2e 7f 27 44 72 3f 1f 66 7e 5f 69 78 3f 25 7f 7f 03 05 04 10 7c 34 00 05 4a 03 78 19 17 40 45 5a 00 58 05 7f 3f 55 4d 7f 3f 78 7b 4f 49 65 7f 7f 14 7f 17 52 00 40 43 28 00 44 2f 04 20 45 34 00 4c 75 03 20 7e 1d 00 51 37 01 60 4f 06 40 71 14 00 48 16 00 20 34 75 7f 53 20 7e 3f 30 6b 7f 36 56 7e 1f 57 77 7f 04 45 7f 47 62 7b 3f 23 5e 7f 51 04 7e 3f 08 6f 7f 36 0c 7f 4f 17 7d 7f 31 11 00 44 1c 02 40 4f 0a 00 62 07 00 40 55 7d 7f 3d 5f 7f 67 40 7d 3f 28 6c 7f 17 4c 7f 5f 68 07 00 14 0f 01 20 47 0a 00 09 68 00 20 1c 08 40 35 3a 00 0c 62 02 60 20 10 00 6c 24 01 10 23 10 00 2b 11 01 30 4b 07 40 13 17 00 3c 71 7e 1f 48 6c 7f 37 14 7f 1f 2b 01 00 55 32 00 48 38 03 40 70 77 7f 2b 60 7c 3f 5b 5b 7f 41 66 7d 1f 01 76 7f 0a 66 7f 1f 78 00 40 3b 0b 00 40 1c 00 40 10 02 00 5e 7c 7f 6f 48 7e 7f 78 4e 7f 67 59 7a 7f 10 49 7f 7f 4a 7b 7f 75 60 7f 3d 4d 7e 2f 73 79 7f 29 48 7f 27 1a 7b 3f 1a 7a 7f 3f 7d 02 00 53 31 00 16 22 03 70 05 15 00 46 22 01 68 17 0b 00 55 69 00 34 2c 06 20 1b 34 00 4c 40 03 70 1a 1b 00 27 5f 01 50 31 0e 00 3b 15 01 44 18 0c 00 70 78 00 10 4a 08 60 10 3f 00 33 02 03 28 7a 0b 00 37 06 00 4c 4e 7c 5f 46 51 7f 29 18 7d 7f 4b 6e 7f 64 3f 7f 37 49 7e 7f 4a 73 7f 2b 03 7f 5f 4a 74 7f 13 68 7f 1f 78 01 00 12 35 00 58 47 05 00 74 27 00 70 44 02 00 0d 12 00 3a 23 01 70 3a 08 00 7e 14 00 60 3c 7f 7f 1e 68 7f 1b 43 7d 1f 73 5e 7f 73 76 7d 0f 7a 79 7f 3f 25 00 28 1d 05 00 20 12 00 18 7b 7f 1f 67 03 00 7e 7b 00 70 74 0f 00 40 0e 01 00 30 08 00 3a 2a 00 08 55 00 20 58 7a 7f 63 14 7f 2f 28 79 7f 4b 3d 7f 7f 3f 7b 3f 75 50 7f 27 54 7b 3f 4a 5d 7f 05 3d 7e 6f 54 7f 7f 09 4c 00 20 30 06 40 78 33 00 70 62 02 40 42 14 00 30 42 00 50 5e 7a 7f 39 12 7f 67 72 76 3f 5f 3d 7f 0b 1f 7c 3f 5b 69 7f 49 1b 7f 6f 1f 7e 7f 1d 07 00 08 78 7e 7f 3f 6d 7f 6f 26 7e 7f 0b 6e 7f 4b 3f 7e 4f 5b 70 7f 7e 19 7f 27 0c 7d 7f 1b 0f 00 5c 5f 02 60 4d 1d 00 4c 7e 01 70 61 0b 00 17 32 00 08 19 00 00 31 73 7f 73 07 7f 7f 17 78 7f 5b 4f 7f 5f 07 7d 7f 63 6c 7f 77 63 7e 3f 17 6e 7f 47 1e 7e 5f 17 6f 7f 5d 25 7f 0f 15 7e 7f 7b 02 00 38 13 00 00 42 7c 7f 67 70 7f 7f 19 00 00 12 13 00 20 5d 02 00 37 1e 00 08 7b 01 40 33 08 00 0c 22 00 40 0e 08 00 74 26 01 60 49 0e 00 17 62 00 00 36 02 40 3f 2b 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827054624}, "hex": "f0 00 32 09 79 3f 00 40 02 65 17 00 00 70 7e 00 00 6f 7f 27 26 7d 5f 2b 63 7f 3f 0d 7e 7f 0b 73 7f 49 3b 7f 0f 7a 7d 7f 42 7f 7f 7f 7b 00 40 2f 10 00 18 33 01 60 35 09 00 51 14 00 20 21 7d 7f 18 59 7f 67 6f 7d 7f 20 77 7f 6d 74 7f 6f 1a 7f 7f 1d 61 7f 07 1f 7c 3f 16 59 7f 13 51 7d 7f 08 71 7f 15 50 7f 1f 06 01 00 2b 0f 00 78 4e 7f 3f 53 69 7f 37 64 7d 1f 39 6a 7f 01 47 7e 1f 44 73 7f 2c 12 7f 37 46 78 3f 59 38 7f 2f 00 7b 5f 3a 57 7f 51 7f 7d 1f 32 79 7f 0f 1a 00 50 22 05 00 29 2c 00 70 48 01 40 29 7e 7f 67 17 7f 5f 20 78 7f 79 48 7f 57 2f 7e 7f 01 01 00 40 56 00 20 76 07 00 46 24 00 70 14 01 00 1f 7f 7f 4f 6f 7f 3f 7a 00 00 58 04 00 00 23 01 00 76 7a 7f 5f 0f 00 00 3e 08 00 10 13 01 00 0c 0d 00 28 20 00 20 7c 7d 7f 5d 44 7f 2f 53 7a 7f 09 4f 7f 5f 45 7c 7f 7c 6d 7f 57 3f 7f 5f 37 01 00 3a 20 00 00 75 02 00 0b 28 00 10 48 02 40 2b 13 00 68 46 00 60 34 00 00 60 7d 7f 3f 0c 7f 7f 10 00 00 18 5f 7f 7f 16 7f 7f 2b 12 00 40 2b 01 00 38 09 00 10 0a 7e 7f 12 6b 7f 7f 05 7f 3f 48 03 00 70 11 01 60 11 0c 00 2e 78 00 40 3d 05 00 10 0c 00 18 13 7e 7f 5d 5e 7f 77 6a 7d 1f 0b 70 7f 41 2c 7f 5f 31 7d 7f 07 7f 7f 5f 14 01 00 49 0b 00 14 1c 01 40 31 0c 00 04 70 00 40 26 05 00 19 04 00 40 2b 7e 3f 64 63 7f 1f 71 7d 3f 13 6d 7f 69 5d 7e 6f 21 76 7f 21 2d 7f 07 16 7b 3f 0e 5c 7f 17 1e 7e 1f 23 77 7f 3b 5d 7f 0f 30 01 00 71 1f 00 00 16 03 00 32 1b 00 34 3b 01 60 4a 09 00 30 21 00 40 31 00 00 72 7d 7f 2f 4f 00 00 0f 0e 00 10 78 00 60 56 06 00 2c 22 00 70 7b 01 00 25 0c 00 68 13 00 00 0c 00 00 20 0c 00 20 6d 04 00 64 3f 00 20 7e 04 00 4c 2e 00 60 66 02 40 0f 14 00 1c 5c 00 00 69 00 00 52 5f 7f 5f 09 7c 7f 2e 5e 7f 2f 77 7d 3f 38 72 7f 47 2d 7f 5f 42 7d 7f 05 0b 00 00 18 02 00 39 1a 00 58 3d 01 00 47 07 00 4c 0b 00 40 33 7d 7f 05 60 7f 3f 09 7e 7f 31 79 7f 6f 0f 00 00 3d 02 00 30 0c 00 60 75 7f 7f 21 03 00 00 6a 00 00 1d 11 00 70 79 01 40 10 15 00 68 45 01 40 2e 0d 00 12 73 00 20 52 07 00 12 3f 00 28 6c 03 00 20 1b 00 70 2a 01 20 70 06 00 2e 1f 00 50 00 02 00 3a 1f 00 70 4a 03 40 75 2a 00 0c 2d 03 60 64 1c 00 20 4e 01 70 6c 08 00 04 1f 00 28 6b 7f 7f 24 75 7f 47 0d 7f 3f 6a 78 7f 4f 4e 7f 7f 2d 7d 7f 37 6f 7f 47 17 7f 7f 5e 7b 7f 53 72 7f 5f 40 00 00 14 11 00 10 2b 01 00 46 0d 00 28 0f 01 40 6d 0c 00 04 0b 01 20 17 08 00 3c 2b 00 50 5b 00 00 48 7a 7f 57 2a 7f 7f 2e 79 7f 53 58 7f 5f 11 7f 7f 1b 0f 00 40 24 01 00 07 05 00 00 25 00 40 0e 04 00 64 49 00 00 27 06 00 08 3c 00 10 11 04 00 1d 1d 00 08 3a 01 40 04 07 00 28 2f 00 60 3c 02 00 00 06 00 30 18 7f 7f 2e 6c 7f 5f 48 7e 3f 63 75 7f 7b 5f 7f 5f 0b 03 00 0e 39 00 00 06 05 00 49 25 00 58 6a 01 40 08 09 00 38 1c 00 60 73 00 00 7e 7f 7f 4f 50 7f 7f 6c 6f 7f 7f 17 7e 3f 7b 6f 7f 63 0a 7f 7f 67 7b 7f 49 6f 7f 6f 1b 00 00 1c 09 00 10 3b 00 00 43 01 00 58 71 7f 1f 23 00 00 44 0f 00 20 38 01 00 5b 0c 00 68 5d 00 40 5a 09 00 44 53 00 60 49 04 00 24 19 00 30 5d 00 00 01 07 00 28 32 00 00 78 04 00 44 2a 00 60 00 02 00 1a 0a 00 00 3e 7f 7f 43 76 7f 57 08 7f 3f 26 79 7f 13 62 7f 5f 17 7f 7f 0b 07 00 10 45 00 00 6e 08 00 40 64 00 40 59 06 00 74 3a 00 40 37 02 00 52 0d 00 00 74 7f 7f 3a 77 7f 5f 27 7f 3f 50 7b 7f 17 01 00 00 67 00 00 08 0c 00 00 68 00 00 2b 03 00 20 7f 7f 7f 51 7b 7f 23 53 7f 7f 36 7d 7f 65 76 7f 5f 4d 00 00 18 0c 00 38 32 01 40 3d 0d 00 3c 6e 00 00 32 05 00 1a 15 00 60 23 00 00 69 78 7f 17 23 7f 3f 22 78 7f 43 3a 7f 1f 07 7c 7f 31 63 7f 5f 74 7e 7f 18 7a 7f 4f 73 7f 3f 3c 02 00 64 28 00 60 3c 03 00 3c 14 00 50 3f 00 00 12 7a 7f 3f 02 7f 3f 42 75 7f 7b 22 7f 3f 5f 7a 7f 09 54 7f 6f 6f 7c 7f 37 63 7f 6f 06 7e 3f 1c 72 7f 47 2e 7f 7f 05 7e 04 00 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827054624}, "hex": "f0 00 32 09 79 3f 00 40 02 65 17 00 00 70 7e 00 00 6f 7f 27 26 7d 5f 2b 63 7f 3f 0d 7e 7f 0b 73 7f 49 3b 7f 0f 7a 7d 7f 42 7f 7f 7f 7b 00 40 2f 10 00 18 33 01 60 35 09 00 51 14 00 20 21 7d 7f 18 59 7f 67 6f 7d 7f 20 77 7f 6d 74 7f 6f 1a 7f 7f 1d 61 7f 07 1f 7c 3f 16 59 7f 13 51 7d 7f 08 71 7f 15 50 7f 1f 06 01 00 2b 0f 00 78 4e 7f 3f 53 69 7f 37 64 7d 1f 39 6a 7f 01 47 7e 1f 44 73 7f 2c 12 7f 37 46 78 3f 59 38 7f 2f 00 7b 5f 3a 57 7f 51 7f 7d 1f 32 79 7f 0f 1a 00 50 22 05 00 29 2c 00 70 48 01 40 29 7e 7f 67 17 7f 5f 20 78 7f 79 48 7f 57 2f 7e 7f 01 01 00 40 56 00 20 76 07 00 46 24 00 70 14 01 00 1f 7f 7f 4f 6f 7f 3f 7a 00 00 58 04 00 00 23 01 00 76 7a 7f 5f 0f 00 00 3e 08 00 10 13 01 00 0c 0d 00 28 20 00 20 7c 7d 7f 5d 44 7f 2f 53 7a 7f 09 4f 7f 5f 45 7c 7f 7c 6d 7f 57 3f 7f 5f 37 01 00 3a 20 00 00 75 02 00 0b 28 00 10 48 02 40 2b 13 00 68 46 00 60 34 00 00 60 7d 7f 3f 0c 7f 7f 10 00 00 18 5f 7f 7f 16 7f 7f 2b 12 00 40 2b 01 00 38 09 00 10 0a 7e 7f 12 6b 7f 7f 05 7f 3f 48 03 00 70 11 01 60 11 0c 00 2e 78 00 40 3d 05 00 10 0c 00 18 13 7e 7f 5d 5e 7f 77 6a 7d 1f 0b 70 7f 41 2c 7f 5f 31 7d 7f 07 7f 7f 5f 14 01 00 49 0b 00 14 1c 01 40 31 0c 00 04 70 00 40 26 05 00 19 04 00 40 2b 7e 3f 64 63 7f 1f 71 7d 3f 13 6d 7f 69 5d 7e 6f 21 76 7f 21 2d 7f 07 16 7b 3f 0e 5c 7f 17 1e 7e 1f 23 77 7f 3b 5d 7f 0f 30 01 00 71 1f 00 00 16 03 00 32 1b 00 34 3b 01 60 4a 09 00 30 21 00 40 31 00 00 72 7d 7f 2f 4f 00 00 0f 0e 00 10 78 00 60 56 06 00 2c 22 00 70 7b 01 00 25 0c 00 68 13 00 00 0c 00 00 20 0c 00 20 6d 04 00 64 3f 00 20 7e 04 00 4c 2e 00 60 66 02 40 0f 14 00 1c 5c 00 00 69 00 00 52 5f 7f 5f 09 7c 7f 2e 5e 7f 2f 77 7d 3f 38 72 7f 47 2d 7f 5f 42 7d 7f 05 0b 00 00 18 02 00 39 1a 00 58 3d 01 00 47 07 00 4c 0b 00 40 33 7d 7f 05 60 7f 3f 09 7e 7f 31 79 7f 6f 0f 00 00 3d 02 00 30 0c 00 60 75 7f 7f 21 03 00 00 6a 00 00 1d 11 00 70 79 01 40 10 15 00 68 45 01 40 2e 0d 00 12 73 00 20 52 07 00 12 3f 00 28 6c 03 00 20 1b 00 70 2a 01 20 70 06 00 2e 1f 00 50 00 02 00 3a 1f 00 70 4a 03 40 75 2a 00 0c 2d 03 60 64 1c 00 20 4e 01 70 6c 08 00 04 1f 00 28 6b 7f 7f 24 75 7f 47 0d 7f 3f 6a 78 7f 4f 4e 7f 7f 2d 7d 7f 37 6f 7f 47 17 7f 7f 5e 7b 7f 53 72 7f 5f 40 00 00 14 11 00 10 2b 01 00 46 0d 00 28 0f 01 40 6d 0c 00 04 0b 01 20 17 08 00 3c 2b 00 50 5b 00 00 48 7a 7f 57 2a 7f 7f 2e 79 7f 53 58 7f 5f 11 7f 7f 1b 0f 00 40 24 01 00 07 05 00 00 25 00 40 0e 04 00 64 49 00 00 27 06 00 08 3c 00 10 11 04 00 1d 1d 00 08 3a 01 40 04 07 00 28 2f 00 60 3c 02 00 00 06 00 30 18 7f 7f 2e 6c 7f 5f 48 7e 3f 63 75 7f 7b 5f 7f 5f 0b 03 00 0e 39 00 00 06 05 00 49 25 00 58 6a 01 40 08 09 00 38 1c 00 60 73 00 00 7e 7f 7f 4f 50 7f 7f 6c 6f 7f 7f 17 7e 3f 7b 6f 7f 63 0a 7f 7f 67 7b 7f 49 6f 7f 6f 1b 00 00 1c 09 00 10 3b 00 00 43 01 00 58 71 7f 1f 23 00 00 44 0f 00 20 38 01 00 5b 0c 00 68 5d 00 40 5a 09 00 44 53 00 60 49 04 00 24 19 00 30 5d 00 00 01 07 00 28 32 00 00 78 04 00 44 2a 00 60 00 02 00 1a 0a 00 00 3e 7f 7f 43 76 7f 57 08 7f 3f 26 79 7f 13 62 7f 5f 17 7f 7f 0b 07 00 10 45 00 00 6e 08 00 40 64 00 40 59 06 00 74 3a 00 40 37 02 00 52 0d 00 00 74 7f 7f 3a 77 7f 5f 27 7f 3f 50 7b 7f 17 01 00 00 67 00 00 08 0c 00 00 68 00 00 2b 03 00 20 7f 7f 7f 51 7b 7f 23 53 7f 7f 36 7d 7f 65 76 7f 5f 4d 00 00 18 0c 00 38 32 01 40 3d 0d 00 3c 6e 00 00 32 05 00 1a 15 00 60 23 00 00 69 78 7f 17 23 7f 3f 22 78 7f 43 3a 7f 1f 07 7c 7f 31 63 7f 5f 74 7e 7f 18 7a 7f 4f 73 7f 3f 3c 02 00 64 28 00 60 3c 03 00 3c 14 00 50 3f 00 00 12 7a 7f 3f 02 7f 3f 42 75 7f 7b 22 7f 3f 5f 7a 7f 09 54 7f 6f 6f 7c 7f 37 63 7f 6f 06 7e 3f 1c 72 7f 47 2e 7f 7f 05 7e 04 00 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827054629}, "hex": "f0 00 32 09 79 3f 00 40 02 5c 1f 00 00 70 7e 00 00 7f 5b 0a 00 60 60 01 00 1d 0f 00 18 3e 00 40 7c 7f 7f 17 69 7f 5f 16 7e 7f 39 73 7f 7f 35 7f 7f 2e 7e 7f 77 7e 7f 7f 3f 00 00 44 7d 7f 3f 64 7e 7f 2b 70 7f 4f 71 7e 7f 3b 78 7f 5f 4b 7f 7f 36 7d 7f 2b 78 7f 3f 23 00 00 18 03 00 40 66 7f 7f 65 7a 7f 57 41 7f 3f 2c 7b 7f 0f 57 7f 7f 1d 7d 7f 3f 6c 7f 6f 1a 7f 7f 2c 7d 7f 7f 7e 7f 3f 1f 00 00 28 7c 7f 7f 0b 7f 7f 17 74 7f 2f 2c 7f 7f 7b 7d 7f 47 05 00 40 5e 00 00 7c 7f 7f 3f 3a 7f 7f 21 78 7f 3f 43 7f 7f 08 7e 7f 07 7b 7f 3f 55 7f 7f 27 73 7f 5f 49 7e 7f 2b 73 7f 5f 33 7f 7f 18 7f 7f 1f 11 00 00 19 02 00 68 12 00 00 45 00 00 52 7c 7f 4f 1c 7f 7f 7c 76 7f 77 1f 7f 3f 07 79 7f 7f 4b 7f 1f 47 7d 7f 15 78 7f 0f 05 00 00 25 04 00 48 3c 00 40 55 04 00 34 25 00 20 09 01 00 1a 7c 7f 4f 7c 7e 7f 4f 73 7f 4f 0d 7f 3f 2d 78 7f 4f 4f 7f 5f 6d 7d 7f 1f 75 7f 7f 31 7f 7f 22 79 7f 5f 44 7f 3f 48 7b 7f 07 62 7f 3f 5a 7e 7f 7f 7c 7f 6f 32 00 00 25 05 00 68 38 00 00 5d 02 00 60 0c 00 00 09 00 00 02 79 7f 0f 35 7f 7f 7f 79 7f 77 5e 7f 7f 11 7f 7f 5f 03 00 00 6b 00 00 1a 03 00 10 7e 7f 7f 33 7c 7f 77 53 7f 3f 1b 7d 7f 4f 6d 7f 7f 7b 7f 7f 75 03 00 00 32 00 00 58 01 00 38 79 7f 7f 7c 7e 7f 37 6c 7f 1f 56 7e 7f 39 73 7f 5f 1e 7f 7f 6b 7a 7f 77 54 7f 3f 22 7e 7f 6f 73 7f 5f 61 7f 7f 13 01 00 20 0b 00 00 15 01 00 40 76 7f 3f 70 7e 7f 17 6f 7f 5f 5b 7e 7f 59 76 7f 5f 32 7f 7f 21 7d 7f 4f 6c 7f 3f 28 7f 7f 3f 7e 7f 1f 16 00 00 36 07 00 50 49 00 00 4b 06 00 50 3c 00 00 0d 04 00 50 22 00 00 68 01 00 5a 0f 00 40 73 00 00 49 06 00 08 25 00 00 6e 00 00 44 05 00 60 22 00 00 34 06 00 30 5b 00 00 1e 09 00 68 6d 00 00 34 07 00 00 35 00 40 62 01 00 76 00 00 50 34 7f 7f 58 77 7f 1f 3d 7f 7f 08 7c 7f 07 6a 7f 1f 0a 7f 7f 55 79 7f 5f 4c 7f 7f 16 7b 7f 17 5b 7f 7f 75 7d 7f 0f 73 7f 7f 2b 7f 7f 0f 7a 7f 3f 65 7f 7f 51 7f 7f 3f 0f 00 00 48 01 00 3c 0a 00 40 2d 00 00 18 7d 7f 4f 4b 7f 7f 40 7b 7f 6f 61 7f 7f 29 7f 7f 33 02 00 00 41 00 00 26 03 00 40 14 00 00 7f 00 00 78 08 00 00 0f 01 00 18 0b 00 00 66 00 00 0c 04 00 60 04 00 00 2a 7f 7f 47 77 7f 3f 58 7f 7f 2b 7d 7f 5f 69 7f 7f 1f 7e 7f 4f 68 7f 7f 01 7e 7f 7f 6e 7f 3f 60 7f 7f 0f 08 00 00 08 01 00 1c 0a 00 10 42 00 00 5b 02 00 40 0b 00 40 24 00 00 38 7e 7f 1f 45 7f 7f 6b 79 7f 0f 47 7f 7f 60 7c 7f 5f 6b 7f 7f 25 7f 7f 7f 00 00 40 40 00 00 72 05 00 00 2a 00 00 5e 01 00 08 0a 00 00 3e 00 00 44 02 00 20 1b 00 00 58 03 00 20 39 00 00 67 04 00 40 26 00 40 07 02 00 20 0b 00 60 37 00 00 70 01 00 50 0b 00 00 0a 01 00 40 09 00 00 3b 00 00 40 7e 7f 5f 4b 7f 7f 79 7a 7f 3f 4f 7f 7f 22 7d 7f 17 6d 7f 7f 41 7f 7f 0b 02 00 00 3a 00 00 4a 05 00 50 2c 00 00 65 02 00 60 10 00 00 58 00 00 3c 02 00 60 7f 7f 7f 09 01 00 60 0d 00 00 3e 01 00 50 0c 00 00 65 00 00 28 07 00 00 22 00 00 56 00 00 20 72 7f 7f 71 7e 7f 0f 7d 7f 3f 1d 00 00 00 07 00 60 45 00 00 02 06 00 50 35 00 00 15 03 00 70 19 00 00 2a 01 00 74 09 00 20 23 00 00 78 7e 7f 7f 64 7f 7f 37 7d 7f 1f 6f 7f 3f 78 7e 7f 2b 79 7f 1f 51 7f 7f 05 7d 7f 4f 6f 7f 7f 64 7e 7f 2f 7e 7f 7f 2f 00 00 64 06 00 60 46 00 00 02 03 00 20 15 00 00 39 00 00 50 7e 7f 7f 2d 7f 7f 0b 74 7f 7f 7d 7e 7f 73 74 7f 4f 26 7f 7f 64 7a 7f 47 60 7f 3f 1a 7f 7f 1f 01 00 40 4f 00 00 0c 06 00 00 30 00 00 15 02 00 10 05 00 00 7a 7f 7f 63 7b 7f 3f 66 7f 7f 0b 7f 7f 7f 7f 7f 7f 4b 00 00 68 00 00 40 03 00 00 0c 7d 7f 1f 5a 7f 7f 7f 7c 7f 5f 5e 7f 7f 1f 7e 7f 7f 71 7f 3f 48 7f 7f 77 7f 7f 3f 15 00 00 5a 02 00 30 0d 00 00 32 00 00 38 7a 7f 3f 38 7f 7f 13 7c 7f 3f 5f 7f 7f 01 7f 7f 7f 76 7f 7f 60 7f 7f 47 7d 7f 7f 53 7f 7f 7b 7d 7f 7f 71 7f 7f 53 00 00 20 06 00 00 06 00 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827054629}, "hex": "f0 00 32 09 79 3f 00 40 02 5c 1f 00 00 70 7e 00 00 7f 5b 0a 00 60 60 01 00 1d 0f 00 18 3e 00 40 7c 7f 7f 17 69 7f 5f 16 7e 7f 39 73 7f 7f 35 7f 7f 2e 7e 7f 77 7e 7f 7f 3f 00 00 44 7d 7f 3f 64 7e 7f 2b 70 7f 4f 71 7e 7f 3b 78 7f 5f 4b 7f 7f 36 7d 7f 2b 78 7f 3f 23 00 00 18 03 00 40 66 7f 7f 65 7a 7f 57 41 7f 3f 2c 7b 7f 0f 57 7f 7f 1d 7d 7f 3f 6c 7f 6f 1a 7f 7f 2c 7d 7f 7f 7e 7f 3f 1f 00 00 28 7c 7f 7f 0b 7f 7f 17 74 7f 2f 2c 7f 7f 7b 7d 7f 47 05 00 40 5e 00 00 7c 7f 7f 3f 3a 7f 7f 21 78 7f 3f 43 7f 7f 08 7e 7f 07 7b 7f 3f 55 7f 7f 27 73 7f 5f 49 7e 7f 2b 73 7f 5f 33 7f 7f 18 7f 7f 1f 11 00 00 19 02 00 68 12 00 00 45 00 00 52 7c 7f 4f 1c 7f 7f 7c 76 7f 77 1f 7f 3f 07 79 7f 7f 4b 7f 1f 47 7d 7f 15 78 7f 0f 05 00 00 25 04 00 48 3c 00 40 55 04 00 34 25 00 20 09 01 00 1a 7c 7f 4f 7c 7e 7f 4f 73 7f 4f 0d 7f 3f 2d 78 7f 4f 4f 7f 5f 6d 7d 7f 1f 75 7f 7f 31 7f 7f 22 79 7f 5f 44 7f 3f 48 7b 7f 07 62 7f 3f 5a 7e 7f 7f 7c 7f 6f 32 00 00 25 05 00 68 38 00 00 5d 02 00 60 0c 00 00 09 00 00 02 79 7f 0f 35 7f 7f 7f 79 7f 77 5e 7f 7f 11 7f 7f 5f 03 00 00 6b 00 00 1a 03 00 10 7e 7f 7f 33 7c 7f 77 53 7f 3f 1b 7d 7f 4f 6d 7f 7f 7b 7f 7f 75 03 00 00 32 00 00 58 01 00 38 79 7f 7f 7c 7e 7f 37 6c 7f 1f 56 7e 7f 39 73 7f 5f 1e 7f 7f 6b 7a 7f 77 54 7f 3f 22 7e 7f 6f 73 7f 5f 61 7f 7f 13 01 00 20 0b 00 00 15 01 00 40 76 7f 3f 70 7e 7f 17 6f 7f 5f 5b 7e 7f 59 76 7f 5f 32 7f 7f 21 7d 7f 4f 6c 7f 3f 28 7f 7f 3f 7e 7f 1f 16 00 00 36 07 00 50 49 00 00 4b 06 00 50 3c 00 00 0d 04 00 50 22 00 00 68 01 00 5a 0f 00 40 73 00 00 49 06 00 08 25 00 00 6e 00 00 44 05 00 60 22 00 00 34 06 00 30 5b 00 00 1e 09 00 68 6d 00 00 34 07 00 00 35 00 40 62 01 00 76 00 00 50 34 7f 7f 58 77 7f 1f 3d 7f 7f 08 7c 7f 07 6a 7f 1f 0a 7f 7f 55 79 7f 5f 4c 7f 7f 16 7b 7f 17 5b 7f 7f 75 7d 7f 0f 73 7f 7f 2b 7f 7f 0f 7a 7f 3f 65 7f 7f 51 7f 7f 3f 0f 00 00 48 01 00 3c 0a 00 40 2d 00 00 18 7d 7f 4f 4b 7f 7f 40 7b 7f 6f 61 7f 7f 29 7f 7f 33 02 00 00 41 00 00 26 03 00 40 14 00 00 7f 00 00 78 08 00 00 0f 01 00 18 0b 00 00 66 00 00 0c 04 00 60 04 00 00 2a 7f 7f 47 77 7f 3f 58 7f 7f 2b 7d 7f 5f 69 7f 7f 1f 7e 7f 4f 68 7f 7f 01 7e 7f 7f 6e 7f 3f 60 7f 7f 0f 08 00 00 08 01 00 1c 0a 00 10 42 00 00 5b 02 00 40 0b 00 40 24 00 00 38 7e 7f 1f 45 7f 7f 6b 79 7f 0f 47 7f 7f 60 7c 7f 5f 6b 7f 7f 25 7f 7f 7f 00 00 40 40 00 00 72 05 00 00 2a 00 00 5e 01 00 08 0a 00 00 3e 00 00 44 02 00 20 1b 00 00 58 03 00 20 39 00 00 67 04 00 40 26 00 40 07 02 00 20 0b 00 60 37 00 00 70 01 00 50 0b 00 00 0a 01 00 40 09 00 00 3b 00 00 40 7e 7f 5f 4b 7f 7f 79 7a 7f 3f 4f 7f 7f 22 7d 7f 17 6d 7f 7f 41 7f 7f 0b 02 00 00 3a 00 00 4a 05 00 50 2c 00 00 65 02 00 60 10 00 00 58 00 00 3c 02 00 60 7f 7f 7f 09 01 00 60 0d 00 00 3e 01 00 50 0c 00 00 65 00 00 28 07 00 00 22 00 00 56 00 00 20 72 7f 7f 71 7e 7f 0f 7d 7f 3f 1d 00 00 00 07 00 60 45 00 00 02 06 00 50 35 00 00 15 03 00 70 19 00 00 2a 01 00 74 09 00 20 23 00 00 78 7e 7f 7f 64 7f 7f 37 7d 7f 1f 6f 7f 3f 78 7e 7f 2b 79 7f 1f 51 7f 7f 05 7d 7f 4f 6f 7f 7f 64 7e 7f 2f 7e 7f 7f 2f 00 00 64 06 00 60 46 00 00 02 03 00 20 15 00 00 39 00 00 50 7e 7f 7f 2d 7f 7f 0b 74 7f 7f 7d 7e 7f 73 74 7f 4f 26 7f 7f 64 7a 7f 47 60 7f 3f 1a 7f 7f 1f 01 00 40 4f 00 00 0c 06 00 00 30 00 00 15 02 00 10 05 00 00 7a 7f 7f 63 7b 7f 3f 66 7f 7f 0b 7f 7f 7f 7f 7f 7f 4b 00 00 68 00 00 40 03 00 00 0c 7d 7f 1f 5a 7f 7f 7f 7c 7f 5f 5e 7f 7f 1f 7e 7f 7f 71 7f 3f 48 7f 7f 77 7f 7f 3f 15 00 00 5a 02 00 30 0d 00 00 32 00 00 38 7a 7f 3f 38 7f 7f 13 7c 7f 3f 5f 7f 7f 01 7f 7f 7f 76 7f 7f 60 7f 7f 47 7d 7f 7f 53 7f 7f 7b 7d 7f 7f 71 7f 7f 53 00 00 20 06 00 00 06 00 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827054634}, "hex": "f0 00 32 09 79 3f 00 40 02 53 27 00 00 70 7e 00 00 16 00 00 68 7f 7f 7f 6b 7f 7f 53 00 00 00 07 00 00 78 00 00 60 06 00 00 05 00 00 70 7e 7f 3f 4b 7f 7f 2b 7c 7f 3f 62 7f 7f 7f 7e 7f 0f 04 00 00 4a 00 00 20 08 00 00 39 00 00 64 02 00 40 02 00 00 22 7e 7f 5f 6a 7f 7f 30 7e 7f 1f 77 7f 7f 5b 7f 7f 5b 7f 7f 3f 12 00 00 72 01 00 70 16 00 00 3a 01 00 68 0a 00 40 41 00 00 18 01 00 00 72 7f 7f 3d 7d 7f 3f 69 7f 7f 65 7e 7f 2f 78 7f 7f 4c 7f 7f 43 7c 7f 1f 6a 7f 7f 59 7e 7f 2f 76 7f 7f 45 7f 7f 5f 7e 7f 3f 1a 00 00 64 02 00 20 14 00 00 3e 00 00 30 7d 7f 7f 54 7f 7f 77 7c 7f 3f 73 7f 7f 2b 00 00 20 10 00 00 72 01 00 30 11 00 00 01 01 00 58 05 00 40 18 00 00 30 00 00 40 76 7f 7f 55 7e 7f 4f 72 7f 7f 29 7f 7f 2f 7e 7f 3f 14 00 00 5c 02 00 00 1a 00 00 14 01 00 20 01 00 00 33 7f 7f 7f 76 7f 3f 24 7f 7f 53 79 7f 3f 4a 7f 7f 27 7c 7f 2f 63 7f 7f 36 7e 7f 4f 76 7f 3f 57 7f 7f 67 7e 7f 1f 7d 7f 7f 31 7f 7f 2f 73 7f 7f 58 7e 7f 37 72 7f 7f 19 7f 7f 4f 7a 7f 1f 65 7f 7f 05 7f 7f 5f 7b 7f 7f 78 7f 7f 1f 7f 7f 3f 00 00 00 68 7f 7f 1f 00 00 00 32 00 00 70 03 00 00 2f 00 00 68 01 00 40 16 00 00 28 02 00 00 17 00 00 46 01 00 10 07 00 00 35 00 00 18 03 00 40 23 00 00 34 03 00 20 20 00 00 7c 02 00 20 1a 00 00 51 01 00 38 09 00 00 16 00 00 48 7e 7f 7f 59 7f 7f 77 7c 7f 0f 65 7f 7f 3f 7e 7f 2f 77 7f 3f 43 7f 7f 33 7d 7f 1f 69 7f 7f 55 7e 7f 6f 75 7f 7f 24 7f 7f 7f 7b 7f 3f 59 7f 7f 0f 7e 7f 1f 72 7f 7f 3d 7f 7f 1f 02 00 00 10 00 00 10 00 00 40 57 7f 7f 3f 7b 7f 7f 52 7f 7f 67 7c 7f 5f 69 7f 7f 4f 7e 7f 6f 77 7f 7f 4e 7f 7f 27 7d 7f 3f 6e 7f 7f 53 7e 7f 1f 7a 7f 7f 6d 7f 7f 77 00 00 40 0c 00 00 60 7f 7f 1f 7c 7f 7f 05 7f 7f 4f 75 7f 7f 0e 7f 7f 37 77 7f 3f 43 7f 7f 63 7b 7f 1f 60 7f 7f 4f 7d 7f 7f 6d 7f 7f 25 7f 7f 77 7d 7f 3f 17 00 00 64 01 00 60 0d 00 00 28 00 00 30 7b 7f 7f 3b 7f 7f 77 78 7f 3f 49 7f 7f 33 7c 7f 3f 64 7f 7f 43 7e 7f 1f 74 7f 7f 41 7f 7f 27 7c 7f 7f 64 7f 7f 67 7d 7f 7f 64 7f 7f 0b 7e 7f 6f 6d 7f 7f 04 7f 7f 2f 79 7f 7f 52 7f 7f 6f 7d 7f 5f 6e 7f 7f 25 7f 7f 2f 7a 7f 7f 53 7f 7f 1f 7c 7f 3f 4f 7f 7f 2f 7c 7f 3f 5c 7f 7f 73 7d 7f 1f 70 7f 7f 0f 7f 7f 17 7a 7f 3f 4c 7f 7f 4f 7c 7f 1f 60 7f 7f 0b 7e 7f 2f 73 7f 7f 27 7f 7f 4f 7b 7f 7f 5a 7f 7f 03 7e 7f 1f 72 7f 7f 13 7f 7f 7f 78 7f 7f 31 7f 7f 27 7a 7f 3f 47 7f 7f 0f 7c 7f 5f 62 7f 7f 37 7e 7f 2f 78 7f 7f 5a 7f 7f 47 7e 7f 7f 6d 7f 7f 73 7d 7f 5f 67 7f 7f 7b 7d 7f 5f 6d 7f 7f 63 7e 7f 7f 76 7f 7f 49 7f 7f 73 7d 7f 5f 78 7f 7f 59 7f 7f 0f 7d 7f 7f 55 7f 7f 2f 7b 7f 7f 46 7f 7f 17 7b 7f 1f 55 7f 7f 31 7d 7f 5f 6c 7f 7f 72 7e 7f 47 77 7f 7f 3d 7f 7f 67 7b 7f 1f 5e 7f 7f 75 7d 7f 7f 70 7f 7f 20 7f 7f 47 7b 7f 3f 61 7f 7f 67 7d 7f 1f 67 7f 7f 77 7d 7f 1f 6c 7f 7f 54 7e 7f 2f 75 7f 3f 2c 7f 7f 63 7a 7f 1f 56 7f 7f 2f 7d 7f 3f 6c 7f 7f 71 7e 7f 3f 78 7f 3f 4e 7f 7f 1b 7d 7f 7f 69 7f 7f 2f 7e 7f 7f 71 7f 7f 14 7f 7f 1f 7a 7f 7f 57 7f 7f 1f 7d 7f 7f 67 7f 7f 2b 7e 7f 5f 72 7f 7f 0d 7f 7f 47 77 7f 3f 36 7f 7f 0b 7b 7f 3f 5a 7f 7f 67 7d 7f 1f 70 7f 7f 1b 7f 7f 6f 7a 7f 7f 60 7f 7f 67 7d 7f 7f 6a 7f 7f 31 7e 7f 1f 71 7f 7f 09 7f 7f 17 78 7f 7f 43 7f 7f 37 7c 7f 5f 66 7f 7f 55 7e 7f 6f 74 7f 7f 27 7f 7f 67 79 7f 7f 4e 7f 7f 77 7c 7f 3f 65 7f 7f 2d 7e 7f 1f 72 7f 7f 21 7f 7f 6f 7a 7f 3f 5d 7f 7f 33 7e 7f 7f 71 7f 7f 7f 7e 7f 7f 74 7f 7f 17 7f 7f 07 79 7f 3f 47 7f 7f 07 7d 7f 1f 6c 7f 7f 0f 7f 7f 4f 79 7f 7f 42 7f 7f 37 7b 7f 7f 4d 7f 7f 3f 7c 7f 3f 5f 7f 7f 75 7d 7f 4f 71 7f 7f 1d 7f 7f 5f 7b 7f 7f 61 7f 7f 2b 7e 7f 7f 70 7f 7f 65 7e 7f 5f 75 7f 7f 1d 7f 7f 57 79 7f 7f 46 7f 7f 23 7c 7f 1f 64 7f 7f 25 7e 7f 6f 73 7f 7f 1f 7f 7f 57 7a 7f 7f 59 35 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827054634}, "hex": "f0 00 32 09 79 3f 00 40 02 53 27 00 00 70 7e 00 00 16 00 00 68 7f 7f 7f 6b 7f 7f 53 00 00 00 07 00 00 78 00 00 60 06 00 00 05 00 00 70 7e 7f 3f 4b 7f 7f 2b 7c 7f 3f 62 7f 7f 7f 7e 7f 0f 04 00 00 4a 00 00 20 08 00 00 39 00 00 64 02 00 40 02 00 00 22 7e 7f 5f 6a 7f 7f 30 7e 7f 1f 77 7f 7f 5b 7f 7f 5b 7f 7f 3f 12 00 00 72 01 00 70 16 00 00 3a 01 00 68 0a 00 40 41 00 00 18 01 00 00 72 7f 7f 3d 7d 7f 3f 69 7f 7f 65 7e 7f 2f 78 7f 7f 4c 7f 7f 43 7c 7f 1f 6a 7f 7f 59 7e 7f 2f 76 7f 7f 45 7f 7f 5f 7e 7f 3f 1a 00 00 64 02 00 20 14 00 00 3e 00 00 30 7d 7f 7f 54 7f 7f 77 7c 7f 3f 73 7f 7f 2b 00 00 20 10 00 00 72 01 00 30 11 00 00 01 01 00 58 05 00 40 18 00 00 30 00 00 40 76 7f 7f 55 7e 7f 4f 72 7f 7f 29 7f 7f 2f 7e 7f 3f 14 00 00 5c 02 00 00 1a 00 00 14 01 00 20 01 00 00 33 7f 7f 7f 76 7f 3f 24 7f 7f 53 79 7f 3f 4a 7f 7f 27 7c 7f 2f 63 7f 7f 36 7e 7f 4f 76 7f 3f 57 7f 7f 67 7e 7f 1f 7d 7f 7f 31 7f 7f 2f 73 7f 7f 58 7e 7f 37 72 7f 7f 19 7f 7f 4f 7a 7f 1f 65 7f 7f 05 7f 7f 5f 7b 7f 7f 78 7f 7f 1f 7f 7f 3f 00 00 00 68 7f 7f 1f 00 00 00 32 00 00 70 03 00 00 2f 00 00 68 01 00 40 16 00 00 28 02 00 00 17 00 00 46 01 00 10 07 00 00 35 00 00 18 03 00 40 23 00 00 34 03 00 20 20 00 00 7c 02 00 20 1a 00 00 51 01 00 38 09 00 00 16 00 00 48 7e 7f 7f 59 7f 7f 77 7c 7f 0f 65 7f 7f 3f 7e 7f 2f 77 7f 3f 43 7f 7f 33 7d 7f 1f 69 7f 7f 55 7e 7f 6f 75 7f 7f 24 7f 7f 7f 7b 7f 3f 59 7f 7f 0f 7e 7f 1f 72 7f 7f 3d 7f 7f 1f 02 00 00 10 00 00 10 00 00 40 57 7f 7f 3f 7b 7f 7f 52 7f 7f 67 7c 7f 5f 69 7f 7f 4f 7e 7f 6f 77 7f 7f 4e 7f 7f 27 7d 7f 3f 6e 7f 7f 53 7e 7f 1f 7a 7f 7f 6d 7f 7f 77 00 00 40 0c 00 00 60 7f 7f 1f 7c 7f 7f 05 7f 7f 4f 75 7f 7f 0e 7f 7f 37 77 7f 3f 43 7f 7f 63 7b 7f 1f 60 7f 7f 4f 7d 7f 7f 6d 7f 7f 25 7f 7f 77 7d 7f 3f 17 00 00 64 01 00 60 0d 00 00 28 00 00 30 7b 7f 7f 3b 7f 7f 77 78 7f 3f 49 7f 7f 33 7c 7f 3f 64 7f 7f 43 7e 7f 1f 74 7f 7f 41 7f 7f 27 7c 7f 7f 64 7f 7f 67 7d 7f 7f 64 7f 7f 0b 7e 7f 6f 6d 7f 7f 04 7f 7f 2f 79 7f 7f 52 7f 7f 6f 7d 7f 5f 6e 7f 7f 25 7f 7f 2f 7a 7f 7f 53 7f 7f 1f 7c 7f 3f 4f 7f 7f 2f 7c 7f 3f 5c 7f 7f 73 7d 7f 1f 70 7f 7f 0f 7f 7f 17 7a 7f 3f 4c 7f 7f 4f 7c 7f 1f 60 7f 7f 0b 7e 7f 2f 73 7f 7f 27 7f 7f 4f 7b 7f 7f 5a 7f 7f 03 7e 7f 1f 72 7f 7f 13 7f 7f 7f 78 7f 7f 31 7f 7f 27 7a 7f 3f 47 7f 7f 0f 7c 7f 5f 62 7f 7f 37 7e 7f 2f 78 7f 7f 5a 7f 7f 47 7e 7f 7f 6d 7f 7f 73 7d 7f 5f 67 7f 7f 7b 7d 7f 5f 6d 7f 7f 63 7e 7f 7f 76 7f 7f 49 7f 7f 73 7d 7f 5f 78 7f 7f 59 7f 7f 0f 7d 7f 7f 55 7f 7f 2f 7b 7f 7f 46 7f 7f 17 7b 7f 1f 55 7f 7f 31 7d 7f 5f 6c 7f 7f 72 7e 7f 47 77 7f 7f 3d 7f 7f 67 7b 7f 1f 5e 7f 7f 75 7d 7f 7f 70 7f 7f 20 7f 7f 47 7b 7f 3f 61 7f 7f 67 7d 7f 1f 67 7f 7f 77 7d 7f 1f 6c 7f 7f 54 7e 7f 2f 75 7f 3f 2c 7f 7f 63 7a 7f 1f 56 7f 7f 2f 7d 7f 3f 6c 7f 7f 71 7e 7f 3f 78 7f 3f 4e 7f 7f 1b 7d 7f 7f 69 7f 7f 2f 7e 7f 7f 71 7f 7f 14 7f 7f 1f 7a 7f 7f 57 7f 7f 1f 7d 7f 7f 67 7f 7f 2b 7e 7f 5f 72 7f 7f 0d 7f 7f 47 77 7f 3f 36 7f 7f 0b 7b 7f 3f 5a 7f 7f 67 7d 7f 1f 70 7f 7f 1b 7f 7f 6f 7a 7f 7f 60 7f 7f 67 7d 7f 7f 6a 7f 7f 31 7e 7f 1f 71 7f 7f 09 7f 7f 17 78 7f 7f 43 7f 7f 37 7c 7f 5f 66 7f 7f 55 7e 7f 6f 74 7f 7f 27 7f 7f 67 79 7f 7f 4e 7f 7f 77 7c 7f 3f 65 7f 7f 2d 7e 7f 1f 72 7f 7f 21 7f 7f 6f 7a 7f 3f 5d 7f 7f 33 7e 7f 7f 71 7f 7f 7f 7e 7f 7f 74 7f 7f 17 7f 7f 07 79 7f 3f 47 7f 7f 07 7d 7f 1f 6c 7f 7f 0f 7f 7f 4f 79 7f 7f 42 7f 7f 37 7b 7f 7f 4d 7f 7f 3f 7c 7f 3f 5f 7f 7f 75 7d 7f 4f 71 7f 7f 1d 7f 7f 5f 7b 7f 7f 61 7f 7f 2b 7e 7f 7f 70 7f 7f 65 7e 7f 5f 75 7f 7f 1d 7f 7f 57 79 7f 7f 46 7f 7f 23 7c 7f 1f 64 7f 7f 25 7e 7f 6f 73 7f 7f 1f 7f 7f 57 7a 7f 7f 59 35 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827054637}, "hex": "f0 00 32 09 11 05 00 40 02 4a 2f 00 00 20 09 00 00 7f 7f 33 7d 7f 1f 6a 7f 7f 3d 7e 7f 7f 74 7f 7f 2e 7f 7f 37 7b 7f 3f 61 7f 7f 1b 7e 7f 3f 74 7f 7f 1b 7f 7f 0f 79 7f 7f 43 7f 7f 5f 7b 7f 3f 60 7f 7f 6b 7d 7f 3f 70 7f 7f 09 7f 7f 5f 78 7f 7f 4a 7f 7f 27 7c 7f 7f 62 7f 7f 73 7d 7f 5f 6e 7f 7f 7b 7e 7f 6f 09 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827054637}, "hex": "f0 00 32 09 11 05 00 40 02 4a 2f 00 00 20 09 00 00 7f 7f 33 7d 7f 1f 6a 7f 7f 3d 7e 7f 7f 74 7f 7f 2e 7f 7f 37 7b 7f 3f 61 7f 7f 1b 7e 7f 3f 74 7f 7f 1b 7f 7f 0f 79 7f 7f 43 7f 7f 5f 7b 7f 3f 60 7f 7f 6b 7d 7f 3f 70 7f 7f 09 7f 7f 5f 78 7f 7f 4a 7f 7f 27 7c 7f 7f 62 7f 7f 73 7d 7f 5f 6e 7f 7f 7b 7e 7f 6f 09 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827054939}, "hex": "f0 00 32 09 49 00 00 40 02 00 00 00 00 1a 00 00 00 02 2e 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827054939}, "hex": "f0 00 32 09 49 00 00 40 02 00 00 00 00 1a 00 00 00 02 2e 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827055553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827055553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827056554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827056554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827057553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827057553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827058553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827058553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827059553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827059553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827060554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827060554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827061552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827061552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827062554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827062554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827063552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827063552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827064554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827064554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827065553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827065553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827066553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827066553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827067553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827067553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827068553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827068553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827069553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827069553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827070553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827070553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827071553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827071553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827072553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827072553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827073554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827073554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827074552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827074552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827075552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827075552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827076553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827076553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827077553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827077553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827078553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827078553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827079553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827079553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827080554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827080554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827081552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827081552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827082554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827082554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827083552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827083552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827084552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827084552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827085553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827085553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827086552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827086552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827087553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827087553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827088553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827088553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827089553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827089553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827090553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827090553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827091554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827091554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827092554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827092554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827093552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827093552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827094554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827094554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827095552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827095552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827096554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827096554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827097553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827097553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827098554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827098554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827099554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827099554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827100553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827100553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827101553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827101553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827102553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827102553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827103553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827103553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827104553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827104553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827105552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827105552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827106553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827106553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827107553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827107553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827108553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827108553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827109552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827109552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827110554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827110554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827111552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827111552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827112552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827112552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827113553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827113553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827114554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827114554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827115553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827115553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827116552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827116552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827117552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827117552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827118553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827118553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827119552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827119552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827120552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827120552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827121553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827121553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827122553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827122553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827123553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827123553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827124553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827124553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827125552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827125552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827126552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827126552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827127552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827127552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827128554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827128554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827129553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827129553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827130553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827130553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827131553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827131553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827132552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827132552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827133552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827133552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827134552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827134552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827135553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827135553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827136552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827136552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827137553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827137553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827138553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827138553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827139554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827139554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827140554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827140554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827141553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827141553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827142554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827142554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827143553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827143553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827144554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827144554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827145553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827145553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827146552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827146552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827147554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827147554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827148553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827148553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827149553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827149553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827150553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827150553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827151553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827151553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827152554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827152554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827153553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827153553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827154553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827154553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827155554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827155554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827156552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827156552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827157553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827157553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827158553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827158553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827159552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827159552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827160553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827160553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827161554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827161554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827162554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827162554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827163554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827163554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827164552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827164552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827165553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827165553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827166554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827166554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827167553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827167553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827168553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827168553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827169554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827169554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827170553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827170553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827171552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827171552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827172552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827172552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827173553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827173553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827174553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827174553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827175552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827175552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827176552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827176552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827177554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827177554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827178553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827178553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827179553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827179553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827180553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827180553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827181552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827181552}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827182554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827182554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827183553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827183553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827184553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827184553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827185554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827185554}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827186553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827186553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827187553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793827187553}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}

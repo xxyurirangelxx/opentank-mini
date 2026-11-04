@@ -1,0 +1,72 @@
+[
+  {
+    "size": 7,
+    "total": 100,
+    "canonical_encoder": 0,
+    "exact_legacy_roundtrip": 100,
+    "independent_payload": 100
+  },
+  {
+    "size": 8,
+    "total": 100,
+    "canonical_encoder": 100,
+    "exact_legacy_roundtrip": 100,
+    "independent_payload": 100
+  },
+  {
+    "size": 15,
+    "total": 100,
+    "canonical_encoder": 100,
+    "exact_legacy_roundtrip": 100,
+    "independent_payload": 100
+  },
+  {
+    "size": 16,
+    "total": 100,
+    "canonical_encoder": 100,
+    "exact_legacy_roundtrip": 100,
+    "independent_payload": 100
+  },
+  {
+    "size": 17,
+    "total": 100,
+    "canonical_encoder": 100,
+    "exact_legacy_roundtrip": 100,
+    "independent_payload": 100
+  },
+  {
+    "size": 34,
+    "total": 100,
+    "canonical_encoder": 100,
+    "exact_legacy_roundtrip": 100,
+    "independent_payload": 100
+  },
+  {
+    "size": 92,
+    "total": 100,
+    "canonical_encoder": 100,
+    "exact_legacy_roundtrip": 100,
+    "independent_payload": 100
+  },
+  {
+    "size": 107,
+    "total": 100,
+    "canonical_encoder": 100,
+    "exact_legacy_roundtrip": 100,
+    "independent_payload": 100
+  },
+  {
+    "size": 256,
+    "total": 100,
+    "canonical_encoder": 100,
+    "exact_legacy_roundtrip": 100,
+    "independent_payload": 100
+  },
+  {
+    "size": 512,
+    "total": 100,
+    "canonical_encoder": 100,
+    "exact_legacy_roundtrip": 100,
+    "independent_payload": 100
+  }
+]

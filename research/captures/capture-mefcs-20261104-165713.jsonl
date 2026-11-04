@@ -1,0 +1,3 @@
+{"type": "send", "payload": {"kind": "HOOK", "name": "midiOutLongMsg"}}
+{"type": "send", "payload": {"kind": "HOOK", "name": "midiOutShortMsg"}}
+{"type": "send", "payload": {"kind": "HOOK", "name": "midiInOpen"}}

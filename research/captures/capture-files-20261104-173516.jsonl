@@ -1,0 +1,5 @@
+{"type": "send", "payload": {"kind": "HOOK", "name": "CreateFileW"}}
+{"type": "send", "payload": {"kind": "HOOK", "name": "CreateFile2"}}
+{"type": "send", "payload": {"kind": "HOOK", "name": "CreateFileW"}}
+{"type": "send", "payload": {"kind": "HOOK", "name": "CreateFile2"}}
+{"type": "send", "payload": {"kind": "READY"}}

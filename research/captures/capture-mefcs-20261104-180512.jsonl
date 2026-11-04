@@ -1,0 +1,683 @@
+{"type": "send", "payload": {"kind": "MODULE", "name": "WINMM.dll", "path": "C:\\Windows\\SYSTEM32\\WINMM.dll"}}
+{"type": "send", "payload": {"kind": "HOOK", "name": "midiOutLongMsg", "address": "0x7ff8a1389d20"}}
+{"type": "send", "payload": {"kind": "HOOK", "name": "midiOutShortMsg", "address": "0x7ff8a1389de0"}}
+{"type": "send", "payload": {"kind": "HOOK", "name": "midiInOpen", "address": "0x7ff8a1389b20"}}
+{"type": "send", "payload": {"kind": "HOOK", "name": "midiInAddBuffer", "address": "0x7ff8a1389a00"}}
+{"type": "send", "payload": {"kind": "MODULE", "name": "winmmbase.dll", "path": "C:\\Windows\\SYSTEM32\\winmmbase.dll"}}
+{"type": "send", "payload": {"kind": "HOOK", "name": "midiOutLongMsg", "address": "0x7ff882c48620"}}
+{"type": "send", "payload": {"kind": "HOOK", "name": "midiOutShortMsg", "address": "0x7ff882c48570"}}
+{"type": "send", "payload": {"kind": "HOOK", "name": "midiInOpen", "address": "0x7ff882c48d90"}}
+{"type": "send", "payload": {"kind": "HOOK", "name": "midiInAddBuffer", "address": "0x7ff882c491d0"}}
+{"type": "send", "payload": {"kind": "MODULE", "name": "midimap.dll", "path": "C:\\Windows\\SYSTEM32\\midimap.dll"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826313529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826313529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826314529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826314529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826315531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826315531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826316531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826316531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826317531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826317531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826318529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826318529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826319530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826319530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826320529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826320529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826321530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826321530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826322530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826322530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826323529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826323529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826324530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826324530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826325530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826325530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826326529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826326529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826327530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826327530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826328529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826328529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826329529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826329529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826330530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826330530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826331531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826331531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826332529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826332529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826333529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826333529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826334530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826334530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826335531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826335531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826336530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826336530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826337530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826337530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826338530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826338530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826339529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826339529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826340530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826340530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826341530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826341530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826342530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826342530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826343531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826343531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826344530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826344530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826345531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826345531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826346531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826346531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826347530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826347530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826348531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826348531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826349531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826349531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826350530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826350530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826351530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826351530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetNumDevs", "address": "0x7ff8a1389ae0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiInGetDevCapsW", "address": "0x7ff8a1389a60"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetNumDevs", "address": "0x7ff8a1389ce0"}}
+{"type": "send", "payload": {"kind": "RESOLVE", "name": "midiOutGetDevCapsW", "address": "0x7ff8a1389c60"}}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826352529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826352529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826353531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826353531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826354530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826354530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826355530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826355530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826356529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826356529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826357530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826357530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826358530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826358530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826359531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826359531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826360530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826360530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826361530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826361530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826362529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826362529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826363530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826363530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826364529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826364529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826365529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826365529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826366530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826366530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826367530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826367530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826368529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826368529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826369531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826369531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826370531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826370531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826371530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826371530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826372529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826372529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826373529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826373529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826374529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826374529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826375529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826375529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826376529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826376529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826377530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826377530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826378530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826378530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826379531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826379531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826380529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826380529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826381531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826381531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826382530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826382530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826383531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826383531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826384530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826384530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826385531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826385531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826386529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826386529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826387529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826387529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826388530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826388530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826389530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826389530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826390531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826390531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826391531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826391531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826392530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826392530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826393530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826393530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826394529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826394529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826395530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826395530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826396531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826396531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826397530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826397530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826398530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826398530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826399531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826399531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826400530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826400530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826401529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826401529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826402531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826402531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826403531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826403531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826404529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826404529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826405530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826405530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826406530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826406530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826407531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826407531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826408529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826408529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826409529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826409529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826410530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826410530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826411531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826411531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826412530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826412530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826413529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826413529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826414530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826414530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826415530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826415530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826416531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826416531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826417529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826417529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826418529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826418529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826419530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826419530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826420529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826420529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826421529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826421529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826422529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826422529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826423531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826423531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826424529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826424529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826425529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826425529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826426530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826426530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826427531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826427531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826428529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826428529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826429531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826429531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826430529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826430529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826431530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826431530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826432529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826432529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826433529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826433529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826434530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826434530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826435529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826435529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826436529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826436529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826437530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826437530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826438531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826438531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826439529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826439529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826440530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826440530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826441529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826441529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826442531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826442531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826443529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826443529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826444531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826444531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826445529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826445529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826446530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826446530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826447531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826447531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826448529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826448529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826449530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826449530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826450530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826450530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826451530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826451530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826452530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826452530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826453529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826453529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826454529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826454529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826455530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826455530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826456529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826456529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826457529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826457529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826458531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826458531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826459530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826459530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826460529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826460529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826461531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826461531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826462530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826462530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826463531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826463531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826464530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826464530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826465530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826465530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826466531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826466531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826467530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826467530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826468530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826468530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826469530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826469530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826470529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826470529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826471530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826471530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826472529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826472529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826473530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826473530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826474531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826474531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826475530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826475530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826476529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826476529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826477530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826477530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826478530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826478530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826479530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826479530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826480531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826480531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826481530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826481530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826482530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826482530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826483530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826483530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826484531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826484531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826485531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826485531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826486529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826486529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826487530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826487530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826488529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826488529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826489530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826489530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826490531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826490531}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826491529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826491529}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826492530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
+{"type": "send", "payload": {"kind": "TX SYSEX", "time": 1793826492530}, "hex": "f0 00 32 0d 41 00 00 00 02 00 00 00 00 42 00 00 00 57 01 f7"}
