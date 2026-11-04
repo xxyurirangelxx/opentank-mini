@@ -13,9 +13,11 @@ regra principal é: **não quebre o pedal de ninguém**.
 ## Boas contribuições
 
 - Capturas de protocolo com contexto: qual botão, qual firmware, o que mudou.
-- Nomes dos modelos de cada bloco (hoje só o FX os tem).
+- Nomes dos modelos de cada bloco — os de AMP e CAB já estão em
+  `research/dumps/model-names.json`; faltam FX, MOD, DLY e REV.
 - Testes que reproduzam um bug antes de corrigi-lo.
 - Suporte verificado a Linux e Android.
+- Confirmação de que a gravação de modelo sobrevive ao power-cycle.
 
 ## Protocolo
 
@@ -26,6 +28,8 @@ mais fáceis de errar:
 - O endereço dos comandos de tempo real é `0x10000000 + offset`.
 - Leitura tem teto de 431 bytes; escrita, 1015.
 - No BLE o payload vai cru, sem `F0`/`F7` e sem empacotamento de 7 bits.
+- A flash de modelos (`0x70000000`) se grava com `0x21` (apaga setor) e `0x22`,
+  **sem commit**: um commit `F0` em `area 0x05` descarta o bloco.
 
 ## Testes com hardware
 
@@ -36,7 +40,15 @@ dart run tool/hil_probe.dart            # só leitura
 ```
 
 Para operações destrutivas, use um slot sacrificial e restaure no mesmo teste.
-O `hil_probe` já faz isso ao receber `--write-test` e `--swap-test`.
+O `hil_probe` já faz isso ao receber `--write-test`, `--swap-test` e
+`--model-test`.
+
+Depois de qualquer sessão em que o M-EFCS foi instrumentado, confira que o
+pedal ficou intacto:
+
+```bash
+python tools/research/audit_model_flash.py    # 30 blocos contra a captura
+```
 
 ## Estilo
 
