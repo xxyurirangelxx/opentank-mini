@@ -1,4 +1,10 @@
-# Validação do protocolo Tank Mini
+# Validação do protocolo Tank Mini (registro histórico)
+
+> **Documento histórico.** Escrito no meio da investigação, antes de o
+> protocolo de gravação, swap e upload de modelo ser descoberto. As seções que
+> dizem que estas operações "ainda dependem de descoberta" estão superadas:
+> consulte [docs/VALIDATION.md](../docs/VALIDATION.md) e
+> [docs/PROTOCOL.md](../docs/PROTOCOL.md) para o estado atual.
 
 Data: 2026-11-04. Hardware identificado: `TANK MINI_009`.
 Host: Windows. Sondas temporárias de investigação; não constituem o app nem uma biblioteca de produção.
