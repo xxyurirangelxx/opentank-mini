@@ -16,7 +16,8 @@ fork and improve.
 - Import amplifier models (`.am2Data`) and cabinet IRs (`.wav`), audition them,
   and write them permanently to any of the 20 model slots
 - Toggle bypass, loopback and the tuner
-- Export and restore the whole preset bank (`.atkm`)
+- Export and restore the whole preset bank (`.atkm`) and the model flash
+  (`.otmodels`)
 
 ## Platforms
 
@@ -33,9 +34,10 @@ fork and improve.
 
 The protocol layer is verified against hardware for reading, writing, swapping,
 selecting, the global toggles and permanent model storage. The model flash
-(`0x70000000`) was read back byte for byte and matched the factory image; a
-modified AMP was written, read back and restored during the investigation.
-Details and evidence live in [docs/VALIDATION.md](docs/VALIDATION.md).
+(`0x70000000`) was read back byte for byte and matched the factory image.
+AMP and CAB records were written to real slots, read back, restored and
+audited block by block (30/30). Details and evidence live in
+[docs/VALIDATION.md](docs/VALIDATION.md).
 
 Persistence across a physical power-cycle is still unverified, as is anything
 on Linux or a real Android device.
