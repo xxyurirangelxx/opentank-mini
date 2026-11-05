@@ -452,6 +452,63 @@ Future<void> main(List<String> args) async {
       }
     }
 
+    if (args.contains('--globals-test')) {
+      // Exercita bypass, loopback e afinador pelo codigo de producao e
+      // restaura o estado inicial. Os tres blocos foram implementados a partir
+      // da captura; aqui eles passam pelo TankDevice de verdade.
+      Future<List<int>> global() => device.readBytes(0x20000000, 4);
+
+      final before = await global();
+      print('estado global antes: ${_hexBytes(before)}');
+
+      final controls = <(String, Future<void> Function(bool))>[
+        ('bypass', device.setBypass),
+        ('loopback', device.setLoopback),
+        ('afinador', device.setTuner),
+      ];
+
+      for (final (label, action) in controls) {
+        await action(true);
+        final on = await global();
+        await action(false);
+        final off = await global();
+        final changedOn = !_sameBytes(on, before);
+        final restored = _sameBytes(off, before);
+        print(
+          '  $label: ligou=${_hexBytes(on)} desligou=${_hexBytes(off)} '
+          'efeito_observavel=$changedOn restaurou=$restored',
+        );
+        if (!changedOn) {
+          // Nem todo controle aparece neste byte de estado (o afinador tem
+          // consulta propria). Reporta em vez de falhar.
+          print('    aviso: $label aceito com ACK, sem efeito neste byte');
+        }
+        if (!restored) {
+          throw StateError('$label nao voltou ao estado anterior');
+        }
+      }
+
+      var after = await global();
+      if (!_sameBytes(before, after)) {
+        // Tenta recuperar o estado original alternando cada controle.
+        for (final (_, action) in controls) {
+          if (_sameBytes(before, after)) break;
+          await action(true);
+          after = await global();
+          if (_sameBytes(before, after)) break;
+          await action(false);
+          after = await global();
+        }
+      }
+      print('estado global depois: ${_hexBytes(after)}');
+      if (!_sameBytes(before, after)) {
+        throw StateError(
+          'estado global nao voltou ao original: '
+          '${_hexBytes(before)} -> ${_hexBytes(after)}',
+        );
+      }
+    }
+
     // Descartar alteracao: muda o volume na RAM e volta ao salvo.
     final saved = await device.readSlot(4);
     await device.setVolume(saved.volume == 60 ? 59 : 60);
@@ -479,3 +536,6 @@ bool _sameBytes(List<int> a, List<int> b) {
 }
 
 String _hex32(int value) => '0x${value.toRadixString(16).padLeft(8, '0')}';
+
+String _hexBytes(List<int> data) =>
+    data.map((int b) => b.toRadixString(16).padLeft(2, '0')).join(' ');

@@ -31,9 +31,9 @@ Legenda da coluna *Pedal*:
 | Importar CAB e pré-ouvir | `encodeCab` + `WavFile` + `uploadModel` | `wav_model_test.dart` | sim |
 | Gravar AMP permanentemente | `encodeAmpFlashRecord` + `writeModelFlash` | `model_flash_test.dart`, `tank_device_test.dart` | sim |
 | Gravar CAB permanentemente | `encodeCabFlashRecord` + `writeModelFlash` | idem | sim |
-| Afinador | `setTuner` | `tank_controller_test.dart` | indireto |
-| Loopback | `setLoopback` | idem | indireto |
-| Bypass | `setBypass` | idem | indireto |
+| Afinador | `setTuner` | `tank_controller_test.dart` | sim (byte 3 de `0x70100000`) |
+| Loopback | `setLoopback` | idem | ACK aceito; sem reflexo no estado global |
+| Bypass | `setBypass` | idem | sim (byte 2 de `0x20000000`) |
 | Backup/restauração do banco | `PresetBank` + `restoreBank` | `preset_bank_test.dart` | sim |
 | Backup/restauração de modelos | `readModelFlashAll` + `restoreModelFlashAll` | `tank_controller_test.dart` | sim |
 

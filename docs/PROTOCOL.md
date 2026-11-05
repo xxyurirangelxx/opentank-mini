@@ -145,6 +145,16 @@ Os seis bytes são a ordem dos blocos. Valor original deste aparelho:
 | Consulta afinador | `00 59 23 08 00 00 04 00 00 10 70 06 00 00 75` |
 | Consulta de estado global | `00 59 23 08 00 00 04 00 00 00 20 04 00 00 D7` |
 
+O que dá para observar por leitura (verificado em 2026-11-04):
+
+- **Bypass**: a consulta de estado global (`addr 0x20000000`, 4 bytes) mostra o
+  byte 2 indo de `00` para `01` ao ligar e voltando ao desligar.
+- **Afinador**: a consulta própria (`addr 0x70100000`, 6 bytes) mostra o byte 3
+  indo de `00` para `01`. O byte 4 é a leitura de frequência e muda junto.
+- **Loopback**: o pedal aceita o comando com ACK, mas nenhum dos dois bytes de
+  estado muda. O efeito é audível, não observável por leitura — não tratar o
+  estado global como fonte de verdade para loopback.
+
 ### Volume do preset
 
 ```

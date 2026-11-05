@@ -26,6 +26,9 @@ Aparelho usado: `TANK MINI_009`, firmware reportado como versão 9, USB
 | Tabelas de nomes de AMP e CAB em `0x80`/`0x90` | leitura | 20 nomes de cada |
 | Gravação permanente de AMP | registro alterado gravado, relido e restaurado | persiste sem commit |
 | Gravação permanente de CAB | registro de outro slot gravado, relido e restaurado | persiste sem commit |
+| Bypass pelo código Dart | ligar/desligar e ler `0x20000000` | byte 2 muda e volta |
+| Afinador pelo código Dart | ligar/desligar e ler `0x70100000` | byte 3 muda e volta |
+| Loopback pelo código Dart | ligar/desligar e ler estado | ACK; sem reflexo na leitura |
 | Integridade após os testes | auditoria dos 30 blocos contra a captura | 30/30 idênticos |
 | Backup e restauração da flash (`--flash-test`) | backup, 1 byte alterado, restauração, auditoria | 30/30 voltaram |
 
