@@ -66,10 +66,7 @@ List<int> eraseSectorsFor(int address, int length) {
 /// O formato de fabrica usa magic `AM4\0` seguido de um nome de 14 bytes e dos
 /// dados. O buffer de previa (`AM2\0`) usa o mesmo payload, entao a conversao
 /// aqui e so substituir o magic e preencher o nome.
-Uint8List encodeAmpFlashRecord(
-  List<int> buffer, {
-  required String name,
-}) {
+Uint8List encodeAmpFlashRecord(List<int> buffer, {required String name}) {
   if (buffer.length < 8192) {
     throw FormatException('Buffer de AMP tem ${buffer.length} bytes');
   }
@@ -93,10 +90,7 @@ const int cabFlashSampleBytes = (cabFlashSlotSize - cabFlashHeader) ~/ 3 * 3;
 ///
 /// Copia do offset 20 do buffer (onde começam as amostras) até o fim do setor.
 /// O header de fábrica termina em `02 40`, diferente do `01 32` do buffer.
-Uint8List encodeCabFlashRecord(
-  List<int> buffer, {
-  required String name,
-}) {
+Uint8List encodeCabFlashRecord(List<int> buffer, {required String name}) {
   if (buffer.length < cabFlashHeader + cabFlashSampleBytes) {
     throw FormatException('Buffer de CAB tem ${buffer.length} bytes');
   }

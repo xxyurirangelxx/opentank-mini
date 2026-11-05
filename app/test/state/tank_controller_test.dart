@@ -244,8 +244,7 @@ void main() {
         }
         return ack();
       }
-      final address =
-          raw[7] | (raw[8] << 8) | (raw[9] << 16) | (raw[10] << 24);
+      final address = raw[7] | (raw[8] << 8) | (raw[9] << 16) | (raw[10] << 24);
       if (raw[2] == 0x22) {
         final length = raw[11] | (raw[12] << 8);
         for (var i = 0; i < length; i++) {

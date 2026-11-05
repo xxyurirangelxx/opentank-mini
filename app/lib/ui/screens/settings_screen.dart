@@ -126,7 +126,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
     try {
       final data = await controller.readModelFlashAll(
         onProgress: (double v) {
-          if (mounted) setState(() => _status = 'Lendo... ${(v * 100).round()}%');
+          if (mounted) {
+            setState(() => _status = 'Lendo... ${(v * 100).round()}%');
+          }
         },
       );
       final path = await PresetIO.save(data, 'tank-models', 'otmodels');
@@ -184,9 +186,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
         },
       );
       if (!mounted) return;
-      setState(() => _status = written == 0
-          ? 'A flash ja estava igual ao arquivo'
-          : '$written blocos regravados e conferidos');
+      setState(
+        () => _status = written == 0
+            ? 'A flash ja estava igual ao arquivo'
+            : '$written blocos regravados e conferidos',
+      );
     } catch (error) {
       if (!mounted) return;
       setState(() => _status = 'Falha: $error');

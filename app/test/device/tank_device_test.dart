@@ -58,7 +58,8 @@ void main() {
       final transport = FakeTransport((List<int> raw) {
         if (raw[2] == 0x11) return identity();
         if (raw[2] == 0x23) {
-          final address = raw[7] | (raw[8] << 8) | (raw[9] << 16) | (raw[10] << 24);
+          final address =
+              raw[7] | (raw[8] << 8) | (raw[9] << 16) | (raw[10] << 24);
           final length = raw[11] | (raw[12] << 8);
           lengths.add(length);
           return readReply(address, buffer.sublist(address, address + length));
@@ -93,10 +94,7 @@ void main() {
         }),
       );
       await device.connect();
-      await expectLater(
-        device.readBytes(0, 64),
-        throwsA(isA<ReadException>()),
-      );
+      await expectLater(device.readBytes(0, 64), throwsA(isA<ReadException>()));
       await device.disconnect();
     });
 
@@ -263,24 +261,28 @@ void main() {
         packets.add(raw);
         if (raw[2] == 0x11) return identity();
         if (raw[2] == 0x21) {
-          final address = raw[7] | (raw[8] << 8) | (raw[9] << 16) | (raw[10] << 24);
-          stored.removeWhere((int k, int v) => k >= address && k < address + 4096);
+          final address =
+              raw[7] | (raw[8] << 8) | (raw[9] << 16) | (raw[10] << 24);
+          stored.removeWhere(
+            (int k, int v) => k >= address && k < address + 4096,
+          );
           return ack();
         }
         if (raw[2] == 0x22 && (raw[11] | (raw[12] << 8)) > 1) {
-          final address = raw[7] | (raw[8] << 8) | (raw[9] << 16) | (raw[10] << 24);
+          final address =
+              raw[7] | (raw[8] << 8) | (raw[9] << 16) | (raw[10] << 24);
           final length = raw[11] | (raw[12] << 8);
           for (var i = 0; i < length; i++) {
             stored[address + i] = raw[14 + i];
           }
         }
         if (raw[2] == 0x23) {
-          final address = raw[7] | (raw[8] << 8) | (raw[9] << 16) | (raw[10] << 24);
+          final address =
+              raw[7] | (raw[8] << 8) | (raw[9] << 16) | (raw[10] << 24);
           final length = raw[11] | (raw[12] << 8);
-          return readReply(
-            address,
-            <int>[for (var i = 0; i < length; i++) stored[address + i] ?? 0],
-          );
+          return readReply(address, <int>[
+            for (var i = 0; i < length; i++) stored[address + i] ?? 0,
+          ]);
         }
         return ack();
       });
@@ -294,8 +296,7 @@ void main() {
       final erases = packets
           .where((List<int> p) => p[2] == 0x21)
           .map(
-            (List<int> p) =>
-                p[7] | (p[8] << 8) | (p[9] << 16) | (p[10] << 24),
+            (List<int> p) => p[7] | (p[8] << 8) | (p[9] << 16) | (p[10] << 24),
           )
           .toList();
       expect(erases, <int>[
@@ -308,13 +309,9 @@ void main() {
         (List<int> p) => p.length > 10 && p[10] == 0xF0,
       );
       expect(commits, isEmpty, reason: 'modelo nao leva commit');
-      expect(
-        <int>[
-          for (var i = 0; i < 8192; i++)
-            stored[0x70000000 + 5 * 8192 + i] ?? -1,
-        ],
-        record,
-      );
+      expect(<int>[
+        for (var i = 0; i < 8192; i++) stored[0x70000000 + 5 * 8192 + i] ?? -1,
+      ], record);
       await device.disconnect();
     });
 
@@ -324,7 +321,8 @@ void main() {
         if (raw[2] == 0x11) return identity();
         if (raw[2] == 0x23) {
           reads++;
-          final address = raw[7] | (raw[8] << 8) | (raw[9] << 16) | (raw[10] << 24);
+          final address =
+              raw[7] | (raw[8] << 8) | (raw[9] << 16) | (raw[10] << 24);
           final length = raw[11] | (raw[12] << 8);
           return readReply(address, List<int>.filled(length, 0xFF));
         }

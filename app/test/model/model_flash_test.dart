@@ -25,7 +25,10 @@ void main() {
   group('enderecos na flash de modelos', () {
     test('AMP usa o bloco anterior ao indice', () {
       expect(modelFlashAddress(isCab: false, index: 1), 0x70000000);
-      expect(modelFlashAddress(isCab: false, index: 20), 0x70000000 + 19 * 8192);
+      expect(
+        modelFlashAddress(isCab: false, index: 20),
+        0x70000000 + 19 * 8192,
+      );
     });
 
     test('CAB usa metades de bloco a partir do bloco 20', () {
@@ -34,10 +37,7 @@ void main() {
         modelFlashAddress(isCab: true, index: 2),
         0x70000000 + 20 * 8192 + 4096,
       );
-      expect(
-        modelFlashAddress(isCab: true, index: 3),
-        0x70000000 + 21 * 8192,
-      );
+      expect(modelFlashAddress(isCab: true, index: 3), 0x70000000 + 21 * 8192);
       expect(
         modelFlashAddress(isCab: true, index: 20),
         0x70000000 + 29 * 8192 + 4096,
@@ -67,10 +67,7 @@ void main() {
   group('setores a apagar', () {
     test('registro de 8192 bytes cobre dois setores', () {
       final address = modelFlashAddress(isCab: false, index: 3);
-      expect(eraseSectorsFor(address, 8192), <int>[
-        address,
-        address + 4096,
-      ]);
+      expect(eraseSectorsFor(address, 8192), <int>[address, address + 4096]);
     });
 
     test('registro alinhado a 4096 cobre um setor', () {
@@ -95,7 +92,10 @@ void main() {
     });
 
     test('nome longo e truncado em 14 bytes', () {
-      final record = encodeAmpFlashRecord(_ampBuffer(), name: 'ABCDEFGHIJKLMNOP');
+      final record = encodeAmpFlashRecord(
+        _ampBuffer(),
+        name: 'ABCDEFGHIJKLMNOP',
+      );
       expect(decodeFlashName(record), 'ABCDEFGHIJKLMN');
     });
 

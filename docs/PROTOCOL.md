@@ -111,6 +111,10 @@ Endereços: FX=8, AMP=9, MOD=10, DLY=11, REV=12, CAB=13.
 Também é o comando usado para **selecionar modelo** (mesmo endereço, valor =
 índice do modelo).
 
+O campo `<endereço>` é um **LE32 igual a `0x10000000 + offset`**, não um byte:
+para o AMP o valor enviado é `09 00 00 10`. O `10` no índice 10 faz parte do
+endereço e não é separador.
+
 ### Parâmetro (knob)
 
 ```

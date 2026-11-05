@@ -384,8 +384,10 @@ Future<void> main(List<String> args) async {
       print('  nome lido: ${decodeFlashName(live)}');
       await device.writeModelFlash(address, original);
       final back = await device.readModelFlash(address, 8192);
-      print('  restaurado: ${_sameBytes(back, original)} '
-          '(${decodeFlashName(back)})');
+      print(
+        '  restaurado: ${_sameBytes(back, original)} '
+        '(${decodeFlashName(back)})',
+      );
       if (!_sameBytes(back, original)) {
         throw StateError('RESTAURACAO DA FLASH FALHOU');
       }
@@ -476,5 +478,4 @@ bool _sameBytes(List<int> a, List<int> b) {
   return true;
 }
 
-String _hex32(int value) =>
-    '0x${value.toRadixString(16).padLeft(8, '0')}';
+String _hex32(int value) => '0x${value.toRadixString(16).padLeft(8, '0')}';
