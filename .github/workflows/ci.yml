@@ -24,7 +24,7 @@ jobs:
         env:
           TAG_NAME: ${{ github.ref_name }}
         run: |
-          version=$(python -c "from pathlib import Path; print(next(line.split(':', 1)[1].strip().split('+')[0] for line in Path('pubspec.yaml').read_text(encoding='utf-8').splitlines() if line.startswith('version:'))")
+          version=$(python -c "from pathlib import Path; print(next(line.split(':', 1)[1].strip().split('+')[0] for line in Path('pubspec.yaml').read_text(encoding='utf-8').splitlines() if line.startswith('version:')))")
           if [[ "$TAG_NAME" != "v$version" ]]; then
             printf 'A tag %s não corresponde à versão v%s do pubspec.yaml\n' "$TAG_NAME" "$version"
             exit 1
