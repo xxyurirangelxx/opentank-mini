@@ -2,7 +2,7 @@
 ///
 /// Formatos derivados de capturas reais do editor oficial:
 ///
-/// - AMP: magic `AM2\0`, header de 18 bytes, payload de 6204 bytes.
+/// - AMP: magic `AM<n>\0`, header de 18 bytes, payload de 6204 bytes.
 /// - CAB: magic `CAB\0`, header de 20 bytes, **2048 amostras PCM 24-bit LE**.
 ///
 /// O firmware normaliza o IR: a forma de onda e preservada, mas a amplitude e
@@ -18,7 +18,12 @@ const int modelBufferSize = 8192;
 /// Quantidade de amostras de um IR no formato CAB.
 const int cabSampleCount = 2048;
 
-/// Magic do AMP.
+/// Magic do AMP no buffer de previa (`AM2\0`).
+///
+/// O numero e a versao do formato. A M-VAVE publica versoes novas com
+/// frequencia (AM2, AM4...), e o payload a partir do offset 18 e o mesmo entre
+/// elas: muda o magic e, na flash, o campo de nome. Por isso a leitura aceita
+/// qualquer `AM<n>` e a escrita normaliza para o que cada destino espera.
 const List<int> ampMagic = <int>[0x41, 0x4D, 0x32, 0x00];
 
 /// Magic do CAB.
@@ -30,29 +35,66 @@ const List<int> cabHeaderTail = <int>[0x01, 0x32];
 /// Identifica o tipo de modelo de um buffer lido do pedal.
 enum ModelKind { amp, cab, unknown }
 
+/// O buffer comeca com um magic de AMP (`AM` + digito + NUL)?
+///
+/// Aceita qualquer versao: `AM2\0`, `AM3\0`, `AM4\0` e as que vierem.
+bool isAmpMagic(List<int> data) {
+  if (data.length < 4) return false;
+  return data[0] == 0x41 &&
+      data[1] == 0x4D &&
+      data[2] >= 0x30 &&
+      data[2] <= 0x39 &&
+      data[3] == 0x00;
+}
+
+/// Versao do formato AMP de um buffer (`2` para `AM2\0`), ou `null`.
+int? ampVersion(List<int> data) => isAmpMagic(data) ? data[2] - 0x30 : null;
+
 /// Detecta o tipo pelo magic.
 ModelKind detectModelKind(List<int> buffer) {
   if (buffer.length >= 4) {
-    if (_startsWith(buffer, ampMagic)) return ModelKind.amp;
+    if (isAmpMagic(buffer)) return ModelKind.amp;
     if (_startsWith(buffer, cabMagic)) return ModelKind.cab;
   }
   return ModelKind.unknown;
 }
 
-/// Monta o buffer de um AMP a partir do arquivo `.am2Data`.
+/// Monta o buffer de um AMP a partir de um arquivo `.am2Data`, `.am4Data`...
 ///
 /// O arquivo ja vem no formato do pedal; so falta o padding ate 8192 bytes.
-Uint8List encodeAmp(List<int> am2Data) {
-  if (!_startsWith(am2Data, ampMagic)) {
-    throw const FormatException('Arquivo AM2 nao comeca com o magic esperado');
-  }
-  if (am2Data.length > modelBufferSize) {
-    throw FormatException(
-      'AM2 tem ${am2Data.length} bytes; o buffer aceita $modelBufferSize',
+/// O magic e normalizado para `AM2\0` e o campo de nome e zerado, que e o que
+/// o buffer de previa espera — o nome vai para a flash no momento de gravar.
+Uint8List encodeAmp(List<int> data) {
+  if (!isAmpMagic(data)) {
+    throw const FormatException(
+      'Arquivo AMP nao comeca com o magic AM<n> (AM2, AM4...)',
     );
   }
-  final out = Uint8List(modelBufferSize)..setRange(0, am2Data.length, am2Data);
+  if (data.length > modelBufferSize) {
+    throw FormatException(
+      'AMP tem ${data.length} bytes; o buffer aceita $modelBufferSize',
+    );
+  }
+  final out = Uint8List(modelBufferSize)..setRange(0, data.length, data);
+  out.setRange(0, 4, ampMagic);
+  out.setRange(4, 18, List<int>.filled(14, 0));
   return out;
+}
+
+/// Nome embutido no cabecalho de um arquivo AMP, quando existe.
+///
+/// Arquivos `AM4` em diante trazem o nome nos bytes 4..18; os `AM2` deixam o
+/// campo zerado. Devolve string vazia quando nao ha nome.
+String decodeAmpName(List<int> data) {
+  if (!isAmpMagic(data)) return '';
+  final text = StringBuffer();
+  for (var i = 4; i < 18 && i < data.length; i++) {
+    final byte = data[i];
+    if (byte == 0) break;
+    if (byte < 0x20 || byte > 0x7E) return '';
+    text.writeCharCode(byte);
+  }
+  return text.toString().trim();
 }
 
 /// Monta o buffer de um CAB a partir de amostras PCM 24-bit little-endian.

@@ -243,13 +243,22 @@ em B, escreve o conteúdo de B em A, envia um commit e reseleciona.
 Ambos usam o **mesmo buffer de modelo**: `area = 0x05`, 8192 bytes, legível e
 gravável. O magic no início distingue o conteúdo.
 
-### AMP — `AM2\0`
+### AMP — `AM<n>\0`
 
-- Header de 18 bytes: `41 4D 32 00` + 14 bytes zero.
-- Payload: estrutura de 6204 bytes (arquivos `.am2Data`).
+- Header de 18 bytes: `41 4D <versão> 00` + 14 bytes de nome (zero no buffer de
+  prévia).
+- Payload: estrutura de 6204 bytes (arquivos `.am2Data`, `.am4Data`...).
 - O buffer é preenchido até 8192 bytes com zeros.
 - Os chunks capturados do editor, concatenados, reproduzem o `.am2Data`
   byte a byte, seguido de padding.
+
+O número é a **versão do formato**. A M-VAVE publica versões novas com
+frequência: este aparelho usa `AM2` no buffer de prévia e `AM4` na flash. O
+payload a partir do offset 18 é o mesmo entre as versões conhecidas, então o
+app aceita qualquer `AM<n>` na importação e normaliza o magic para o que cada
+destino espera (`AM2` no buffer, `AM4` na flash). Se um firmware futuro mudar
+o layout do payload, o ponto único de ajuste é `factoryAmpMagic` em
+`model_flash.dart`.
 
 ### CAB — `CAB\0`
 

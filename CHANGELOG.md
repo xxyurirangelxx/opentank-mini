@@ -3,6 +3,16 @@
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 Versionamento semântico.
 
+## [0.1.2] — 2026-11-05
+
+### Adicionado
+
+- Importação de AMP em qualquer versão do formato: `.am2Data`, `.am3Data`,
+  `.am4Data` e as próximas. O magic é lido como `AM<n>` e normalizado para o
+  que cada destino espera (`AM2` no buffer de prévia, `AM4` na flash).
+- O nome embutido no cabeçalho do arquivo (AM4 em diante) é usado ao gravar,
+  em vez do nome do arquivo baixado.
+
 ## [0.1.1] — 2026-11-05
 
 ### Corrigido

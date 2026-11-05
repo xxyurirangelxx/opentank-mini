@@ -21,6 +21,9 @@ class ImportScreen extends StatefulWidget {
 
 class _ImportScreenState extends State<ImportScreen> {
   String? _fileName;
+
+  /// Nome embutido no arquivo (AM4 em diante). Vazio quando nao ha.
+  String _embeddedName = '';
   List<int>? _buffer;
   ModelKind _kind = ModelKind.unknown;
   bool _busy = false;
@@ -94,13 +97,31 @@ class _ImportScreenState extends State<ImportScreen> {
   Future<void> _pickAmp() async {
     final file = await FilePicker.pickFile(
       type: FileType.custom,
-      allowedExtensions: <String>['am2Data', 'am2', 'bin'],
+      // A M-VAVE publica versoes novas do formato com frequencia (AM2, AM4...).
+      // O seletor lista as conhecidas; o conteudo e validado pelo magic, entao
+      // uma versao futura com outro nome de extensao ainda entra por "bin".
+      allowedExtensions: <String>[
+        'am2Data',
+        'am3Data',
+        'am4Data',
+        'am5Data',
+        'am6Data',
+        'am2',
+        'am3',
+        'am4',
+        'am5',
+        'am6',
+        'bin',
+      ],
     );
     if (file == null) return;
     await _load(
       file,
       convert: (List<int> data) => encodeAmp(data),
       kind: ModelKind.amp,
+      // AM4 em diante traz o nome do modelo no cabecalho; usar esse nome e
+      // melhor que o nome do arquivo, que costuma vir com sufixo de download.
+      nameFrom: decodeAmpName,
     );
   }
 
@@ -122,6 +143,7 @@ class _ImportScreenState extends State<ImportScreen> {
     PlatformFile file, {
     required List<int> Function(List<int>) convert,
     required ModelKind kind,
+    String Function(List<int>)? nameFrom,
   }) async {
     setState(() {
       _busy = true;
@@ -134,6 +156,7 @@ class _ImportScreenState extends State<ImportScreen> {
         _buffer = buffer;
         _kind = kind;
         _fileName = file.name;
+        _embeddedName = nameFrom?.call(bytes) ?? '';
         _status = '';
       });
     } catch (error) {
@@ -207,7 +230,10 @@ class _ImportScreenState extends State<ImportScreen> {
     );
     if (index == null) return;
 
-    final name = (_fileName ?? 'OPEN TANK')
+    // O nome embutido no arquivo (AM4+) tem prioridade sobre o nome do
+    // arquivo, que costuma vir com sufixo de download.
+    final source = _embeddedName.isNotEmpty ? _embeddedName : (_fileName ?? '');
+    final name = source
         .replaceAll(RegExp(r'\.[^.]+$'), '')
         .replaceAll(RegExp(r'[^A-Za-z0-9._ -]'), '')
         .trim();
@@ -302,7 +328,7 @@ class _PickerCards extends StatelessWidget {
             child: _PickerCard(
               icon: Icons.memory,
               title: 'AMP',
-              subtitle: 'Arquivo .am2Data exportado do editor oficial',
+              subtitle: 'Arquivo .am2Data, .am4Data... do editor oficial',
               onTap: busy ? null : onPickAmp,
             ),
           ),
