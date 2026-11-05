@@ -73,6 +73,24 @@ automatically and tells you how to install it if it is missing.
 
 [Inno Setup 6]: https://jrsoftware.org/isdl.php
 
+### Releases
+
+Update `app/pubspec.yaml` to the desired version, commit the changes, and push
+an identical version tag (for example, `v0.1.3` for `version: 0.1.3+4`):
+
+```bash
+git tag v0.1.3
+git push origin v0.1.3
+```
+
+After the tests and builds succeed, GitHub Actions creates a release with the
+Windows x64 installer, the Android APK, and a Linux x64 tarball containing the
+runnable bundle. The APK currently uses Android's debug signing key, which can
+change between CI runs. Android may require uninstalling the previous APK
+before installing an update, losing its local app data. A stable production
+signing key is needed for reliable updates. Linux requires GTK 3 and its other
+system dependencies.
+
 ## How it works
 
 The app is split so that everything except the transport is testable without a
