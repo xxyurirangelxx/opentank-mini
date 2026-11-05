@@ -190,6 +190,29 @@ O que dá para observar por leitura (verificado em 2026-11-04):
 
 Contagens de modelos observadas: FX 3, AMP 20, MOD 7, DLY 5, REV 6, CAB 20.
 
+Os bytes `14..19` guardam o **índice do modelo, 0-based**: `0` é o primeiro
+modelo do bloco. A prova está nos 21 presets de fábrica — o maior valor gravado
+é exatamente `contagem - 1` nos seis blocos:
+
+| Bloco | Contagem | Valores vistos nos 21 slots | Máximo |
+|---|---|---|---|
+| FX | 3 | 0, 1, 2 | 2 |
+| AMP | 20 | 2..19 | 19 |
+| MOD | 7 | 0..6 | 6 |
+| DLY | 5 | 0..4 | 4 |
+| REV | 6 | 0..5 | 5 |
+| CAB | 20 | 0..19 | 19 |
+
+Além disso, há presets com FX `0` e o FX **ligado** (slots 0, 1, 2, 3, 5...).
+Se `0` significasse "sem modelo", esses presets teriam o bloco ligado sem
+efeito, o que não faz sentido: `0` é o Noise gate. Escolher o modelo `n` envia
+`n` e o preset passa a guardar `n`.
+
+**Cuidado com a leitura circular:** ler o cabeçalho da flash em
+`0x70000000 + (n-1)*8192` e encontrar um modelo chamado `n...` **não** prova
+1-based — apenas mostra que os blocos estão ordenados. O que decide é a faixa
+de valores realmente gravada.
+
 ## 5. Banco de presets
 
 - 21 slots de 92 bytes, endereço `92 * slot`.
@@ -312,12 +335,15 @@ a área acusa os 30 blocos como corrompidos.
 | 0..19 | 20 AMPs (8192 B cada) |
 | 20..29 | 20 CABs, **dois por bloco de 4096 B** |
 
-O índice guardado no preset é 1-based:
+O índice guardado no preset é 0-based (`0` = primeiro modelo):
 
 ```
-AMP n  →  0x70000000 + (n-1) * 8192
-CAB n  →  0x70000000 + (20 + (n-1) ~/ 2) * 8192 + ((n-1) % 2) * 4096
+AMP n  →  0x70000000 + n * 8192
+CAB n  →  0x70000000 + (20 + n ~/ 2) * 8192 + (n % 2) * 4096
 ```
+
+Com isso, AMP `0` é o bloco 0 (`1J120_CL`) e CAB `0` é a primeira metade do
+bloco 20 (`1AC-SeVin`).
 
 ### Registro AMP (8192 B)
 
@@ -385,10 +411,27 @@ blocos. Falta confirmar se sobrevive ao power-cycle.
 
 ### Tabelas de nomes
 
-`0x80000000` lista os nomes de CAB e `0x90000000` os de AMP, ambos em registros
-de 10 bytes separados por NUL e repetidos a cada 431 bytes (a tabela ocupa o
-início de cada página de leitura). Servem para exibir o nome do modelo sem ler a
-flash inteira.
+`0x90000000` lista os nomes de AMP e `0x80000000` os de CAB, com `area = 0x05`.
+Cada tabela tem **20 registros de 14 bytes** — o mesmo tamanho do campo de nome
+no cabeçalho do modelo na flash. O nome fica no início do registro, em ASCII, e
+o restante é preenchido com NUL. Os 20 registros ocupam 280 bytes, então **uma
+única leitura de 431 bytes traz a tabela inteira**.
+
+A tabela é **viva**: gravar um modelo na flash troca o nome nela na hora, sem
+reiniciar o pedal (conferido em 2026-11-04, ver `VALIDATION.md`). As duas
+tabelas são a fonte que o app usa para mostrar os nomes nas listas suspensas.
+
+Pedir o bloco a partir de um deslocamento (por exemplo `0x900001AF`) **não**
+continua a tabela: o pedal devolve o mesmo bloco espelhado, com o primeiro byte
+trocado. O pedido tem de ser sempre no endereço base.
+
+O mesmo acontece com `0xA0000000`, que espelha a tabela de AMP. Varrendo
+`0x80000000`..`0xA0000000` só existem estas duas tabelas: **FX, MOD, DLY e REV
+não têm nomes como texto no pedal**, em nenhuma área testada. O editor oficial
+busca esses nomes fora do aparelho.
+
+Ao gravar um modelo com um nome novo, o nome também entra no cabeçalho do
+registro na flash, e é ele que sobrevive a um restore da região.
 
 Nomes de fábrica (este aparelho):
 

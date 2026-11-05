@@ -369,7 +369,7 @@ Future<void> main(List<String> args) async {
       final index = args
           .firstWhere((String a) => a.startsWith('--index='), orElse: () => '')
           .replaceFirst('--index=', '');
-      final slot = index.isEmpty ? 20 : int.parse(index);
+      final slot = index.isEmpty ? modelSlotCount - 1 : int.parse(index);
       final address = modelFlashAddress(isCab: false, index: slot);
       final original = await device.readModelFlash(address, 8192);
       print('AMP $slot em ${_hex32(address)}: ${decodeFlashName(original)}');
@@ -393,6 +393,38 @@ Future<void> main(List<String> args) async {
       }
     }
 
+    if (args.contains('--names-test')) {
+      // Valida o caminho de producao que alimenta as listas suspensas: le as
+      // tabelas de nomes e confere cada uma contra o cabecalho do registro na
+      // flash. Se divergir, a interface mostraria o nome errado.
+      final watch = Stopwatch()..start();
+      final names = await device.readModelNames();
+      watch.stop();
+      print('nomes lidos em ${watch.elapsedMilliseconds} ms');
+      print('  AMP: ${names.amp.join(" | ")}');
+      print('  CAB: ${names.cab.join(" | ")}');
+      var divergences = 0;
+      for (var index = 0; index < modelSlotCount; index++) {
+        for (final isCab in <bool>[false, true]) {
+          final address = modelFlashAddress(isCab: isCab, index: index);
+          final header = await device.readModelFlash(address, 18);
+          final inFlash = decodeFlashName(header);
+          final inTable = names.name(isCab: isCab, index: index) ?? '';
+          if (inFlash != inTable) {
+            divergences++;
+            print(
+              '  divergencia ${isCab ? 'CAB' : 'AMP'} $index: '
+              'flash="$inFlash" tabela="$inTable"',
+            );
+          }
+        }
+      }
+      print('  conferido contra 40 cabecalhos: $divergences divergencias');
+      if (divergences != 0) {
+        throw StateError('TABELA DE NOMES DIVERGE DA FLASH');
+      }
+    }
+
     if (args.contains('--flash-test')) {
       // Backup completo, alteracao de um byte, restauracao e auditoria —
       // exercita o mesmo caminho que a tela de Ajustes usa.
@@ -410,7 +442,7 @@ Future<void> main(List<String> args) async {
       }
       print('  lidos ${snapshot.length} bytes');
 
-      final address = modelFlashAddress(isCab: true, index: 20);
+      final address = modelFlashAddress(isCab: true, index: modelSlotCount - 1);
       final tampered = List<int>.of(snapshot);
       tampered[address - modelFlashBase + 4] ^= 0x01;
       await device.writeModelFlash(
@@ -507,6 +539,42 @@ Future<void> main(List<String> args) async {
           '${_hexBytes(before)} -> ${_hexBytes(after)}',
         );
       }
+    }
+
+    if (args.contains('--upload-test')) {
+      // Exercita o caminho de "Ouvir no pedal": envia um buffer para a area
+      // 0x05, le de volta e restaura o buffer original.
+      final original = await device.readBlock(0, 8192, area: 5);
+      print('buffer antes: ${_hexBytes(original.sublist(0, 8))}');
+
+      // Registro de AMP de fabrica como amostra (offset 0 do bloco 19).
+      final sample = await device.readBlock(
+        modelFlashBase + 19 * 8192,
+        8192,
+        area: 5,
+      );
+      final amp = List<int>.of(sample)
+        ..setRange(0, 4, <int>[0x41, 0x4D, 0x32, 0x00]);
+      await device.uploadModel(amp, previewKind: 1);
+      final back = await device.readBlock(0, 8192, area: 5);
+      final ok = _sameBytes(back, amp);
+      print(
+        'upload AMP para previa: enviado=${amp.length}B '
+        'relido=${back.length}B confere=$ok magic=${_hexBytes(back.sublist(0, 4))}',
+      );
+      if (!ok) {
+        final diff = <int>[
+          for (var i = 0; i < 8192; i++)
+            if (back[i] != amp[i]) i,
+        ];
+        print('  diferencas: ${diff.length} em ${diff.take(8)}');
+      }
+
+      // Restaura pelo mesmo caminho (escrita simples, sem apagar setor): o
+      // buffer de previa e RAM, nao flash, entao nada de comando 0x21 aqui.
+      await device.uploadModel(original, previewKind: 1);
+      final restored = await device.readBlock(0, 8192, area: 5);
+      print('buffer restaurado: ${_sameBytes(restored, original)}');
     }
 
     // Descartar alteracao: muda o volume na RAM e volta ao salvo.

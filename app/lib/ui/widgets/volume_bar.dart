@@ -11,33 +11,60 @@ class VolumeBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        _step(Icons.remove, () => onChanged?.call((value - 1).clamp(0, 100))),
-        const SizedBox(width: 12),
-        Expanded(
-          child: Slider(
-            value: value.toDouble(),
-            max: 100,
-            divisions: 100,
-            label: '$value',
-            onChanged: onChanged == null
-                ? null
-                : (double v) => onChanged!.call(v.round()),
+    return Container(
+      padding: const EdgeInsets.fromLTRB(16, 12, 16, 10),
+      decoration: AppTheme.card(),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Row(
+            children: <Widget>[
+              const Icon(Icons.volume_up, size: 17, color: AppTheme.textDim),
+              const SizedBox(width: 8),
+              const Text(
+                'Volume',
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w600,
+                  color: AppTheme.textDim,
+                ),
+              ),
+              const Spacer(),
+              Text(
+                '$value',
+                style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700,
+                  color: AppTheme.text,
+                ),
+              ),
+            ],
           ),
-        ),
-        const SizedBox(width: 12),
-        _step(Icons.add, () => onChanged?.call((value + 1).clamp(0, 100))),
-        const SizedBox(width: 16),
-        SizedBox(
-          width: 44,
-          child: Text(
-            '$value',
-            textAlign: TextAlign.right,
-            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+          Row(
+            children: <Widget>[
+              _step(
+                Icons.remove,
+                () => onChanged?.call((value - 1).clamp(0, 100)),
+              ),
+              Expanded(
+                child: Slider(
+                  value: value.toDouble(),
+                  max: 100,
+                  divisions: 100,
+                  label: '$value',
+                  onChanged: onChanged == null
+                      ? null
+                      : (double v) => onChanged!.call(v.round()),
+                ),
+              ),
+              _step(
+                Icons.add,
+                () => onChanged?.call((value + 1).clamp(0, 100)),
+              ),
+            ],
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
@@ -45,8 +72,12 @@ class VolumeBar extends StatelessWidget {
     return IconButton.filledTonal(
       onPressed: onChanged == null ? null : action,
       icon: Icon(icon, size: 18),
+      tooltip: icon == Icons.add ? 'Aumentar volume' : 'Diminuir volume',
       visualDensity: VisualDensity.compact,
-      style: IconButton.styleFrom(backgroundColor: AppTheme.surfaceHigh),
+      style: IconButton.styleFrom(
+        backgroundColor: AppTheme.surfaceHigh,
+        foregroundColor: AppTheme.text,
+      ),
     );
   }
 }

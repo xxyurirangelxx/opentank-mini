@@ -72,8 +72,10 @@ void main() {
 
     test('modelo respeita a contagem do bloco', () {
       final preset = Preset.fromBytes(_preset());
+      // O campo e 0-based: 0 = primeiro modelo, modelCount-1 = ultimo.
       expect(preset.withModel(Block.fx, 99).model(Block.fx), 2);
       expect(preset.withModel(Block.amp, 99).model(Block.amp), 19);
+      expect(preset.withModel(Block.amp, 0).model(Block.amp), 0);
     });
 
     test('igualdade compara os 92 bytes', () {

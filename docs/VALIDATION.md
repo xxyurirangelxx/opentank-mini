@@ -23,7 +23,10 @@ Aparelho usado: `TANK MINI_009`, firmware reportado como versão 9, USB
 | Leitura de bloco grande | 8192 bytes em fatias de 431 | estável entre leituras |
 | Escrita de bloco grande | 1015 bytes por comando | ACK e conteúdo confere |
 | Flash de modelos `0x70000000` | 245760 bytes lidos e comparados com a captura | idêntica (SHA-256) |
-| Tabelas de nomes de AMP e CAB em `0x80`/`0x90` | leitura | 20 nomes de cada |
+| Tabelas de nomes de AMP e CAB em `0x80`/`0x90` | leitura | 20 nomes de cada, registros de 14 bytes |
+| Nomes na interface (`--names-test`) | `readModelNames` e conferência contra os 40 cabeçalhos da flash | 20 + 20 nomes em 30 ms, 0 divergências |
+| Tabela de nomes é viva | gravar AMP 1 com outro nome e reler a tabela | nome muda na hora; restaurado |
+| Índice de modelo é 0-based | faixa dos 21 presets de fábrica contra a contagem de cada bloco | máximo = `contagem - 1` nos seis blocos |
 | Gravação permanente de AMP | registro alterado gravado, relido e restaurado | persiste sem commit |
 | Gravação permanente de CAB | registro de outro slot gravado, relido e restaurado | persiste sem commit |
 | Bypass pelo código Dart | ligar/desligar e ler `0x20000000` | byte 2 muda e volta |

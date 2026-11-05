@@ -3,6 +3,7 @@ import 'dart:typed_data';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:opentank_mini/core/device/tank_device.dart';
+import 'package:opentank_mini/core/model/model_flash.dart';
 import 'package:opentank_mini/core/model/preset.dart';
 import 'package:opentank_mini/core/protocol/messages.dart';
 
@@ -71,6 +72,46 @@ void main() {
       final data = await device.readBlock(0, 900);
       expect(data.length, 900);
       expect(lengths, <int>[431, 431, 38]);
+      await device.disconnect();
+    });
+
+    test('le os nomes de AMP e CAB na area de modelo', () async {
+      List<int> table(List<String> values) {
+        final out = <int>[];
+        for (final value in values) {
+          final bytes = value.codeUnits.take(14).toList();
+          out
+            ..addAll(bytes)
+            ..addAll(List<int>.filled(14 - bytes.length, 0));
+        }
+        return out;
+      }
+
+      final areas = <int>[];
+      final transport = FakeTransport((List<int> raw) {
+        if (raw[2] == 0x11) return identity();
+        if (raw[2] == 0x23) {
+          final address =
+              raw[7] | (raw[8] << 8) | (raw[9] << 16) | (raw[10] << 24);
+          final length = raw[11] | (raw[12] << 8);
+          areas.add(raw[6]);
+          final names = address == ampNameTableAddress
+              ? table(<String>['1J120_CL', '2J900_CL'])
+              : table(<String>['1AC-SeVin']);
+          final padded = <int>[
+            ...names,
+            ...List<int>.filled(length - names.length, 0),
+          ];
+          return readReply(address, padded.sublist(0, length));
+        }
+        return ack();
+      });
+      final device = TankDevice(transport);
+      await device.connect();
+      final fromPedal = await device.readModelNames();
+      expect(fromPedal.amp, <String>['1J120_CL', '2J900_CL']);
+      expect(fromPedal.cab, <String>['1AC-SeVin']);
+      expect(areas, <int>[0x05, 0x05], reason: 'a tabela exige area 0x05');
       await device.disconnect();
     });
 

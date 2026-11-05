@@ -39,3 +39,9 @@ __pycache__/
 # Artefatos locais de pesquisa que não devem ir para o repo
 research/artifacts/*.tmp
 *.log
+
+# Instalador gerado (vai para a release, não para o repositório)
+dist/
+
+# Capturas temporárias das ferramentas de pesquisa
+tools/research/shot-*.png

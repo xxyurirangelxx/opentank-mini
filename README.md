@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/images/logo.png" alt="OpenTank Mini" width="360">
+</p>
+
 # OpenTank Mini
 
 Unofficial, open-source desktop and mobile editor for the **M-VAVE Tank Mini**
@@ -47,12 +51,27 @@ on Linux or a real Android device.
 ```bash
 cd app
 flutter pub get
-flutter test          # 103 unit tests, no hardware needed
+flutter test          # 127 unit tests, no hardware needed
 flutter run -d windows
 ```
 
 Requires Flutter 3.47 or newer. On Windows you need the "Desktop development
 with C++" workload from Visual Studio 2022 (MSVC, CMake and the Windows SDK).
+
+### Windows installer
+
+The app ships as a per-user installer, so no administrator rights are needed:
+
+```bash
+python tools/build_installer.py        # builds the app and the .exe installer
+```
+
+The result lands in `dist/OpenTankMini-<version>-windows-x64.exe`. It installs
+to `%LOCALAPPDATA%\Programs\OpenTank Mini` and creates Start-menu and desktop
+shortcuts. The packaging step needs [Inno Setup 6]; the script finds it
+automatically and tells you how to install it if it is missing.
+
+[Inno Setup 6]: https://jrsoftware.org/isdl.php
 
 ## How it works
 

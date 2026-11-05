@@ -33,6 +33,24 @@ const int cabFlashSlotSize = 4096;
 /// Quantidade de AMPs e CABs gravaveis.
 const int modelSlotCount = 20;
 
+/// Endereco da tabela de nomes de CAB que o pedal mantem na memoria.
+const int cabNameTableAddress = 0x80000000;
+
+/// Endereco da tabela de nomes de AMP que o pedal mantem na memoria.
+const int ampNameTableAddress = 0x90000000;
+
+/// Tamanho de um registro da tabela de nomes.
+///
+/// E o mesmo campo de 14 bytes do cabecalho do modelo na flash: o nome ocupa
+/// o inicio do registro e o resto e preenchido com NUL.
+const int nameTableRecordSize = 14;
+
+/// Quantidade de nomes que cada tabela expoe.
+const int nameTableCount = modelSlotCount;
+
+/// Bytes que cobrem uma tabela inteira (20 x 14 = 280): cabe numa so leitura.
+const int nameTableBytes = nameTableCount * nameTableRecordSize;
+
 /// Header de um modelo na flash de modelos de fabrica (`AM4\0`).
 const List<int> factoryAmpMagic = <int>[0x41, 0x4D, 0x34, 0x00];
 
@@ -41,16 +59,24 @@ const List<int> factoryCabMagic = <int>[0x43, 0x41, 0x42, 0x00];
 
 /// Endereco do bloco (ou metade de bloco) de um modelo.
 ///
-/// [index] e o valor guardado no preset, 1-based.
+/// [index] e o valor guardado no preset, **0-based**: o pedal guarda `0` para o
+/// primeiro modelo de cada bloco.
+///
+/// A prova esta nos 21 presets de fabrica: o maior valor gravado e exatamente
+/// `contagem - 1` nos seis blocos (FX 2 de 3, AMP 19 de 20, CAB 19 de 20,
+/// MOD 6 de 7, DLY 4 de 5, REV 5 de 6), e ha presets com FX `0` e o FX ligado —
+/// ou seja, `0` e um modelo e nao "sem modelo".
 int modelFlashAddress({required bool isCab, required int index}) {
-  if (index < 1 || index > modelSlotCount) {
-    throw RangeError('Indice de modelo fora de 1..$modelSlotCount: $index');
+  if (index < 0 || index >= modelSlotCount) {
+    throw RangeError(
+      'Indice de modelo fora de 0..${modelSlotCount - 1}: $index',
+    );
   }
   if (!isCab) {
-    return modelFlashBase + (index - 1) * 8192;
+    return modelFlashBase + index * 8192;
   }
-  final block = 20 + (index - 1) ~/ 2;
-  final half = (index - 1) % 2;
+  final block = 20 + index ~/ 2;
+  final half = index % 2;
   return modelFlashBase + block * 8192 + half * cabFlashSlotSize;
 }
 
@@ -125,4 +151,91 @@ Uint8List _nameBytes(String name) {
     out[i] = clean.codeUnitAt(i) & 0xFF;
   }
   return out;
+}
+
+/// Decodifica uma tabela de nomes devolvida pelo pedal.
+///
+/// Os registros sao fixos de [nameTableRecordSize] bytes. A leitura para no
+/// primeiro registro vazio ou invalido: um pedal que ainda nao respondeu
+/// devolve zeros, e ai a tabela fica vazia em vez de virar uma lista de
+/// strings em branco.
+List<String> decodeNameTable(List<int> blob, {int limit = nameTableCount}) {
+  final names = <String>[];
+  for (
+    var offset = 0;
+    offset + nameTableRecordSize <= blob.length && names.length < limit;
+    offset += nameTableRecordSize
+  ) {
+    final name = _decodeNameRecord(blob, offset);
+    if (name == null) break;
+    names.add(name);
+  }
+  return names;
+}
+
+String? _decodeNameRecord(List<int> blob, int offset) {
+  final text = StringBuffer();
+  for (var i = 0; i < nameTableRecordSize; i++) {
+    final byte = blob[offset + i];
+    if (byte == 0) break;
+    // Fora do ASCII imprimivel so pode ser lixo de leitura.
+    if (byte < 0x20 || byte > 0x7E) return null;
+    text.writeCharCode(byte);
+  }
+  final value = text.toString().trim();
+  return value.isEmpty ? null : value;
+}
+
+/// Nomes dos modelos que o pedal expoe: AMP e CAB.
+///
+/// Indices sao 0-based, iguais aos gravados no preset. Nao existe tabela
+/// equivalente para FX, MOD, DLY e REV: varrendo `0x80000000`..`0xA0000000` o
+/// pedal so devolve as duas tabelas abaixo, espelhadas (ver `PROTOCOL.md`).
+class ModelNames {
+  const ModelNames({this.amp = const <String>[], this.cab = const <String>[]});
+
+  /// Nomes de AMP, indice 0 = primeiro modelo.
+  final List<String> amp;
+
+  /// Nomes de CAB, indice 0 = primeiro modelo.
+  final List<String> cab;
+
+  static const ModelNames empty = ModelNames();
+
+  bool get isEmpty => amp.isEmpty && cab.isEmpty;
+
+  List<String> table({required bool isCab}) => isCab ? cab : amp;
+
+  /// Nome do modelo [index] (0-based), ou `null` quando o pedal nao informou.
+  String? name({required bool isCab, required int index}) {
+    final names = table(isCab: isCab);
+    if (index < 0 || index >= names.length) return null;
+    final value = names[index].trim();
+    return value.isEmpty ? null : value;
+  }
+
+  /// Copia com o nome de um modelo trocado.
+  ///
+  /// Usado depois de gravar um modelo: o pedal regenera a tabela na hora, mas
+  /// atualizar a copia local evita uma segunda leitura logo apos a gravacao.
+  ModelNames withName({
+    required bool isCab,
+    required int index,
+    required String name,
+  }) {
+    if (index < 0 || index >= nameTableCount) {
+      throw RangeError(
+        'Indice de modelo fora de 0..${nameTableCount - 1}: $index',
+      );
+    }
+    final current = table(isCab: isCab);
+    final next = <String>[
+      for (var i = 0; i < nameTableCount; i++)
+        i < current.length ? current[i] : '',
+    ];
+    next[index] = name;
+    return isCab
+        ? ModelNames(amp: amp, cab: next)
+        : ModelNames(amp: next, cab: cab);
+  }
 }

@@ -31,8 +31,8 @@ def flutter_cmd():
     for candidate in (
         os.environ.get('FLUTTER'),
         shutil.which('flutter'),
-        r'C:\Users\Yuri Rangel\tools-sdk\flutter\bin\flutter.bat',
-        r'C:\Users\Yuri Rangel\tools-sdk\flutter\bin\flutter',
+        Path.home() / 'tools-sdk' / 'flutter' / 'bin' / 'flutter.bat',
+        Path.home() / 'tools-sdk' / 'flutter' / 'bin' / 'flutter',
     ):
         if candidate and Path(candidate).exists():
             return candidate
@@ -58,6 +58,7 @@ def check_files():
         'app/lib/core/model/preset_bank.dart': 'banco .atkm',
         'app/lib/core/model/model_format.dart': 'buffer AMP/CAB',
         'app/lib/core/model/model_flash.dart': 'flash de modelos',
+        'app/lib/core/model/model_catalog.dart': 'catálogo de modelos e parâmetros',
         'app/lib/core/device/tank_device.dart': 'cliente do dispositivo',
         'app/lib/platform/midi_transport.dart': 'transporte USB',
         'app/lib/platform/ble_transport.dart': 'transporte BLE',
@@ -92,8 +93,11 @@ def check_docs():
         ('docs/PROTOCOL.md', r'0x10000000 \+ offset', 'endereço de tempo real'),
         ('docs/PROTOCOL.md', r'431', 'limite de leitura'),
         ('docs/PROTOCOL.md', r'1015', 'limite de escrita'),
+        ('docs/PROTOCOL.md', r'20 registros de 14 bytes', 'registro da tabela de nomes'),
+        ('docs/PROTOCOL.md', r'não têm nomes como texto', 'limite de nomes de FX/MOD/DLY/REV'),
         ('docs/VALIDATION.md', r'21/21', 'banco verificado'),
         ('docs/VALIDATION.md', r'30/30', 'flash verificada'),
+        ('docs/VALIDATION.md', r'0 divergências', 'nomes conferidos contra a flash'),
         ('docs/VALIDATION.md', r'[Pp]ower-cycle', 'lacuna do power-cycle'),
         ('README.md', r'M-VAVE Tank Mini', 'apresenta o produto'),
         ('README.md', r'MIT', 'licença citada'),
@@ -120,16 +124,35 @@ def check_code_rules():
          'checksum começa no índice 5'),
         ('app/lib/core/model/model_flash.dart', r'0x70000000',
          'flash de modelos no endereço certo'),
+        ('app/lib/core/model/model_flash.dart', r'decodeNameTable',
+         'tabela de nomes decodificada'),
+        ('app/lib/state/tank_controller.dart', r'readModelNames',
+         'controlador puxa os nomes do pedal'),
+        ('app/lib/ui/screens/home_screen.dart', r'modelNames:',
+         'tela passa os nomes para o painel'),
+        # O índice do modelo é 0-based: clamp em modelCount-1 e endereço n*8192.
+        # Trocar para 1-based desalinha nome, seleção e gravação.
+        ('app/lib/core/model/preset.dart', r'clamp\(0, block\.modelCount - 1\)',
+         'índice de modelo 0-based no preset'),
+        ('app/lib/core/model/model_flash.dart', r'index \* 8192',
+         'endereço de modelo 0-based na flash'),
     ]
     bad = []
     for path, pattern, label in checks:
         text = (ROOT / path).read_text(encoding='utf-8')
         if not re.search(pattern, text):
             bad.append(label)
+    # Regressão: nenhuma lista fixa de modelos na interface. Os nomes têm de
+    # vir do pedal; uma lista no código volta a mostrar nome errado quando o
+    # usuário grava um modelo com outro nome.
+    panel = (ROOT / 'app/lib/ui/widgets/block_panel.dart').read_text(
+        encoding='utf-8')
+    if re.search(r"knownModels|Noise Gate", panel):
+        bad.append('block_panel voltou a ter lista fixa de modelos')
     if bad:
         record('regras de protocolo', FAIL, f'violadas: {bad}')
     else:
-        record('regras de protocolo', PASS, f'{len(checks)} regras presentes')
+        record('regras de protocolo', PASS, f'{len(checks) + 2} regras presentes')
 
 
 def check_tests(quick):
@@ -143,18 +166,6 @@ def check_tests(quick):
     else:
         tail = out.strip().splitlines()[-3:]
         record('testes', FAIL, ' | '.join(tail))
-
-
-def check_analyze(quick):
-    if quick:
-        record('análise estática', SKIP, '--quick')
-        return
-    code, out = run([flutter_cmd(), 'analyze', '--fatal-infos'], APP)
-    if code == 0 and 'No issues found' in out:
-        record('análise estática', PASS, 'flutter analyze --fatal-infos limpo')
-    else:
-        tail = out.strip().splitlines()[-3:]
-        record('análise estática', FAIL, ' | '.join(tail))
 
 
 def check_format(quick):

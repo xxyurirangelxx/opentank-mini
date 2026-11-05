@@ -10,10 +10,8 @@ import '../theme.dart';
 
 /// Tela de importacao de AMP e CAB.
 ///
-/// O arquivo e enviado para o buffer de modelo do pedal (`area 0x05`) e
-/// ativado por preview. Gravar de forma permanente no aparelho depende de um
-/// comando que ainda nao foi capturado; por isso a tela deixa claro que a
-/// operacao e de previa.
+/// O arquivo pode ir para o buffer de previa do pedal (para ouvir antes) ou ser
+/// gravado de forma permanente num dos 20 slots da flash de modelos.
 class ImportScreen extends StatefulWidget {
   const ImportScreen({super.key});
 
@@ -31,87 +29,63 @@ class _ImportScreenState extends State<ImportScreen> {
   @override
   Widget build(BuildContext context) {
     final controller = context.watch<TankController>();
+    final isAmp = _kind == ModelKind.amp;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Importar AMP / CAB'),
-        backgroundColor: AppTheme.surface,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(24),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+        title: const Row(
           children: <Widget>[
-            Row(
+            Icon(Icons.folder_open, size: 20),
+            SizedBox(width: 10),
+            Text('Importar AMP / CAB'),
+          ],
+        ),
+        backgroundColor: AppTheme.surface,
+        surfaceTintColor: Colors.transparent,
+      ),
+      body: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 900),
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.all(24),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                FilledButton.tonalIcon(
-                  onPressed: _busy ? null : _pickAmp,
-                  icon: const Icon(Icons.memory),
-                  label: const Text('Carregar AMP (.am2Data)'),
+                _PickerCards(
+                  busy: _busy,
+                  onPickAmp: _pickAmp,
+                  onPickCab: _pickCab,
                 ),
-                const SizedBox(width: 12),
-                FilledButton.tonalIcon(
-                  onPressed: _busy ? null : _pickCab,
-                  icon: const Icon(Icons.graphic_eq),
-                  label: const Text('Carregar CAB (.wav)'),
-                ),
-                const Spacer(),
-                if (_buffer != null)
-                  FilledButton.icon(
-                    onPressed: _busy || !controller.connected
-                        ? null
-                        : () => _preview(controller),
-                    icon: const Icon(Icons.play_arrow),
-                    label: const Text('Ouvir no pedal'),
-                  ),
+                const SizedBox(height: 20),
                 if (_buffer != null) ...<Widget>[
-                  const SizedBox(width: 8),
-                  FilledButton.icon(
-                    onPressed: _busy || !controller.connected
-                        ? null
-                        : () => _saveToDevice(controller),
-                    icon: const Icon(Icons.save),
-                    label: const Text('Gravar permanentemente'),
+                  _FileCard(
+                    name: _fileName ?? 'modelo',
+                    isAmp: isAmp,
+                    bytes: _buffer!.length,
+                    busy: _busy,
+                    connected: controller.connected,
+                    onPreview: () => _preview(controller),
+                    onSave: () => _saveToDevice(controller),
                   ),
+                  const SizedBox(height: 16),
                 ],
+                if (_busy) ...<Widget>[
+                  const LinearProgressIndicator(minHeight: 3),
+                  const SizedBox(height: 10),
+                ],
+                if (_status.isNotEmpty)
+                  Text(
+                    _status,
+                    style: const TextStyle(
+                      color: AppTheme.textDim,
+                      fontSize: 13,
+                      height: 1.4,
+                    ),
+                  ),
+                const SizedBox(height: 20),
+                const _Notice(),
               ],
             ),
-            const SizedBox(height: 20),
-            if (_busy) const LinearProgressIndicator(minHeight: 2),
-            if (_fileName != null) ...<Widget>[
-              Container(
-                padding: const EdgeInsets.all(14),
-                decoration: BoxDecoration(
-                  color: AppTheme.surface,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Row(
-                  children: <Widget>[
-                    Icon(
-                      _kind == ModelKind.amp ? Icons.memory : Icons.graphic_eq,
-                      color: AppTheme.accent,
-                    ),
-                    const SizedBox(width: 12),
-                    Expanded(child: Text(_fileName!)),
-                    Text(
-                      _kind == ModelKind.amp ? 'AMP' : 'CAB',
-                      style: const TextStyle(
-                        color: AppTheme.textDim,
-                        fontSize: 12,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 12),
-            ],
-            if (_status.isNotEmpty)
-              Text(
-                _status,
-                style: const TextStyle(color: AppTheme.textDim, fontSize: 13),
-              ),
-            const Spacer(),
-            const _Notice(),
-          ],
+          ),
         ),
       ),
     );
@@ -167,7 +141,7 @@ class _ImportScreenState extends State<ImportScreen> {
         _buffer = null;
         _fileName = null;
         _kind = ModelKind.unknown;
-        _status = 'Nao foi possivel ler o arquivo: $error';
+        _status = 'Não foi possível ler o arquivo: $error';
       });
     } finally {
       setState(() => _busy = false);
@@ -188,7 +162,7 @@ class _ImportScreenState extends State<ImportScreen> {
       );
       setState(
         () =>
-            _status = 'Previa ativa. Ajuste os controles na pedal para ouvir.',
+            _status = 'Prévia ativa. Ajuste os controles na pedal para ouvir.',
       );
     } catch (error) {
       setState(() => _status = 'Falha no envio: $error');
@@ -215,10 +189,10 @@ class _ImportScreenState extends State<ImportScreen> {
             crossAxisSpacing: 8,
             childAspectRatio: 1.8,
             children: <Widget>[
-              for (var i = 1; i <= modelSlotCount; i++)
+              for (var i = 0; i < modelSlotCount; i++)
                 OutlinedButton(
                   onPressed: () => Navigator.pop(ctx, i),
-                  child: Text('$i'),
+                  child: Text('${i + 1}'),
                 ),
             ],
           ),
@@ -255,12 +229,12 @@ class _ImportScreenState extends State<ImportScreen> {
       if (!mounted) return;
       setState(
         () => _status =
-            'Gravado no slot $index e conferido por releitura. '
+            'Gravado no slot ${index + 1} e conferido por releitura. '
             'Selecione o modelo no preset para usar.',
       );
     } catch (error) {
       if (!mounted) return;
-      setState(() => _status = 'Falha na gravacao: $error');
+      setState(() => _status = 'Falha na gravação: $error');
     } finally {
       if (mounted) setState(() => _busy = false);
     }
@@ -277,6 +251,7 @@ class _Notice extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppTheme.surfaceHigh,
         borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: AppTheme.stroke),
       ),
       child: const Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -285,13 +260,244 @@ class _Notice extends StatelessWidget {
           SizedBox(width: 10),
           Expanded(
             child: Text(
-              'O envio coloca o modelo no buffer de previa do pedal. '
+              'O envio coloca o modelo no buffer de prévia do pedal. '
               'Gravar permanentemente apaga os setores da flash do slot e '
-              'confere por releitura; o slot antigo e sobrescrito, entao '
+              'confere por releitura; o slot antigo e sobrescrito, então '
               'guarde um backup antes.',
-              style: TextStyle(fontSize: 12, color: AppTheme.textDim),
+              style: TextStyle(
+                fontSize: 12,
+                color: AppTheme.textDim,
+                height: 1.4,
+              ),
             ),
           ),
+        ],
+      ),
+    );
+  }
+}
+
+/// Dois cartoes de escolha de arquivo.
+class _PickerCards extends StatelessWidget {
+  const _PickerCards({
+    required this.busy,
+    required this.onPickAmp,
+    required this.onPickCab,
+  });
+
+  final bool busy;
+  final VoidCallback onPickAmp;
+  final VoidCallback onPickCab;
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints constraints) {
+        final wide = constraints.maxWidth > 560;
+        final gap = wide ? 14.0 : 0.0;
+        final width = wide ? (constraints.maxWidth - gap) / 2 : double.infinity;
+        final cards = <Widget>[
+          SizedBox(
+            width: width,
+            child: _PickerCard(
+              icon: Icons.memory,
+              title: 'AMP',
+              subtitle: 'Arquivo .am2Data exportado do editor oficial',
+              onTap: busy ? null : onPickAmp,
+            ),
+          ),
+          SizedBox(
+            width: width,
+            child: _PickerCard(
+              icon: Icons.graphic_eq,
+              title: 'CAB',
+              subtitle: 'IR em .wav, convertido para 24 bits mono',
+              onTap: busy ? null : onPickCab,
+            ),
+          ),
+        ];
+        if (!wide) {
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[cards[0], const SizedBox(height: 12), cards[1]],
+          );
+        }
+        return Row(
+          children: <Widget>[
+            cards[0],
+            SizedBox(width: gap),
+            cards[1],
+          ],
+        );
+      },
+    );
+  }
+}
+
+class _PickerCard extends StatelessWidget {
+  const _PickerCard({
+    required this.icon,
+    required this.title,
+    required this.subtitle,
+    required this.onTap,
+  });
+
+  final IconData icon;
+  final String title;
+  final String subtitle;
+  final VoidCallback? onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: AppTheme.surface,
+      borderRadius: BorderRadius.circular(AppTheme.radius),
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(AppTheme.radius),
+        child: Container(
+          height: 108,
+          padding: const EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(AppTheme.radius),
+            border: Border.all(color: AppTheme.stroke),
+          ),
+          child: Row(
+            children: <Widget>[
+              Container(
+                width: 46,
+                height: 46,
+                decoration: BoxDecoration(
+                  color: AppTheme.accentSoft,
+                  borderRadius: BorderRadius.circular(13),
+                ),
+                child: Icon(icon, color: AppTheme.accent, size: 22),
+              ),
+              const SizedBox(width: 14),
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      title,
+                      style: const TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    const SizedBox(height: 3),
+                    Text(
+                      subtitle,
+                      style: const TextStyle(
+                        fontSize: 11.5,
+                        color: AppTheme.textDim,
+                        height: 1.3,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const Icon(Icons.upload_file, size: 18, color: AppTheme.textDim),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// Arquivo carregado, com as acoes de previa e gravacao.
+class _FileCard extends StatelessWidget {
+  const _FileCard({
+    required this.name,
+    required this.isAmp,
+    required this.bytes,
+    required this.busy,
+    required this.connected,
+    required this.onPreview,
+    required this.onSave,
+  });
+
+  final String name;
+  final bool isAmp;
+  final int bytes;
+  final bool busy;
+  final bool connected;
+  final VoidCallback onPreview;
+  final VoidCallback onSave;
+
+  @override
+  Widget build(BuildContext context) {
+    final ready = !busy && connected;
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: AppTheme.card(),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          Row(
+            children: <Widget>[
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                decoration: BoxDecoration(
+                  color: AppTheme.accentSoft,
+                  borderRadius: BorderRadius.circular(6),
+                ),
+                child: Text(
+                  isAmp ? 'AMP' : 'CAB',
+                  style: const TextStyle(
+                    fontSize: 10.5,
+                    fontWeight: FontWeight.w800,
+                    color: AppTheme.accent,
+                    letterSpacing: 0.5,
+                  ),
+                ),
+              ),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Text(
+                  name,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+              Text(
+                '$bytes bytes',
+                style: const TextStyle(fontSize: 11.5, color: AppTheme.textDim),
+              ),
+            ],
+          ),
+          const SizedBox(height: 14),
+          Row(
+            children: <Widget>[
+              Expanded(
+                child: FilledButton.tonalIcon(
+                  onPressed: ready ? onPreview : null,
+                  icon: const Icon(Icons.play_arrow, size: 18),
+                  label: const Text('Ouvir no pedal'),
+                ),
+              ),
+              const SizedBox(width: 10),
+              Expanded(
+                child: FilledButton.icon(
+                  onPressed: ready ? onSave : null,
+                  icon: const Icon(Icons.save_outlined, size: 18),
+                  label: const Text('Gravar no pedal'),
+                ),
+              ),
+            ],
+          ),
+          if (!connected) ...<Widget>[
+            const SizedBox(height: 10),
+            const Text(
+              'Conecte a pedal para enviar.',
+              style: TextStyle(fontSize: 11.5, color: AppTheme.textDim),
+            ),
+          ],
         ],
       ),
     );

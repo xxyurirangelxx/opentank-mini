@@ -16,7 +16,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 1.0.0+1
+version: 0.1.1+2
 
 environment:
   sdk: ^3.13.7
@@ -60,7 +60,29 @@ flutter:
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
-  uses-material-design: true
+  # Fonte de ícones completa do Material, empacotada sem redução.
+  #
+  # A redução automática (`--tree-shake-icons`) mantém o subconjunto em cache e
+  # esse cache **não é invalidado** quando só a interface muda: depois de um
+  # redesenho, ícones novos saem como quadrado vazio (aconteceu duas vezes
+  # neste projeto, com a fonte caindo para 4,7 KB). Os ~1,6 MB a mais não
+  # pesam num app de desktop, então o build usa `--no-tree-shake-icons`.
+  uses-material-design: false
+
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf
+        - asset: assets/fonts/Roboto-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Roboto-Bold.ttf
+          weight: 700
+    - family: MaterialIcons
+      fonts:
+        - asset: assets/fonts/MaterialIcons-Regular.otf
+
+  assets:
+    - assets/images/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.opentank" "\0"
-            VALUE "FileDescription", "opentank_mini" "\0"
+            VALUE "CompanyName", "OpenTank Mini" "\0"
+            VALUE "FileDescription", "OpenTank Mini - editor da M-VAVE Tank Mini" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "opentank_mini" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2026 com.opentank. All rights reserved." "\0"
+            VALUE "LegalCopyright", "OpenTank Mini - projeto de codigo aberto sob licenca MIT" "\0"
             VALUE "OriginalFilename", "opentank_mini.exe" "\0"
-            VALUE "ProductName", "opentank_mini" "\0"
+            VALUE "ProductName", "OpenTank Mini" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

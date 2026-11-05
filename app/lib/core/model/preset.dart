@@ -83,6 +83,12 @@ class Preset {
 
   int model(Block block) => bytes[block.modelAddress];
 
+  /// Troca o modelo do bloco.
+  ///
+  /// O campo guarda o indice do modelo **0-based**: `0` e o primeiro modelo.
+  /// Nos 21 presets de fabrica o maior valor de cada bloco e exatamente
+  /// `contagem - 1`, e ha presets com FX `0` e o FX ligado — se `0` fosse
+  /// "sem modelo", esses presets teriam o bloco ligado sem efeito.
   Preset withModel(Block block, int index) =>
       _with(block.modelAddress, index.clamp(0, block.modelCount - 1));
 

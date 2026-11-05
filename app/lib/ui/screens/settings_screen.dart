@@ -23,84 +23,181 @@ class _SettingsScreenState extends State<SettingsScreen> {
     final bank = controller.bank;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Ajustes e arquivos'),
-        backgroundColor: AppTheme.surface,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(24),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        title: const Row(
           children: <Widget>[
-            const Text(
-              'Conexao',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              controller.connected
-                  ? 'Conectado a ${controller.device?.identity ?? "Tank Mini"}'
-                  : 'Desconectado',
-              style: const TextStyle(color: AppTheme.textDim),
-            ),
-            const SizedBox(height: 24),
-            const Text(
-              'Banco de presets',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
-            ),
-            const SizedBox(height: 8),
-            Row(
-              children: <Widget>[
-                FilledButton.tonalIcon(
-                  onPressed: bank == null ? null : _exportBank,
-                  icon: const Icon(Icons.download),
-                  label: const Text('Salvar .atkm'),
-                ),
-                const SizedBox(width: 12),
-                FilledButton.tonalIcon(
-                  onPressed: controller.busy ? null : _importBank,
-                  icon: const Icon(Icons.upload),
-                  label: const Text('Carregar .atkm'),
-                ),
-              ],
-            ),
-            const SizedBox(height: 24),
-            const Text(
-              'Modelos (AMP e CAB)',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
-            ),
-            const SizedBox(height: 8),
-            Row(
-              children: <Widget>[
-                FilledButton.tonalIcon(
-                  onPressed: controller.busy || !controller.connected
-                      ? null
-                      : _exportModels,
-                  icon: const Icon(Icons.download),
-                  label: const Text('Backup dos modelos'),
-                ),
-                const SizedBox(width: 12),
-                FilledButton.tonalIcon(
-                  onPressed: controller.busy || !controller.connected
-                      ? null
-                      : _importModels,
-                  icon: const Icon(Icons.upload),
-                  label: const Text('Restaurar modelos'),
-                ),
-              ],
-            ),
-            const SizedBox(height: 12),
-            if (_status.isNotEmpty)
-              Text(
-                _status,
-                style: const TextStyle(color: AppTheme.textDim, fontSize: 13),
-              ),
-            const Spacer(),
-            const Text(
-              'OpenTank Mini nao e afiliado a M-VAVE. Use por sua conta e risco: '
-              'grave um backup antes de alterar o aparelho.',
-              style: TextStyle(color: AppTheme.textDim, fontSize: 12),
-            ),
+            Icon(Icons.settings, size: 20),
+            SizedBox(width: 10),
+            Text('Ajustes e arquivos'),
           ],
+        ),
+        backgroundColor: AppTheme.surface,
+        surfaceTintColor: Colors.transparent,
+      ),
+      body: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 900),
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.all(24),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                _Section(
+                  icon: Icons.link,
+                  title: 'Conexão',
+                  children: <Widget>[
+                    Row(
+                      children: <Widget>[
+                        Container(
+                          width: 8,
+                          height: 8,
+                          decoration: BoxDecoration(
+                            color: controller.connected
+                                ? AppTheme.success
+                                : AppTheme.danger,
+                            shape: BoxShape.circle,
+                          ),
+                        ),
+                        const SizedBox(width: 9),
+                        Expanded(
+                          child: Text(
+                            controller.connected
+                                ? 'Conectado a ${controller.device?.identity ?? "Tank Mini"} '
+                                      '(${controller.link == Link.usb ? "USB" : "Bluetooth"})'
+                                : 'Desconectado',
+                            style: const TextStyle(
+                              fontSize: 13,
+                              color: AppTheme.text,
+                            ),
+                          ),
+                        ),
+                        if (!controller.connected)
+                          FilledButton.tonal(
+                            onPressed: controller.connect,
+                            child: const Text('Conectar'),
+                          ),
+                      ],
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 16),
+                _Section(
+                  icon: Icons.grid_view_rounded,
+                  title: 'Banco de presets',
+                  description:
+                      'O arquivo .atkm guarda os 21 slots. Exporte antes de '
+                      'alterar o aparelho.',
+                  children: <Widget>[
+                    Row(
+                      children: <Widget>[
+                        FilledButton.tonalIcon(
+                          onPressed: bank == null ? null : _exportBank,
+                          icon: const Icon(Icons.download, size: 18),
+                          label: const Text('Salvar .atkm'),
+                        ),
+                        const SizedBox(width: 12),
+                        FilledButton.tonalIcon(
+                          onPressed: controller.busy ? null : _importBank,
+                          icon: const Icon(Icons.upload, size: 18),
+                          label: const Text('Carregar .atkm'),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 16),
+                _Section(
+                  icon: Icons.memory,
+                  title: 'Modelos (AMP e CAB)',
+                  description:
+                      'Backup completo da flash de modelos: 20 AMPs e 20 CABs. '
+                      'Restaurar regrava só os blocos diferentes.',
+                  children: <Widget>[
+                    Row(
+                      children: <Widget>[
+                        FilledButton.tonalIcon(
+                          onPressed: controller.busy || !controller.connected
+                              ? null
+                              : _exportModels,
+                          icon: const Icon(Icons.download, size: 18),
+                          label: const Text('Backup dos modelos'),
+                        ),
+                        const SizedBox(width: 12),
+                        FilledButton.tonalIcon(
+                          onPressed: controller.busy || !controller.connected
+                              ? null
+                              : _importModels,
+                          icon: const Icon(Icons.upload, size: 18),
+                          label: const Text('Restaurar modelos'),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                if (_status.isNotEmpty) ...<Widget>[
+                  const SizedBox(height: 16),
+                  Container(
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: AppTheme.surfaceHigh,
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: AppTheme.stroke),
+                    ),
+                    child: Row(
+                      children: <Widget>[
+                        const Icon(
+                          Icons.terminal,
+                          size: 15,
+                          color: AppTheme.textDim,
+                        ),
+                        const SizedBox(width: 9),
+                        Expanded(
+                          child: Text(
+                            _status,
+                            style: const TextStyle(
+                              color: AppTheme.textDim,
+                              fontSize: 12.5,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+                const SizedBox(height: 28),
+                Container(
+                  padding: const EdgeInsets.all(14),
+                  decoration: BoxDecoration(
+                    color: AppTheme.surfaceHigh.withValues(alpha: 0.6),
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: AppTheme.stroke),
+                  ),
+                  child: const Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Icon(
+                        Icons.warning_amber_rounded,
+                        size: 17,
+                        color: AppTheme.accent,
+                      ),
+                      SizedBox(width: 10),
+                      Expanded(
+                        child: Text(
+                          'OpenTank Mini não e afiliado a M-VAVE. Use por sua '
+                          'conta e risco: grave um backup antes de alterar o '
+                          'aparelho.',
+                          style: TextStyle(
+                            color: AppTheme.textDim,
+                            fontSize: 12,
+                            height: 1.4,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );
@@ -159,7 +256,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           title: const Text('Restaurar os modelos?'),
           content: const Text(
             'Os 20 AMPs e 20 CABs do arquivo sobrescrevem os do pedal. '
-            'Blocos iguais sao ignorados; os diferentes sao apagados, '
+            'Blocos iguais são ignorados; os diferentes são apagados, '
             'gravados e conferidos um a um.',
           ),
           actions: <Widget>[
@@ -188,7 +285,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       if (!mounted) return;
       setState(
         () => _status = written == 0
-            ? 'A flash ja estava igual ao arquivo'
+            ? 'A flash já estava igual ao arquivo'
             : '$written blocos regravados e conferidos',
       );
     } catch (error) {
@@ -217,7 +314,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           title: const Text('Sobrescrever os 21 slots?'),
           content: const Text(
             'Isso grava todos os presets do arquivo no aparelho. '
-            'Exporte o banco atual antes, se ainda nao fez.',
+            'Exporte o banco atual antes, se ainda não fez.',
           ),
           actions: <Widget>[
             TextButton(
@@ -239,5 +336,60 @@ class _SettingsScreenState extends State<SettingsScreen> {
       if (!mounted) return;
       setState(() => _status = 'Falha: $error');
     }
+  }
+}
+
+/// Bloco de ajustes com titulo, descricao e acoes.
+class _Section extends StatelessWidget {
+  const _Section({
+    required this.icon,
+    required this.title,
+    required this.children,
+    this.description,
+  });
+
+  final IconData icon;
+  final String title;
+  final String? description;
+  final List<Widget> children;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(18),
+      decoration: AppTheme.card(),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Row(
+            children: <Widget>[
+              Icon(icon, size: 17, color: AppTheme.accent),
+              const SizedBox(width: 9),
+              Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 14.5,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ],
+          ),
+          if (description != null) ...<Widget>[
+            const SizedBox(height: 6),
+            Text(
+              description!,
+              style: const TextStyle(
+                fontSize: 12,
+                color: AppTheme.textDim,
+                height: 1.4,
+              ),
+            ),
+          ],
+          const SizedBox(height: 14),
+          ...children,
+        ],
+      ),
+    );
   }
 }

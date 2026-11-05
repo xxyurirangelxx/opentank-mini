@@ -11,7 +11,7 @@ import '../core/transport/transport.dart';
 /// `ae42`. Neste transporte o payload trafega **cru**, sem `F0`/`F7` e sem
 /// empacotamento de 7 bits. A camada de cima continua falando SysEx, entao esse
 /// transporte converte nas duas direcoes.
-class BleTransport implements TankTransport {
+class BleTransport implements TankTransport, BleDisconnectHook {
   BleTransport({required this.deviceName});
 
   static const String serviceUuid = '0000ae40-0000-1000-8000-00805f9b34fb';
@@ -25,8 +25,20 @@ class BleTransport implements TankTransport {
       StreamController<List<int>>.broadcast();
   final BytesBuilder _assembly = BytesBuilder(copy: true);
   StreamSubscription<Uint8List>? _subscription;
+  StreamSubscription<bool>? _connectionSubscription;
   String? _deviceId;
-  final int _mtu = 20;
+  int _chunkSize = 20;
+
+  /// Assinatura para quando o sistema derrubar o link.
+  @override
+  void Function()? onDisconnected;
+
+  /// Tamanho de fragmento negociado.
+  ///
+  /// O valor padrao do BLE e 23 bytes de MTU, dos quais 3 sao cabecalho ATT.
+  /// Pedir MTU maior reduz muito o tempo de uma leitura de 92 bytes (de 5
+  /// escritas para 1) e e o principal alivio para a instabilidade do Bluetooth.
+  int get chunkSize => _chunkSize;
 
   @override
   String get name => deviceName;
@@ -63,21 +75,56 @@ class BleTransport implements TankTransport {
       );
     }
     _deviceId = device.single.deviceId;
-    await UniversalBle.connect(_deviceId!);
-    final services = await UniversalBle.discoverServices(_deviceId!);
+    final deviceId = _deviceId!;
+    await UniversalBle.connect(deviceId, timeout: const Duration(seconds: 20));
+    // Depois de conectar, o sistema ainda pode derrubar o link. Escutar aqui e
+    // o que permite avisar a interface em vez de deixar a proxima requisicao
+    // morrer no timeout.
+    _connectionSubscription = UniversalBle.connectionStream(deviceId)
+        .listen((bool connected) {
+          if (!connected) onDisconnected?.call();
+        });
+
+    final services = await UniversalBle.discoverServices(deviceId);
     final hasService = services.any(
       (BleService s) => _normalize(s.uuid).contains('ae40'),
     );
     if (!hasService) {
-      await UniversalBle.disconnect(_deviceId!);
-      _deviceId = null;
+      await _teardown(deviceId);
       throw TransportException('Servico AE40 ausente; aparelho inesperado');
     }
-    await UniversalBle.subscribeNotifications(_deviceId!, serviceUuid, rxUuid);
+
+    // Pedir MTU maior e best effort: se o pedal recusar, seguimos com 23 bytes.
+    try {
+      final mtu = await UniversalBle.requestMtu(
+        deviceId,
+        185,
+        timeout: const Duration(seconds: 5),
+      );
+      _chunkSize = mtu > 3 ? mtu - 3 : 20;
+    } catch (_) {
+      _chunkSize = 20;
+    }
+
+    await UniversalBle.subscribeNotifications(deviceId, serviceUuid, rxUuid);
     _subscription = UniversalBle.characteristicValueStream(
-      _deviceId!,
+      deviceId,
       rxUuid,
     ).listen(_onNotification);
+  }
+
+  /// Fecha o link atual e esquece o dispositivo.
+  Future<void> _teardown(String deviceId) async {
+    await _subscription?.cancel();
+    _subscription = null;
+    await _connectionSubscription?.cancel();
+    _connectionSubscription = null;
+    try {
+      await UniversalBle.disconnect(deviceId);
+    } catch (_) {
+      // Pode ja estar desconectado.
+    }
+    _deviceId = null;
   }
 
   @override
@@ -87,10 +134,8 @@ class BleTransport implements TankTransport {
       throw TransportException('Transporte BLE nao aberto');
     }
     // Aqui a mensagem trafega crua: sem F0/F7 e sem empacotamento de 7 bits.
-    // O MTU reportado inclui 3 bytes de cabecalho ATT.
-    final chunkSize = _mtu - 3 > 0 ? _mtu - 3 : 20;
-    for (var offset = 0; offset < raw.length; offset += chunkSize) {
-      final end = offset + chunkSize;
+    for (var offset = 0; offset < raw.length; offset += _chunkSize) {
+      final end = offset + _chunkSize;
       final chunk = Uint8List.fromList(
         raw.sublist(offset, end > raw.length ? raw.length : end),
       );
@@ -101,8 +146,11 @@ class BleTransport implements TankTransport {
         chunk,
         withoutResponse: true,
       );
-      // O pedal precisa de folga entre fragmentos.
-      await Future<void>.delayed(const Duration(milliseconds: 6));
+      // O pedal precisa de folga entre fragmentos. Com MTU negociado o quadro
+      // costuma caber inteiro, entao na pratica isto quase nunca atrasa.
+      if (end < raw.length) {
+        await Future<void>.delayed(const Duration(milliseconds: 4));
+      }
     }
   }
 
@@ -144,6 +192,7 @@ class BleTransport implements TankTransport {
   Future<void> close() async {
     await _subscription?.cancel();
     _subscription = null;
+    onDisconnected = null;
     final deviceId = _deviceId;
     if (deviceId != null) {
       try {
@@ -151,7 +200,7 @@ class BleTransport implements TankTransport {
       } catch (_) {
         // Silencioso: o dispositivo pode ja ter desconectado.
       }
-      await UniversalBle.disconnect(deviceId);
+      await _teardown(deviceId);
     }
     _deviceId = null;
     await _incoming.close();

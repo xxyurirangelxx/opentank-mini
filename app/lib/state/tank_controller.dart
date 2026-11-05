@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/foundation.dart';
 
 import '../core/device/tank_device.dart';
@@ -70,6 +72,9 @@ class TankController extends ChangeNotifier {
   int _activeSlot = 0;
   bool _busy = false;
 
+  /// Nomes de AMP e CAB lidos do pedal. Vazio enquanto desconectado.
+  ModelNames _modelNames = ModelNames.empty;
+
   TankConnectionState get state => _state;
   String get statusMessage => _message;
   PresetBank? get bank => _bank;
@@ -78,6 +83,27 @@ class TankController extends ChangeNotifier {
   bool get busy => _busy;
   bool get connected => _state == TankConnectionState.connected;
   TankDevice? get device => _device;
+
+  /// Nomes dos modelos como o pedal os reporta.
+  ModelNames get modelNames => _modelNames;
+
+  /// Nomes de modelo de um bloco, na ordem do indice do preset.
+  ///
+  /// So AMP e CAB tem tabela no pedal; os demais voltam vazios e a interface
+  /// mostra o numero do modelo.
+  List<String> modelNamesFor(Block block) {
+    switch (block) {
+      case Block.amp:
+        return _modelNames.amp;
+      case Block.cab:
+        return _modelNames.cab;
+      case Block.fx:
+      case Block.mod:
+      case Block.dly:
+      case Block.rev:
+        return const <String>[];
+    }
+  }
 
   Preset? _pending;
   bool _draining = false;
@@ -98,7 +124,7 @@ class TankController extends ChangeNotifier {
           await _push(baseline, target);
           _lastSent = target;
         } catch (error) {
-          _message = 'Alteracao rejeitada: $error';
+          _message = 'Alteração rejeitada: $error';
           _pending = null;
           notifyListeners();
           break;
@@ -111,6 +137,63 @@ class TankController extends ChangeNotifier {
 
   /// Ultimo estado confirmado no pedal; base das diferencas enviadas.
   Preset? _lastSent;
+
+  /// Consulta periodica do preset ativo.
+  ///
+  /// O pedal **nao avisa** quando o usuario mexe nele: escutando a porta por 20
+  /// segundos sem enviar nada chegam zero mensagens. O editor oficial resolve
+  /// consultando o estado a cada 1 segundo (medido nas capturas: 360 envios da
+  /// mesma leitura, intervalo mediano de 1,000 s). E o mesmo caminho aqui.
+  Timer? _pollTimer;
+  bool _polling = false;
+
+  /// Intervalo entre consultas. Um segundo e o que o editor oficial usa e o
+  /// pedal responde bem; mais rapido so gasta radio no Bluetooth.
+  static const Duration pollInterval = Duration(seconds: 1);
+
+  void _startPolling() {
+    _pollTimer?.cancel();
+    _pollTimer = Timer.periodic(pollInterval, (_) => _poll());
+  }
+
+  void _stopPolling() {
+    _pollTimer?.cancel();
+    _pollTimer = null;
+  }
+
+  /// Le o preset ativo e adota o que mudou no pedal.
+  ///
+  /// Nao roda enquanto ha envio em andamento: a resposta poderia chegar antes
+  /// de o pedal aplicar a edicao e a interface voltaria um passo.
+  Future<void> _poll() async {
+    final device = _device;
+    if (device == null || !connected || _polling) return;
+    if (_busy || _draining || _pending != null) return;
+    _polling = true;
+    try {
+      final active = await device.readActive();
+      final known = _lastSent;
+      if (known != null && active == known) return;
+      _adopt(active);
+    } catch (error) {
+      // Uma consulta perdida nao derruba a sessao; a proxima tenta de novo.
+      debugPrint('consulta periodica falhou: $error');
+    } finally {
+      _polling = false;
+    }
+  }
+
+  /// Adota um estado que veio do pedal.
+  void _adopt(Preset active) {
+    final bank = _bank;
+    _draft = active;
+    _lastSent = active;
+    if (bank != null) {
+      final match = _matchingSlot(bank.slots, active);
+      if (match >= 0) _activeSlot = match;
+    }
+    notifyListeners();
+  }
 
   /// Rascunho difere do que esta salvo no slot?
   bool get isDirty {
@@ -157,6 +240,9 @@ class TankController extends ChangeNotifier {
       _state = TankConnectionState.connected;
       _message = identity;
       notifyListeners();
+      // Se o transporte cair (BLE desconectado pelo sistema, cabo removido), a
+      // sessao termina de forma limpa em vez de falhar em toda requisicao.
+      _lostSubscription = device.lost.listen((_) => _onLinkLost());
       await refresh();
     } catch (error) {
       _state = TankConnectionState.error;
@@ -170,8 +256,26 @@ class TankController extends ChangeNotifier {
     }
   }
 
+  StreamSubscription<void>? _lostSubscription;
+
+  /// O link caiu por conta do sistema.
+  ///
+  /// Mantem o banco lido e o rascunho na tela, mas marca como desconectado: o
+  /// usuario ve o estado real e pode reconectar sem perder o que estava vendo.
+  void _onLinkLost() {
+    _stopPolling();
+    _pollTimer = null;
+    if (_state != TankConnectionState.connected) return;
+    _state = TankConnectionState.error;
+    _message = 'Conexão perdida';
+    notifyListeners();
+  }
+
   Future<void> disconnect() async {
     final device = _device;
+    _stopPolling();
+    await _lostSubscription?.cancel();
+    _lostSubscription = null;
     _device = null;
     _state = TankConnectionState.idle;
     _message = '';
@@ -179,6 +283,7 @@ class TankController extends ChangeNotifier {
     _draft = null;
     _lastSent = null;
     _pending = null;
+    _modelNames = ModelNames.empty;
     notifyListeners();
     await device?.disconnect();
   }
@@ -198,7 +303,23 @@ class TankController extends ChangeNotifier {
       _draft = active;
       _lastSent = active;
       _message = device.identity;
+      _modelNames = await _readNames(device);
+      _startPolling();
     });
+  }
+
+  /// Le os nomes sem derrubar a conexao se a tabela nao responder.
+  ///
+  /// Um pedal com firmware diferente pode nao expor as tabelas; nesse caso a
+  /// interface volta a mostrar o numero do modelo, mas o editor continua
+  /// utilizavel.
+  Future<ModelNames> _readNames(TankDevice device) async {
+    try {
+      return await device.readModelNames();
+    } catch (error) {
+      debugPrint('nomes de modelo indisponiveis: $error');
+      return ModelNames.empty;
+    }
   }
 
   int _matchingSlot(List<Preset> slots, Preset active) {
@@ -207,6 +328,21 @@ class TankController extends ChangeNotifier {
     }
     // Estado nao salvo: mantem o slot selecionado.
     return _activeSlot;
+  }
+
+  /// Slot cujo conteudo salvo corresponde ao preset ativo, ou `null` quando o
+  /// pedal esta com uma edicao nao salva.
+  ///
+  /// A interface usa isto para nao mentir no seletor de slot: antes, qualquer
+  /// estado nao reconhecido fazia o seletor cair no slot anterior.
+  int? get matchedSlot {
+    final bank = _bank;
+    final draft = _draft;
+    if (bank == null || draft == null) return null;
+    for (var i = 0; i < bank.slots.length; i++) {
+      if (bank.slots[i] == draft) return i;
+    }
+    return null;
   }
 
   /// Seleciona um slot no pedal.
@@ -250,7 +386,7 @@ class TankController extends ChangeNotifier {
       await _push(previous, next);
     } catch (error) {
       _draft = previous;
-      _message = 'Alteracao rejeitada: $error';
+      _message = 'Alteração rejeitada: $error';
       notifyListeners();
     }
   }
@@ -369,7 +505,7 @@ class TankController extends ChangeNotifier {
 
   /// Grava um modelo permanentemente na flash do pedal.
   ///
-  /// [index] e o indice 1-based do slot de modelo (o mesmo valor que o preset
+  /// [index] e o indice 0-based do slot de modelo (o mesmo valor que o preset
   /// guarda). O registro e montado por `model_flash.dart`.
   Future<void> saveModel({
     required ModelKind kind,
@@ -394,7 +530,14 @@ class TankController extends ChangeNotifier {
     notifyListeners();
     try {
       await device.writeModelFlash(address, record, onProgress: onProgress);
-      _message = 'Modelo gravado em ${isCab ? 'CAB' : 'AMP'} $index';
+      // O pedal regenera a tabela de nomes na hora; atualizar a copia local
+      // evita uma releitura so para exibir o nome novo.
+      _modelNames = _modelNames.withName(
+        isCab: isCab,
+        index: index,
+        name: name,
+      );
+      _message = 'Modelo gravado em ${isCab ? 'CAB' : 'AMP'} ${index + 1}';
     } finally {
       _busy = false;
       notifyListeners();
@@ -522,6 +665,8 @@ class TankController extends ChangeNotifier {
 
   @override
   void dispose() {
+    _stopPolling();
+    _lostSubscription?.cancel();
     _device?.disconnect();
     super.dispose();
   }

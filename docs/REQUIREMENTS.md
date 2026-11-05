@@ -21,6 +21,10 @@ Legenda da coluna *Pedal*:
 | Editar routing (6 blocos) | `setRouting` | idem | sim |
 | Ligar/desligar bloco | `setBlockEnabled` | idem | sim |
 | Trocar modelo de bloco | `setBlockModel` | idem | sim |
+| Mostrar nome de AMP e CAB na interface | `TankDevice.readModelNames` + `ModelNames` | `le os nomes de AMP e CAB na area de modelo`, `traz os nomes de AMP e CAB que o pedal reporta` | sim (20 + 20 nomes, 0 divergências contra 40 cabeçalhos) |
+| Mostrar nome de FX, MOD, DLY e REV | `model_catalog.dart` (`catalogModelName`) | `model_catalog_test.dart` | indireto (o pedal não expõe; nomes do M-EFCS) |
+| Nomear os knobs conforme o modelo | `parameterLabelsFor` | `model_catalog_test.dart` | indireto (rótulos do M-EFCS) |
+| Faixa dos knobs do CAB | `parameterText` | `model_catalog_test.dart` | indireto (20–300 Hz e 18,0k–5,0k) |
 | Editar parâmetros | `setParameter` | idem | sim |
 | Pré-ouvir antes de salvar | `apply` grava na RAM | `editar aplica no pedal...` | sim |
 | Salvar no slot atual | `save` → `saveSlot` | `save grava no slot...` | sim |
@@ -41,7 +45,7 @@ Legenda da coluna *Pedal*:
 
 | Requisito | Código | Build | Pedal |
 |---|---|---|---|
-| Windows USB MIDI | `midi_transport.dart` | **bloqueado** (falta `VC.CMake.Project`) | não |
+| Windows USB MIDI | `midi_transport.dart` | `opentank_mini.exe` compila e roda | sim (conexão e leitura dos 21 slots) |
 | Windows BLE | `ble_transport.dart` | idem | não |
 | Linux USB MIDI | idem | CI (`build-linux`) | não |
 | Linux BLE | idem | CI | não |
@@ -63,9 +67,8 @@ empacotamento. O que não rodou foi o binário Flutter nesses caminhos.
 
 | Item | Por quê |
 |---|---|
-| Build Windows | falta componente do Visual Studio; instalar exige UAC |
 | Persistência após power-cycle | a gravação não leva commit e ainda não houve desligar/ligar |
-| Nomes de FX, MOD, DLY e REV | só AMP e CAB foram lidos do pedal |
+| Nomes de FX, MOD, DLY e REV | vêm do catálogo do M-EFCS, não do pedal: varrendo `0x80000000`..`0xA0000000` só existem as tabelas de AMP e CAB |
 | Áudio (afinador, loopback, bypass) | precisa de guitarra e ouvido |
 | Número de amostras que o CAB usa na flash | IR de fábrica curto não revela; ver `PROTOCOL.md` |
 

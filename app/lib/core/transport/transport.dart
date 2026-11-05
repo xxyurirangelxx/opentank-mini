@@ -34,3 +34,12 @@ class TransportException implements Exception {
   String toString() =>
       'TransportException: $message${cause == null ? '' : ' ($cause)'}';
 }
+
+/// Transporte que consegue avisar quando o link cai.
+///
+/// So o BLE implementa: no MIDI USB o sistema nao entrega desconexao, entao a
+/// deteccao ali fica por conta do timeout da requisicao.
+abstract class BleDisconnectHook {
+  /// Funcao chamada quando o link cai. `null` remove o aviso.
+  set onDisconnected(void Function()? callback);
+}

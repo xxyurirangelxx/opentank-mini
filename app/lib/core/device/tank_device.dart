@@ -63,26 +63,81 @@ class _Response {
 /// Traduz chamadas de negocio em mensagens do protocolo e valida as respostas.
 /// Nao conhece Flutter nem MIDI diretamente: recebe um [TankTransport].
 class TankDevice {
-  TankDevice(this.transport, {this.readTimeout = const Duration(seconds: 3)});
+  TankDevice(
+    this.transport, {
+    this.readTimeout = const Duration(seconds: 3),
+    this.maxAttempts = 3,
+  });
 
   final TankTransport transport;
   final Duration readTimeout;
+
+  /// Quantas vezes uma requisicao sem resposta e repetida antes de desistir.
+  final int maxAttempts;
 
   StreamSubscription<List<int>>? _subscription;
   Completer<List<int>>? _waiter;
   String _identity = '';
   bool _open = false;
 
+  /// Fila de conversas: o protocolo nao tem correlacao de ID, entao so pode
+  /// existir uma requisicao em voo por vez.
+  ///
+  /// Sem a fila, uma consulta periodica concorrendo com uma edicao do usuario
+  /// derrubava a segunda com "Requisicao anterior ainda em andamento" — e na
+  /// interface isso aparecia como falha de conexao.
+  Future<void> _queue = Future<void>.value();
+
+  /// Quadros que chegaram depois de um timeout.
+  ///
+  /// Uma resposta atrasada seria entregue ao proximo [waiter] e corromperia a
+  /// leitura seguinte. Em vez de tentar casar respostas (o protocolo nao tem
+  /// ID), ao estourar o tempo a fila e parada por um instante e o que chegar
+  /// nesse intervalo e descartado.
+  bool _draining = false;
+
+  final StreamController<void> _lost = StreamController<void>.broadcast();
+
   String get identity => _identity;
   bool get isOpen => _open;
 
+  /// Emite quando o transporte cai (BLE desconectado, porta removida).
+  Stream<void> get lost => _lost.stream;
+
+  TransportException? get lostReason => _lostError;
+
   Future<String> connect() async {
+    // O BLE precisa avisar antes: se o sistema derrubar o link, a sessao
+    // termina na hora em vez de cada requisicao morrer no timeout.
+    if (transport case final BleDisconnectHook hook) {
+      hook.onDisconnected = () => markLost('Conexao BLE encerrada');
+    }
     await transport.open();
     _subscription = transport.incoming.listen(_onFrame);
     _open = true;
     _identity = await identify();
     return _identity;
   }
+
+  /// Avisa que a conexao caiu do lado do transporte.
+  ///
+  /// Chamado pelo BLE quando o sistema reporta desconexao: a fila e acordada com
+  /// erro em vez de deixar a proxima requisicao esperar o timeout inteiro.
+  void markLost(String reason) {
+    if (!_open) return;
+    _open = false;
+    final error = TransportException(reason);
+    _lostError = error;
+    _waiter?.completeError(error);
+    _waiter = null;
+    if (!_lost.isClosed) _lost.add(null);
+  }
+
+  /// Erro que derrubou a sessao, repetido nas requisicoes seguintes.
+  ///
+  /// Guardar a causa evita que uma queda de link apareca como "nao conectado"
+  /// generico: o usuario ve o motivo real.
+  TransportException? _lostError;
 
   Future<void> disconnect() async {
     _open = false;
@@ -91,39 +146,76 @@ class TankDevice {
     await _subscription?.cancel();
     _subscription = null;
     await transport.close();
+    await _lost.close();
   }
 
   void _onFrame(List<int> frame) {
+    if (_draining) return;
     final waiter = _waiter;
     if (waiter != null && !waiter.isCompleted) {
       waiter.complete(frame);
     }
   }
 
+  /// Executa [action] com exclusividade, respeitando a ordem de chegada.
+  ///
+  /// A fila nunca fica presa: se uma acao falhar, a proxima ainda roda.
+  Future<T> _serialize<T>(Future<T> Function() action) {
+    final previous = _queue;
+    final completer = Completer<void>();
+    _queue = completer.future;
+    return previous
+        .then<void>((_) {}, onError: (Object _) {})
+        .then((_) => action())
+        .whenComplete(completer.complete);
+  }
+
   /// Envia [frame] e devolve a proxima resposta.
   ///
-  /// Conversas sao estritamente sequenciais: o protocolo nao tem correlacao de
-  /// ID, entao uma requisicao de cada vez.
-  Future<List<int>> _exchange(List<int> frame, {Duration? timeout}) async {
-    if (!_open) {
-      throw StateError('Dispositivo nao conectado');
-    }
-    if (_waiter != null && !_waiter!.isCompleted) {
-      throw StateError('Requisicao anterior ainda em andamento');
-    }
+  /// Repete a requisicao quando o pedal nao responde: no BLE uma notificacao
+  /// perdida e comum e a repeticao resolve sem incomodar o usuario.
+  Future<List<int>> _exchange(List<int> frame, {Duration? timeout}) {
+    return _serialize(() async {
+      Object lastError = _lostError ?? StateError('Dispositivo nao conectado');
+      for (var attempt = 1; attempt <= maxAttempts; attempt++) {
+        if (!_open) {
+          throw _lostError ??
+              (lastError is TransportException
+                  ? lastError
+                  : StateError('Dispositivo nao conectado'));
+        }
+        try {
+          return await _attempt(frame, timeout ?? readTimeout);
+        } on TimeoutException catch (error) {
+          lastError = TransportException(
+            'Sem resposta do dispositivo apos $attempt tentativa(s)',
+            error,
+          );
+          if (attempt < maxAttempts) await _drainStale();
+        }
+      }
+      throw lastError;
+    });
+  }
+
+  Future<List<int>> _attempt(List<int> frame, Duration timeout) async {
     final waiter = Completer<List<int>>();
     _waiter = waiter;
     try {
       await transport.send(frame);
-      return await waiter.future.timeout(timeout ?? readTimeout);
+      return await waiter.future.timeout(timeout);
     } on TimeoutException {
-      throw TimeoutException(
-        'Sem resposta do dispositivo',
-        timeout ?? readTimeout,
-      );
+      throw TimeoutException('Sem resposta do dispositivo', timeout);
     } finally {
       _waiter = null;
     }
+  }
+
+  /// Descarta o que ainda estiver a caminho depois de um timeout.
+  Future<void> _drainStale() async {
+    _draining = true;
+    await Future<void>.delayed(const Duration(milliseconds: 60));
+    _draining = false;
   }
 
   /// Identificacao do aparelho.
@@ -415,6 +507,28 @@ class TankDevice {
   /// Le o registro de um modelo da flash (8192 para AMP, 4096 para CAB).
   Future<List<int>> readModelFlash(int address, int length) =>
       readBlock(address, length, area: Area.model);
+
+  /// Le os nomes de AMP e CAB direto do pedal.
+  ///
+  /// Sao duas leituras: `0x90000000` para os AMPs e `0x80000000` para os CABs,
+  /// 20 registros de 14 bytes cada. A tabela e **viva**: gravar um modelo na
+  /// flash troca o nome na hora, sem precisar reiniciar (conferido no pedal em
+  /// 2026-11-04).
+  ///
+  /// Pedir o mesmo bloco a partir de um offset devolve o conteudo espelhado com
+  /// o primeiro byte alterado; por isso o endereco pedido e sempre o base.
+  ///
+  /// FX, MOD, DLY e REV nao tem tabela de nomes no pedal — varrendo
+  /// `0x80000000`..`0xA0000000` so aparecem estas duas.
+  Future<ModelNames> readModelNames() async {
+    final amp = decodeNameTable(
+      await readBlock(ampNameTableAddress, nameTableBytes, area: Area.model),
+    );
+    final cab = decodeNameTable(
+      await readBlock(cabNameTableAddress, nameTableBytes, area: Area.model),
+    );
+    return ModelNames(amp: amp, cab: cab);
+  }
 
   static String _hex32(int value) =>
       '0x${value.toRadixString(16).padLeft(8, '0')}';

@@ -3,10 +3,14 @@ import ast
 import ctypes
 from ctypes import wintypes
 import json
+import os
 from pathlib import Path
 import time
 
-SOURCE = Path(r'C:\Users\Yuri Rangel\Documents\Projetos\tank-mini-midi\tank_midi.py')
+# Sonda historica: o modulo original ficava em outro projeto local.
+# O caminho vem do ambiente para o repositorio nao carregar caminho
+# de maquina de ninguem.
+SOURCE = Path(os.environ.get('TANK_MIDI_SOURCE', 'tank_midi.py'))
 ROOT = Path(__file__).resolve().parent
 
 def load_scope():

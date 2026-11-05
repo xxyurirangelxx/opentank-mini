@@ -23,34 +23,37 @@ Uint8List _cabBuffer({int samples = cabSampleCount}) {
 
 void main() {
   group('enderecos na flash de modelos', () {
-    test('AMP usa o bloco anterior ao indice', () {
-      expect(modelFlashAddress(isCab: false, index: 1), 0x70000000);
+    test('AMP usa o bloco do proprio indice (0-based)', () {
+      expect(modelFlashAddress(isCab: false, index: 0), 0x70000000);
       expect(
-        modelFlashAddress(isCab: false, index: 20),
+        modelFlashAddress(isCab: false, index: 19),
         0x70000000 + 19 * 8192,
       );
     });
 
     test('CAB usa metades de bloco a partir do bloco 20', () {
-      expect(modelFlashAddress(isCab: true, index: 1), 0x70000000 + 20 * 8192);
+      expect(modelFlashAddress(isCab: true, index: 0), 0x70000000 + 20 * 8192);
       expect(
-        modelFlashAddress(isCab: true, index: 2),
+        modelFlashAddress(isCab: true, index: 1),
         0x70000000 + 20 * 8192 + 4096,
       );
-      expect(modelFlashAddress(isCab: true, index: 3), 0x70000000 + 21 * 8192);
+      expect(modelFlashAddress(isCab: true, index: 2), 0x70000000 + 21 * 8192);
       expect(
-        modelFlashAddress(isCab: true, index: 20),
+        modelFlashAddress(isCab: true, index: 19),
         0x70000000 + 29 * 8192 + 4096,
       );
     });
 
     test('indice fora da faixa e recusado', () {
-      expect(() => modelFlashAddress(isCab: false, index: 0), throwsRangeError);
-      expect(() => modelFlashAddress(isCab: true, index: 21), throwsRangeError);
+      expect(
+        () => modelFlashAddress(isCab: false, index: -1),
+        throwsRangeError,
+      );
+      expect(() => modelFlashAddress(isCab: true, index: 20), throwsRangeError);
     });
 
     test('todos os 20 slots cabem na regiao', () {
-      for (var i = 1; i <= modelSlotCount; i++) {
+      for (var i = 0; i < modelSlotCount; i++) {
         for (final isCab in <bool>[false, true]) {
           final address = modelFlashAddress(isCab: isCab, index: i);
           final size = isCab ? cabFlashSlotSize : 8192;
@@ -131,6 +134,75 @@ void main() {
       final record = Uint8List(8192)..setRange(0, 4, factoryCabMagic);
       record.setRange(4, 4 + '13BGN412'.length, '13BGN412'.codeUnits);
       expect(decodeFlashName(record), '13BGN412');
+    });
+  });
+
+  group('tabela de nomes do pedal', () {
+    test('decodifica registros de 14 bytes com NUL no fim', () {
+      // Sequencia real lida de 0x90000000: registros de 14 bytes, nome curto
+      // preenchido com NUL.
+      final blob = <int>[
+        ...'1J120_CL'.codeUnits,
+        ...List<int>.filled(6, 0),
+        ...'2J900_CL'.codeUnits,
+        ...List<int>.filled(6, 0),
+        ...'15CT-Gas V4H'.codeUnits,
+        ...List<int>.filled(2, 0),
+      ];
+      expect(blob.length, nameTableRecordSize * 3);
+      expect(decodeNameTable(blob), <String>[
+        '1J120_CL',
+        '2J900_CL',
+        '15CT-Gas V4H',
+      ]);
+    });
+
+    test('para no primeiro registro vazio', () {
+      final blob = <int>[
+        ...'1AC-SeVin'.codeUnits,
+        ...List<int>.filled(5, 0),
+        ...List<int>.filled(nameTableRecordSize + 40, 0),
+      ];
+      expect(decodeNameTable(blob), <String>['1AC-SeVin']);
+    });
+
+    test('leitura zerada devolve tabela vazia', () {
+      expect(decodeNameTable(List<int>.filled(nameTableBytes, 0)), isEmpty);
+    });
+
+    test('registro com byte fora do ASCII e descartado', () {
+      final blob = <int>[
+        0x41,
+        0x01,
+        ...List<int>.filled(12, 0),
+        ...'B'.codeUnits,
+        ...List<int>.filled(13, 0),
+      ];
+      expect(decodeNameTable(blob), isEmpty);
+    });
+
+    test('nome do modelo usa indice 0-based', () {
+      const names = ModelNames(
+        amp: <String>['1J120_CL', '2J900_CL'],
+        cab: <String>['1AC-SeVin'],
+      );
+      expect(names.name(isCab: false, index: 0), '1J120_CL');
+      expect(names.name(isCab: false, index: 1), '2J900_CL');
+      expect(names.name(isCab: true, index: 0), '1AC-SeVin');
+      expect(names.name(isCab: true, index: 1), isNull);
+      expect(names.name(isCab: false, index: -1), isNull);
+    });
+
+    test('withName troca so o modelo pedido', () {
+      const names = ModelNames(amp: <String>['A', 'B'], cab: <String>['C']);
+      final updated = names.withName(isCab: false, index: 1, name: 'NOVO');
+      expect(updated.amp.sublist(0, 3), <String>['A', 'NOVO', '']);
+      expect(updated.cab, <String>['C']);
+      expect(names.amp, <String>['A', 'B'], reason: 'nao altera o original');
+      expect(
+        () => names.withName(isCab: false, index: 20, name: 'X'),
+        throwsRangeError,
+      );
     });
   });
 }

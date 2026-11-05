@@ -19,12 +19,35 @@ Uint8List _preset(int volume, int ampModel) {
 }
 
 /// Emula o pedal: flash por endereco, RAM do preset ativo e NAK fora da faixa.
-FakeTransport _pedal(Map<int, List<int>> flash, List<int> ram) {
+///
+/// [ampNames]/[cabNames] preenchem as tabelas de nomes; quando ficam nulos o
+/// pedal responde NAK, como faria um firmware que nao expoe a tabela.
+FakeTransport _pedal(
+  Map<int, List<int>> flash,
+  List<int> ram, {
+  List<String>? ampNames,
+  List<String>? cabNames,
+}) {
   return FakeTransport((List<int> raw) {
     if (raw[2] == 0x11) return identity();
     final address = raw[7] | (raw[8] << 8) | (raw[9] << 16) | (raw[10] << 24);
     if (raw[2] == 0x23) {
       final length = raw[11] | (raw[12] << 8);
+      if (address == ampNameTableAddress || address == cabNameTableAddress) {
+        final names = address == ampNameTableAddress ? ampNames : cabNames;
+        if (names == null) return nak();
+        final table = <int>[
+          for (final value in names) ...<int>[
+            ...value.codeUnits.take(14),
+            ...List<int>.filled(
+              14 - (value.length > 14 ? 14 : value.length),
+              0,
+            ),
+          ],
+          ...List<int>.filled(length, 0),
+        ];
+        return readReply(address, table.sublist(0, length));
+      }
       if (address >= 0x10000000) {
         return readReply(address, ram.sublist(0, length));
       }
@@ -89,6 +112,35 @@ void main() {
     expect(controller.activeSlot, 4);
     expect(controller.draft!.volume, 14);
     expect(controller.isDirty, isFalse);
+    await controller.disconnect();
+  });
+
+  test('traz os nomes de AMP e CAB que o pedal reporta', () async {
+    final controller = TankController(
+      transportFactory: (_) => _pedal(
+        flash,
+        ram,
+        ampNames: <String>['1J120_CL', '2J900_CL', '15CT-Gas V4H'],
+        cabNames: <String>['1AC-SeVin'],
+      ),
+    );
+    await controller.connect();
+    expect(controller.modelNamesFor(Block.amp).length, 3);
+    expect(controller.modelNamesFor(Block.amp)[2], '15CT-Gas V4H');
+    expect(controller.modelNamesFor(Block.cab), <String>['1AC-SeVin']);
+    expect(controller.modelNamesFor(Block.fx), isEmpty);
+    expect(controller.modelNames.name(isCab: true, index: 0), '1AC-SeVin');
+    await controller.disconnect();
+    expect(controller.modelNames.isEmpty, isTrue, reason: 'sai ao desconectar');
+  });
+
+  test('sem tabela no pedal o editor continua funcionando', () async {
+    // Axes: o pedal responde NAK para as tabelas de nomes (firmware que nao
+    // expoe a regiao). A conexao nao pode falhar por causa disso.
+    final controller = build();
+    await controller.connect();
+    expect(controller.connected, isTrue);
+    expect(controller.modelNames.isEmpty, isTrue);
     await controller.disconnect();
   });
 
@@ -282,5 +334,50 @@ void main() {
     expect(decodeFlashName(record), 'TEST_AMP');
     expect(record.sublist(18), buffer.sublist(18));
     await controller.disconnect();
+  });
+
+  group('acompanhar o pedal', () {
+    test('troca de slot feita no pedal aparece no app', () async {
+      final controller = build();
+      await controller.connect();
+      expect(controller.activeSlot, 4);
+
+      // O usuario gira o seletor no proprio pedal: a RAM muda e a consulta
+      // periodica (1 s, igual ao editor oficial) traz o novo estado.
+      ram.setRange(0, 92, flash[7 * 92]!);
+      await Future<void>.delayed(
+        TankController.pollInterval + const Duration(milliseconds: 120),
+      );
+      expect(controller.activeSlot, 7);
+      expect(controller.draft!.volume, 17);
+      await controller.disconnect();
+    });
+
+    test('edicao feita no pedal vira rascunho sem marcar o slot', () async {
+      final controller = build();
+      await controller.connect();
+      final before = controller.activeSlot;
+
+      // Gira o knob de volume no pedal: RAM[0] muda, a flash nao.
+      ram[0] = 88;
+      await Future<void>.delayed(
+        TankController.pollInterval + const Duration(milliseconds: 120),
+      );
+      expect(controller.draft!.volume, 88);
+      expect(controller.activeSlot, before, reason: 'o slot nao mudou');
+      expect(controller.matchedSlot, isNull, reason: 'estado nao salvo');
+      expect(controller.isDirty, isTrue);
+      await controller.disconnect();
+    });
+
+    test('desconectar para a consulta periodica', () async {
+      final controller = build();
+      await controller.connect();
+      await controller.disconnect();
+      // Sem o timer, nenhuma leitura nova acontece. Se ele continuasse vivo, a
+      // leitura falharia e o teste nao teria como ver; conferir o estado basta.
+      expect(controller.connected, isFalse);
+      expect(controller.bank, isNull);
+    });
   });
 }
