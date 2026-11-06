@@ -133,6 +133,8 @@ class BleTransport implements TankTransport, BleDisconnectHook {
     if (deviceId == null) {
       throw TransportException('Transporte BLE nao aberto');
     }
+    // Uma resposta parcial da tentativa anterior nao pertence ao novo pedido.
+    _assembly.clear();
     // Aqui a mensagem trafega crua: sem F0/F7 e sem empacotamento de 7 bits.
     for (var offset = 0; offset < raw.length; offset += _chunkSize) {
       final end = offset + _chunkSize;
@@ -158,7 +160,7 @@ class BleTransport implements TankTransport, BleDisconnectHook {
     _assembly.add(data);
     final buffered = _assembly.toBytes();
     final total = _tryResolveLength(buffered);
-    if (total == null) {
+    if (total == null || buffered.length < total) {
       return;
     }
     // Retem o que sobrar para a proxima mensagem.
