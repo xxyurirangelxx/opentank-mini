@@ -40,6 +40,15 @@ python tools/build_installer.py
 python tools/build_installer.py --skip-build   # repackage only
 ```
 
+## GitHub and releases
+
+- Before publishing changes, run `python tools/verify_repo.py` and review `git status` and the diff. Keep secrets, local settings, and generated build artifacts out of commits.
+- Send routine changes through a pull request targeting `main`; do not push directly to `main` unless the user explicitly requests it. Never force-push.
+- Do not push branches, tags, or releases unless the user explicitly requests that remote action.
+- To release, update the version in `app/pubspec.yaml`, validate and commit the change, then create and push a tag matching the version without its build suffix (for example, `version: 0.1.4+4` uses `v0.1.4`).
+- A tag matching `v*` runs `.github/workflows/ci.yml`. CI verifies the tag against `app/pubspec.yaml`, tests and builds Windows, Android, and Linux, then creates a GitHub release with the generated assets and notes. Check the workflow result before announcing the release.
+- See `README.md` under “Releases” for the release command and platform-specific installation notes.
+
 Hardware probes (require the pedal connected; read-only unless flagged):
 
 ```bash
