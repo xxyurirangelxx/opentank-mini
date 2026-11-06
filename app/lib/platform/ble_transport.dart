@@ -3,6 +3,7 @@ import 'dart:typed_data';
 
 import 'package:universal_ble/universal_ble.dart';
 
+import '../core/protocol/messages.dart' show isValidResponse, maxRead;
 import '../core/transport/transport.dart';
 
 /// Transporte BLE pelo serviço proprietario da M-VAVE.
@@ -158,30 +159,29 @@ class BleTransport implements TankTransport, BleDisconnectHook {
 
   void _onNotification(Uint8List data) {
     _assembly.add(data);
-    final buffered = _assembly.toBytes();
-    final total = _tryResolveLength(buffered);
-    if (total == null || buffered.length < total) {
-      return;
+    var buffered = _assembly.takeBytes();
+    while (buffered.isNotEmpty) {
+      // Fragmentos tardios podem preceder o cabecalho da nova resposta.
+      if (buffered[0] != 0x00 || (buffered.length > 1 && buffered[1] != 0x59)) {
+        buffered = buffered.sublist(1);
+        continue;
+      }
+      if (buffered.length < 5) break;
+      final total = (buffered[3] | (buffered[4] << 8)) + 7;
+      if (total < 8 || total > maxRead + 15) {
+        buffered = buffered.sublist(1);
+        continue;
+      }
+      if (buffered.length < total) break;
+      final frame = buffered.sublist(0, total);
+      if (!isValidResponse(frame)) {
+        buffered = buffered.sublist(1);
+        continue;
+      }
+      _incoming.add(frame);
+      buffered = buffered.sublist(total);
     }
-    // Retem o que sobrar para a proxima mensagem.
-    final consumed = total;
-    _assembly.clear();
-    if (buffered.length > consumed) {
-      _assembly.add(buffered.sublist(consumed));
-    }
-    // A camada de cima trabalha com bytes crus; nada de reempacotar.
-    _incoming.add(buffered.sublist(0, consumed));
-  }
-
-  /// Descobre o tamanho total de uma mensagem a partir do cabecalho.
-  ///
-  /// O campo em `data[3:5]` vale `payload + 8` em todas as mensagens
-  /// observadas (requisicoes e respostas de leitura inclusive), e a mensagem
-  /// completa ocupa esse valor mais 7 bytes de prefixo e checksum.
-  static int? _tryResolveLength(Uint8List data) {
-    if (data.length < 7) return null;
-    if (data[0] != 0x00 || data[1] != 0x59) return null;
-    return (data[3] | (data[4] << 8)) + 7;
+    _assembly.add(buffered);
   }
 
   static String _normalize(String uuid) =>

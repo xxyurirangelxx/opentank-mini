@@ -88,6 +88,41 @@ class _BlePlatform extends UniversalBlePlatform {
         });
         return;
       }
+      if (reads == 3) {
+        scheduleMicrotask(() {
+          updateCharacteristicValue(
+            deviceId,
+            BleTransport.rxUuid,
+            Uint8List.fromList(full.sublist(20)),
+            null,
+          );
+          updateCharacteristicValue(
+            deviceId,
+            BleTransport.rxUuid,
+            Uint8List.fromList(full),
+            null,
+          );
+        });
+        return;
+      }
+      if (reads == 4) {
+        final corrupt = List<int>.of(full)..[20] = 8;
+        scheduleMicrotask(() {
+          updateCharacteristicValue(
+            deviceId,
+            BleTransport.rxUuid,
+            Uint8List.fromList(corrupt),
+            null,
+          );
+          updateCharacteristicValue(
+            deviceId,
+            BleTransport.rxUuid,
+            Uint8List.fromList(full),
+            null,
+          );
+        });
+        return;
+      }
       reply = reads == 2 ? full.sublist(0, 20) : full;
     }
     scheduleMicrotask(
@@ -110,9 +145,11 @@ void main() {
     final device = TankDevice(
       BleTransport(deviceName: 'TANK MINI'),
       readTimeout: const Duration(milliseconds: 100),
+      maxAttempts: 2,
     );
     await device.connect();
     try {
+      expect(await device.readBytes(0, 92), List<int>.filled(92, 7));
       expect(await device.readBytes(0, 92), List<int>.filled(92, 7));
       expect(await device.readBytes(0, 92), List<int>.filled(92, 7));
     } finally {
