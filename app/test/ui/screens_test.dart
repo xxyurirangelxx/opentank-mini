@@ -1,5 +1,7 @@
 import 'dart:typed_data';
 
+import 'package:flutter/foundation.dart'
+    show debugDefaultTargetPlatformOverride, TargetPlatform;
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:opentank_mini/core/model/preset.dart';
@@ -78,16 +80,27 @@ void main() {
     ram = List<int>.of(flash[4 * 92]!);
   });
 
-  testWidgets('a tela de conexão aparece desconectada', (
+  testWidgets('a tela de conexão móvel oferece apenas Bluetooth', (
     WidgetTester tester,
   ) async {
-    final controller = TankController(
-      transportFactory: (_) => _pedal(flash, ram),
-    );
-    await tester.pumpWidget(_wrap(controller, const HomeScreen()));
-    expect(find.text('Conectar'), findsOneWidget);
-    expect(find.textContaining('USB'), findsWidgets);
-    await tester.runAsync(controller.disconnect);
+    final previousPlatform = debugDefaultTargetPlatformOverride;
+    debugDefaultTargetPlatformOverride = TargetPlatform.android;
+    try {
+      final controller = TankController(
+        transportFactory: (_) => _pedal(flash, ram),
+      );
+      await tester.pumpWidget(_wrap(controller, const HomeScreen()));
+      expect(find.text('Conectar'), findsOneWidget);
+      expect(find.text('Ligue o Bluetooth da Tank Mini'), findsOneWidget);
+      expect(
+        find.text('Nesta plataforma o app usa apenas Bluetooth.'),
+        findsOneWidget,
+      );
+      expect(find.text('Conecte a Tank Mini por USB'), findsNothing);
+      await tester.runAsync(controller.disconnect);
+    } finally {
+      debugDefaultTargetPlatformOverride = previousPlatform;
+    }
   });
 
   testWidgets('o editor monta com banco carregado', (

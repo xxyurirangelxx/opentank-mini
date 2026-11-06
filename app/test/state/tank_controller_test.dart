@@ -1,5 +1,7 @@
 import 'dart:typed_data';
 
+import 'package:flutter/foundation.dart'
+    show debugDefaultTargetPlatformOverride, TargetPlatform;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:opentank_mini/core/model/model_flash.dart';
 import 'package:opentank_mini/core/model/model_format.dart';
@@ -103,6 +105,15 @@ void main() {
 
   TankController build() =>
       TankController(transportFactory: (_) => _pedal(flash, ram));
+
+  test('inicia em Bluetooth em plataformas sem suporte USB', () {
+    debugDefaultTargetPlatformOverride = TargetPlatform.android;
+    addTearDown(() => debugDefaultTargetPlatformOverride = null);
+
+    final controller = TankController();
+    expect(controller.link, Link.bluetooth);
+    controller.dispose();
+  });
 
   test('conecta, le o banco e identifica o slot ativo', () async {
     final controller = build();
