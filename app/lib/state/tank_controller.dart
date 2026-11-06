@@ -46,7 +46,7 @@ class TankController extends ChangeNotifier {
     this.bleName = 'TANK MINI_BLE',
     Link initialLink = Link.usb,
     TankTransport Function(Link link)? transportFactory,
-  }) : _link = initialLink {
+  }) : _link = supportsUsb ? initialLink : Link.bluetooth {
     _transportFactory = transportFactory;
   }
 

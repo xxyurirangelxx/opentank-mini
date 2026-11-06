@@ -45,3 +45,6 @@ dist/
 
 # Capturas temporárias das ferramentas de pesquisa
 tools/research/shot-*.png
+
+# Configuração local do Claude Code
+.claude/settings.local.json
