@@ -3,7 +3,7 @@ import 'dart:typed_data';
 
 import 'package:universal_ble/universal_ble.dart';
 
-import '../core/protocol/messages.dart' show isValidResponse, maxRead;
+import '../core/protocol/messages.dart' show Command, isValidResponse, maxRead;
 import '../core/transport/transport.dart';
 
 /// Transporte BLE pelo serviço proprietario da M-VAVE.
@@ -29,6 +29,7 @@ class BleTransport implements TankTransport, BleDisconnectHook {
   StreamSubscription<bool>? _connectionSubscription;
   String? _deviceId;
   int _chunkSize = 20;
+  int? _expectedResponseLength;
 
   /// Assinatura para quando o sistema derrubar o link.
   @override
@@ -136,6 +137,13 @@ class BleTransport implements TankTransport, BleDisconnectHook {
     }
     // Uma resposta parcial da tentativa anterior nao pertence ao novo pedido.
     _assembly.clear();
+    // A identificacao tem tamanho variavel; os demais comandos retornam ACK
+    // ou uma resposta de leitura cujo tamanho ja e conhecido pelo pedido.
+    _expectedResponseLength = raw.length < 3 || raw[2] == Command.identify
+        ? null
+        : raw[2] == Command.read && raw.length >= 13
+        ? (raw[11] | (raw[12] << 8)) + 15
+        : 8;
     // Aqui a mensagem trafega crua: sem F0/F7 e sem empacotamento de 7 bits.
     for (var offset = 0; offset < raw.length; offset += _chunkSize) {
       final end = offset + _chunkSize;
@@ -168,7 +176,10 @@ class BleTransport implements TankTransport, BleDisconnectHook {
       }
       if (buffered.length < 5) break;
       final total = (buffered[3] | (buffered[4] << 8)) + 7;
-      if (total < 8 || total > maxRead + 15) {
+      final expected = _expectedResponseLength;
+      if (total < 8 ||
+          total > maxRead + 15 ||
+          (expected != null && total != 8 && total != expected)) {
         buffered = buffered.sublist(1);
         continue;
       }

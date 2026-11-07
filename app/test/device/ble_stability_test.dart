@@ -68,6 +68,29 @@ class _BlePlatform extends UniversalBlePlatform {
     final List<int> reply;
     if (value[2] == 0x11) {
       reply = identity()..[3] = identity().length - 7;
+    } else if (value[2] == 0x22) {
+      scheduleMicrotask(() {
+        updateCharacteristicValue(
+          deviceId,
+          BleTransport.rxUuid,
+          Uint8List.fromList(<int>[
+            0,
+            0x59,
+            0,
+            0x90,
+            0,
+            ...List<int>.filled(15, 7),
+          ]),
+          null,
+        );
+        updateCharacteristicValue(
+          deviceId,
+          BleTransport.rxUuid,
+          Uint8List.fromList(ack()),
+          null,
+        );
+      });
+      return;
     } else {
       reads++;
       final full = readReply(0, List<int>.filled(92, 7));
@@ -93,7 +116,14 @@ class _BlePlatform extends UniversalBlePlatform {
           updateCharacteristicValue(
             deviceId,
             BleTransport.rxUuid,
-            Uint8List.fromList(full.sublist(20)),
+            Uint8List.fromList(<int>[
+              0,
+              0x59,
+              0,
+              0x90,
+              0,
+              ...List<int>.filled(15, 7),
+            ]),
             null,
           );
           updateCharacteristicValue(
@@ -118,6 +148,25 @@ class _BlePlatform extends UniversalBlePlatform {
             deviceId,
             BleTransport.rxUuid,
             Uint8List.fromList(full),
+            null,
+          );
+        });
+        return;
+      }
+      if (reads == 5) {
+        final payload = List<int>.filled(92, 7)..setRange(0, 8, ack());
+        final frame = readReply(0, payload);
+        scheduleMicrotask(() {
+          updateCharacteristicValue(
+            deviceId,
+            BleTransport.rxUuid,
+            Uint8List.fromList(frame.sublist(0, 30)),
+            null,
+          );
+          updateCharacteristicValue(
+            deviceId,
+            BleTransport.rxUuid,
+            Uint8List.fromList(frame.sublist(30)),
             null,
           );
         });
@@ -152,6 +201,9 @@ void main() {
       expect(await device.readBytes(0, 92), List<int>.filled(92, 7));
       expect(await device.readBytes(0, 92), List<int>.filled(92, 7));
       expect(await device.readBytes(0, 92), List<int>.filled(92, 7));
+      final payload = List<int>.filled(92, 7)..setRange(0, 8, ack());
+      expect(await device.readBytes(0, 92), payload);
+      await device.setVolume(42);
     } finally {
       await device.disconnect();
     }
